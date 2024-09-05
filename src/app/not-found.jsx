@@ -3,9 +3,9 @@ import React from "react";
 
 export default function Page404() {
   return (
-    <Box   >
-      <Box className="grid h-screen place-content-center bg-white px-4" w={'50%'} m={'auto'} rounded={'100%'} p={'10%'}>
-        <Box className="text-center" >
+    <Box  m={'auto'} justifyContent={'center'} display={'flex'} alignItems={'center'}>
+  
+        <Box className="text-center" h={'100vh'} m={'auto'} justifyContent={'center'} display={'flex'} alignItems={'center'} flexDirection={'column'}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1024 768"
@@ -30,7 +30,7 @@ export default function Page404() {
           </h1>
 
           <p className="mt-4 text-gray-500">Caiu de paraquedas aqui? parace que essa pagina não existe.</p>
-        </Box>
+        
       </Box>
     </Box>
   );
