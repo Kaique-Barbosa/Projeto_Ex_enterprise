@@ -1,0 +1,336 @@
+<style>
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+  * {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    margin: 0px;
+    height: 100%;
+  }
+  /* a blue color as a generic focus style */
+  button:focus-visible {
+    outline: 2px solid #4a90e2 !important;
+    outline: -webkit-focus-ring-color auto 5px !important;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  :root {
+    --branco: rgba(255, 255, 255, 1);
+    --cinza: rgba(227, 228, 230, 1);
+    --cinza-secondrio: rgba(153, 153, 153, 1);
+    --cores-container-fundo: rgba(9, 8, 8, 1);
+    --cores-dourado: rgba(251, 193, 2, 1);
+    --cores-fonte: rgba(227, 228, 230, 1);
+    --cores-fonte-p-gina: rgba(255, 255, 255, 1);
+    --cores-fundo: rgba(0, 0, 0, 1);
+    --cores-laranja: rgba(235, 117, 0, 1);
+    --dourado: rgba(240, 169, 14, 1);
+    --fontes-fonte-grande-bold-font-family: "Work Sans", Helvetica;
+    --fontes-fonte-grande-bold-font-size: 32px;
+    --fontes-fonte-grande-bold-font-style: normal;
+    --fontes-fonte-grande-bold-font-weight: 700;
+    --fontes-fonte-grande-bold-letter-spacing: 1.92px;
+    --fontes-fonte-grande-bold-line-height: normal;
+    --fontes-fonte-grande-bold-uppercase-font-family: "Work Sans", Helvetica;
+    --fontes-fonte-grande-bold-uppercase-font-size: 32px;
+    --fontes-fonte-grande-bold-uppercase-font-style: normal;
+    --fontes-fonte-grande-bold-uppercase-font-weight: 700;
+    --fontes-fonte-grande-bold-uppercase-letter-spacing: 1.92px;
+    --fontes-fonte-grande-bold-uppercase-line-height: normal;
+    --fontes-fonte-grande-light-font-family: "Work Sans", Helvetica;
+    --fontes-fonte-grande-light-font-size: 32px;
+    --fontes-fonte-grande-light-font-style: normal;
+    --fontes-fonte-grande-light-font-weight: 300;
+    --fontes-fonte-grande-light-letter-spacing: 1.92px;
+    --fontes-fonte-grande-light-line-height: normal;
+    --fontes-fonte-grande-light-uppercase-font-family: "Work Sans", Helvetica;
+    --fontes-fonte-grande-light-uppercase-font-size: 32px;
+    --fontes-fonte-grande-light-uppercase-font-style: normal;
+    --fontes-fonte-grande-light-uppercase-font-weight: 300;
+    --fontes-fonte-grande-light-uppercase-letter-spacing: 1.92px;
+    --fontes-fonte-grande-light-uppercase-line-height: normal;
+    --fontes-fonte-grande-regular-font-family: "Work Sans", Helvetica;
+    --fontes-fonte-grande-regular-font-size: 32px;
+    --fontes-fonte-grande-regular-font-style: normal;
+    --fontes-fonte-grande-regular-font-weight: 400;
+    --fontes-fonte-grande-regular-letter-spacing: 1.92px;
+    --fontes-fonte-grande-regular-line-height: normal;
+    --fontes-fonte-grande-regular-upeercase-font-family: "Work Sans", Helvetica;
+    --fontes-fonte-grande-regular-upeercase-font-size: 32px;
+    --fontes-fonte-grande-regular-upeercase-font-style: normal;
+    --fontes-fonte-grande-regular-upeercase-font-weight: 400;
+    --fontes-fonte-grande-regular-upeercase-letter-spacing: 1.92px;
+    --fontes-fonte-grande-regular-upeercase-line-height: normal;
+    --fontes-fonte-m-dia-bold-font-family: "Work Sans", Helvetica;
+    --fontes-fonte-m-dia-bold-font-size: 24px;
+    --fontes-fonte-m-dia-bold-font-style: normal;
+    --fontes-fonte-m-dia-bold-font-weight: 700;
+    --fontes-fonte-m-dia-bold-letter-spacing: 1.44px;
+    --fontes-fonte-m-dia-bold-line-height: normal;
+    --fontes-fonte-m-dia-bold-uppercase-font-family: "Work Sans", Helvetica;
+    --fontes-fonte-m-dia-bold-uppercase-font-size: 24px;
+    --fontes-fonte-m-dia-bold-uppercase-font-style: normal;
+    --fontes-fonte-m-dia-bold-uppercase-font-weight: 700;
+    --fontes-fonte-m-dia-bold-uppercase-letter-spacing: 1.44px;
+    --fontes-fonte-m-dia-bold-uppercase-line-height: normal;
+    --fontes-fonte-m-dia-light-font-family: "Work Sans", Helvetica;
+    --fontes-fonte-m-dia-light-font-size: 24px;
+    --fontes-fonte-m-dia-light-font-style: normal;
+    --fontes-fonte-m-dia-light-font-weight: 400;
+    --fontes-fonte-m-dia-light-letter-spacing: 1.44px;
+    --fontes-fonte-m-dia-light-line-height: normal;
+    --fontes-fonte-m-dia-light-uppercase-font-family: "Work Sans", Helvetica;
+    --fontes-fonte-m-dia-light-uppercase-font-size: 24px;
+    --fontes-fonte-m-dia-light-uppercase-font-style: normal;
+    --fontes-fonte-m-dia-light-uppercase-font-weight: 300;
+    --fontes-fonte-m-dia-light-uppercase-letter-spacing: 1.44px;
+    --fontes-fonte-m-dia-light-uppercase-line-height: normal;
+    --fontes-fonte-m-dia-regular-font-family: "Work Sans", Helvetica;
+    --fontes-fonte-m-dia-regular-font-size: 24px;
+    --fontes-fonte-m-dia-regular-font-style: normal;
+    --fontes-fonte-m-dia-regular-font-weight: 400;
+    --fontes-fonte-m-dia-regular-letter-spacing: 1.44px;
+    --fontes-fonte-m-dia-regular-line-height: normal;
+    --fontes-fonte-m-dia-regular-uppercase-font-family: "Work Sans", Helvetica;
+    --fontes-fonte-m-dia-regular-uppercase-font-size: 24px;
+    --fontes-fonte-m-dia-regular-uppercase-font-style: normal;
+    --fontes-fonte-m-dia-regular-uppercase-font-weight: 400;
+    --fontes-fonte-m-dia-regular-uppercase-letter-spacing: 1.44px;
+    --fontes-fonte-m-dia-regular-uppercase-line-height: normal;
+    --fontes-fonte-normal-bold-font-family: "Work Sans", Helvetica;
+    --fontes-fonte-normal-bold-font-size: 20px;
+    --fontes-fonte-normal-bold-font-style: normal;
+    --fontes-fonte-normal-bold-font-weight: 700;
+    --fontes-fonte-normal-bold-letter-spacing: 1.2px;
+    --fontes-fonte-normal-bold-line-height: 32px;
+    --fontes-fonte-normal-light-font-family: "Work Sans", Helvetica;
+    --fontes-fonte-normal-light-font-size: 20px;
+    --fontes-fonte-normal-light-font-style: normal;
+    --fontes-fonte-normal-light-font-weight: 300;
+    --fontes-fonte-normal-light-letter-spacing: 1.2px;
+    --fontes-fonte-normal-light-line-height: 32px;
+    --fontes-fonte-normal-regular-font-family: "Work Sans", Helvetica;
+    --fontes-fonte-normal-regular-font-size: 20px;
+    --fontes-fonte-normal-regular-font-style: normal;
+    --fontes-fonte-normal-regular-font-weight: 400;
+    --fontes-fonte-normal-regular-letter-spacing: 1.2px;
+    --fontes-fonte-normal-regular-line-height: 32px;
+    --fontes-fonte-normal-uppercase-bold-font-family: "Work Sans", Helvetica;
+    --fontes-fonte-normal-uppercase-bold-font-size: 20px;
+    --fontes-fonte-normal-uppercase-bold-font-style: normal;
+    --fontes-fonte-normal-uppercase-bold-font-weight: 700;
+    --fontes-fonte-normal-uppercase-bold-letter-spacing: 1.2px;
+    --fontes-fonte-normal-uppercase-bold-line-height: 32px;
+    --fontes-fonte-normal-uppercase-font-family: "Work Sans", Helvetica;
+    --fontes-fonte-normal-uppercase-font-size: 20px;
+    --fontes-fonte-normal-uppercase-font-style: normal;
+    --fontes-fonte-normal-uppercase-font-weight: 300;
+    --fontes-fonte-normal-uppercase-letter-spacing: 1.2px;
+    --fontes-fonte-normal-uppercase-line-height: 32px;
+    --fontes-fonte-normal-uppercase-regular-font-family: "Work Sans", Helvetica;
+    --fontes-fonte-normal-uppercase-regular-font-size: 20px;
+    --fontes-fonte-normal-uppercase-regular-font-style: normal;
+    --fontes-fonte-normal-uppercase-regular-font-weight: 400;
+    --fontes-fonte-normal-uppercase-regular-letter-spacing: 1.2px;
+    --fontes-fonte-normal-uppercase-regular-line-height: normal;
+    --h1-bold-font-family: "Work Sans", Helvetica;
+    --h1-bold-font-size: 56px;
+    --h1-bold-font-style: normal;
+    --h1-bold-font-weight: 700;
+    --h1-bold-letter-spacing: 3.36px;
+    --h1-bold-line-height: normal;
+    --h1-semi-bold-font-family: "Work Sans", Helvetica;
+    --h1-semi-bold-font-size: 56px;
+    --h1-semi-bold-font-style: normal;
+    --h1-semi-bold-font-weight: 600;
+    --h1-semi-bold-letter-spacing: 3.36px;
+    --h1-semi-bold-line-height: normal;
+    --h2-bold-font-family: "Work Sans", Helvetica;
+    --h2-bold-font-size: 40px;
+    --h2-bold-font-style: normal;
+    --h2-bold-font-weight: 700;
+    --h2-bold-letter-spacing: 2.4px;
+    --h2-bold-line-height: normal;
+    --h2-semi-bold-font-family: "Work Sans", Helvetica;
+    --h2-semi-bold-font-size: 40px;
+    --h2-semi-bold-font-style: normal;
+    --h2-semi-bold-font-weight: 600;
+    --h2-semi-bold-letter-spacing: 2.4px;
+    --h2-semi-bold-line-height: normal;
+    --h3-bold-font-family: "Work Sans", Helvetica;
+    --h3-bold-font-size: 32px;
+    --h3-bold-font-style: normal;
+    --h3-bold-font-weight: 700;
+    --h3-bold-letter-spacing: 1.92px;
+    --h3-bold-line-height: normal;
+    --h3-semi-bold-font-family: "Work Sans", Helvetica;
+    --h3-semi-bold-font-size: 32px;
+    --h3-semi-bold-font-style: normal;
+    --h3-semi-bold-font-weight: 600;
+    --h3-semi-bold-letter-spacing: 1.92px;
+    --h3-semi-bold-line-height: normal;
+    --h4-bold-font-family: "Work Sans", Helvetica;
+    --h4-bold-font-size: 24px;
+    --h4-bold-font-style: normal;
+    --h4-bold-font-weight: 700;
+    --h4-bold-letter-spacing: 1.44px;
+    --h4-bold-line-height: normal;
+    --h4-semi-bold-font-family: "Work Sans", Helvetica;
+    --h4-semi-bold-font-size: 24px;
+    --h4-semi-bold-font-style: normal;
+    --h4-semi-bold-font-weight: 600;
+    --h4-semi-bold-letter-spacing: 1.44px;
+    --h4-semi-bold-line-height: normal;
+    --h5-bold-font-family: "Work Sans", Helvetica;
+    --h5-bold-font-size: 22px;
+    --h5-bold-font-style: normal;
+    --h5-bold-font-weight: 700;
+    --h5-bold-letter-spacing: 1.32px;
+    --h5-bold-line-height: normal;
+    --h5-semi-bold-font-family: "Work Sans", Helvetica;
+    --h5-semi-bold-font-size: 22px;
+    --h5-semi-bold-font-style: normal;
+    --h5-semi-bold-font-weight: 600;
+    --h5-semi-bold-letter-spacing: 1.32px;
+    --h5-semi-bold-line-height: normal;
+    --heading-3-light-font-family: "Work Sans", Helvetica;
+    --heading-3-light-font-size: 32px;
+    --heading-3-light-font-style: normal;
+    --heading-3-light-font-weight: 300;
+    --heading-3-light-letter-spacing: 0px;
+    --heading-3-light-line-height: 150%;
+    --heading-3-semibold-font-family: "Work Sans", Helvetica;
+    --heading-3-semibold-font-size: 32px;
+    --heading-3-semibold-font-style: normal;
+    --heading-3-semibold-font-weight: 600;
+    --heading-3-semibold-letter-spacing: 0px;
+    --heading-3-semibold-line-height: 150%;
+    --heading-4-semibold-font-family: "Work Sans", Helvetica;
+    --heading-4-semibold-font-size: 24px;
+    --heading-4-semibold-font-style: normal;
+    --heading-4-semibold-font-weight: 600;
+    --heading-4-semibold-letter-spacing: 1.44px;
+    --heading-4-semibold-line-height: 150%;
+    --laranja: rgba(235, 117, 0, 1);
+    --navbar-nav-menu-width: 776px;
+    --navbar-show-actions: initial;
+    --navbar-show-links: initial;
+    --navbar-show-menu-button: none;
+    --navbar-show-nav-menu-actions: none;
+    --navbar-width-breakpoint: 1512px;
+    --primaria: rgba(0, 0, 0, 1);
+    --responsividade-font-size: 20px;
+    --responsividade-font-size-1: 56px;
+    --responsividade-font-size-2: 40px;
+    --responsividade-font-size-3: 32px;
+    --responsividade-font-size-4: 24px;
+    --responsividade-font-size-5: 22px;
+    --responsividade-menu-width: 720px;
+    --responsividade-padding: 32px;
+    --responsividade-view-height: 982px;
+    --responsividade-view-width: 1512px;
+    --responsividade-width: 1440px;
+  }
+
+  /*
+
+To enable a theme in your HTML, simply add one of the following data attributes to an HTML element, like so:
+
+<body data-cores-mode="tema-escuro">
+<!-- the rest of your content -->
+</body>
+You can apply the theme on any DOM node, not just the `body`
+
+*/
+
+  [data-cores-mode="tema-escuro"] {
+    --cores-container-fundo: rgba(9, 8, 8, 1);
+    --cores-dourado: rgba(251, 193, 2, 1);
+    --cores-fonte: rgba(227, 228, 230, 1);
+    --cores-fonte-p-gina: rgba(255, 255, 255, 1);
+    --cores-fundo: rgba(0, 0, 0, 1);
+    --cores-laranja: rgba(235, 117, 0, 1);
+  }
+
+  [data-cores-mode="tema-claro"] {
+    --cores-container-fundo: rgba(251, 250, 250, 1);
+    --cores-dourado: rgba(235, 172, 0, 1);
+    --cores-fonte: rgba(0, 0, 0, 1);
+    --cores-fonte-p-gina: rgba(0, 0, 0, 1);
+    --cores-fundo: rgba(255, 255, 255, 1);
+    --cores-laranja: rgba(246, 76, 3, 1);
+  }
+
+  [data-responsividade-mode="desktop"] {
+    --responsividade-font-size: 20px;
+    --responsividade-font-size-1: 56px;
+    --responsividade-font-size-2: 40px;
+    --responsividade-font-size-3: 32px;
+    --responsividade-font-size-4: 24px;
+    --responsividade-font-size-5: 22px;
+    --responsividade-menu-width: 720px;
+    --responsividade-padding: 32px;
+    --responsividade-view-height: 982px;
+    --responsividade-view-width: 1512px;
+    --responsividade-width: 1440px;
+  }
+
+  [data-responsividade-mode="tablet"] {
+    --responsividade-font-size: 18px;
+    --responsividade-font-size-1: 52px;
+    --responsividade-font-size-2: 38px;
+    --responsividade-font-size-3: 30px;
+    --responsividade-font-size-4: 22px;
+    --responsividade-font-size-5: 20px;
+    --responsividade-menu-width: 480px;
+    --responsividade-padding: 32px;
+    --responsividade-view-height: 1194px;
+    --responsividade-view-width: 838px;
+    --responsividade-width: 768px;
+  }
+
+  [data-responsividade-mode="mobile"] {
+    --responsividade-font-size: 16px;
+    --responsividade-font-size-1: 48px;
+    --responsividade-font-size-2: 36px;
+    --responsividade-font-size-3: 28px;
+    --responsividade-font-size-4: 20px;
+    --responsividade-font-size-5: 18px;
+    --responsividade-menu-width: 375px;
+    --responsividade-padding: 16px;
+    --responsividade-view-height: 852px;
+    --responsividade-view-width: 393px;
+    --responsividade-width: 375px;
+  }
+
+  [data-navbar-mode="desktop"] {
+    --navbar-nav-menu-width: 776px;
+    --navbar-show-actions: initial;
+    --navbar-show-links: initial;
+    --navbar-show-menu-button: none;
+    --navbar-show-nav-menu-actions: none;
+    --navbar-width-breakpoint: 1512px;
+  }
+
+  [data-navbar-mode="tablet"] {
+    --navbar-nav-menu-width: 418px;
+    --navbar-show-actions: initial;
+    --navbar-show-links: none;
+    --navbar-show-menu-button: initial;
+    --navbar-show-nav-menu-actions: none;
+    --navbar-width-breakpoint: 834px;
+  }
+
+  [data-navbar-mode="mobile"] {
+    --navbar-nav-menu-width: 350px;
+    --navbar-show-actions: none;
+    --navbar-show-links: none;
+    --navbar-show-menu-button: initial;
+    --navbar-show-nav-menu-actions: initial;
+    --navbar-width-breakpoint: 393px;
+  }
+</style>

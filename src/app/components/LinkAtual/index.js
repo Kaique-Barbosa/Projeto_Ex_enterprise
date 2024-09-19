@@ -1,0 +1,1 @@
+export { LinkAtual } from "./LinkAtual";
