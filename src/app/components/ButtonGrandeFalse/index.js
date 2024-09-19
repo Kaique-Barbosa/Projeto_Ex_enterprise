@@ -1,1 +1,0 @@
-export { ButtonGrandeFalse } from "./ButtonGrandeFalse";

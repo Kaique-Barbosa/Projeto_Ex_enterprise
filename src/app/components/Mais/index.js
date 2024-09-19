@@ -1,1 +1,0 @@
-export { Mais } from "./Mais";

@@ -1,1 +1,0 @@
-export { Devs } from "./Devs";

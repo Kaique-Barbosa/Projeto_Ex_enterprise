@@ -1,1 +1,0 @@
-export { PginaHomeTema } from "./PginaHomeTema";
