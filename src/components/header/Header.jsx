@@ -18,15 +18,13 @@ export const Header = ({ logoLogo }) => {
       className="flex items-center  justify-center w-full"
       data-navbar-mode={larguraDaTela}
     >
-      <div className="bg[--cores-container-fundo] w-full max-w-[1440px] flex items-center px-8 py-2 justify-between">
+      <div className="w-full max-w-[1440px] flex items-center px-8 py-2 justify-between">
         {/* <Link href={"/"} alt={"logo Da Empresa/ Home Page"}> */}
         <Image
           priority
           src={logoLogo}
           alt="Logo Da empresa"
-          width={64}
-          height={64}
-          className="h-auto w-auto"
+          className="h-16 w-16"
         />
 
         <nav className="hidden md:flex items-center gap-6 justify-center text-cores-fonte">
