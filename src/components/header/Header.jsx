@@ -15,30 +15,21 @@ export const Header = ({ logoLogo }) => {
 
   return (
     <div
-      className={` flex items-center  justify-center `}
+      className="flex items-center  justify-center w-full"
       data-navbar-mode={larguraDaTela}
-      style={{
-        width: "var(--responsividade-container-width)",
-      }}
     >
-      <div className="bg-slate-900 w-[100%] m-2 flex  items-center px-5 mx-[5%] justify-between ">
+      <div className="bg[--cores-container-fundo] w-full max-w-[1440px] flex items-center px-8 py-2 justify-between">
         {/* <Link href={"/"} alt={"logo Da Empresa/ Home Page"}> */}
-          <Image
-            priority
-            src={logoLogo}
-            alt="Logo Da empresa"
-            width={80}
-            height={50}
-            className="h-auto w-auto"
-          />
-          
-          {larguraDaTela === "mobile" ? (
-            <MenuMobile/>
-          ): null }
-        {/* </Link> */}
+        <Image
+          priority
+          src={logoLogo}
+          alt="Logo Da empresa"
+          width={64}
+          height={64}
+          className="h-auto w-auto"
+        />
 
-        <div className="  [display:var(--navbar-show-links,flex)] items-center gap-4  justify-center text-cores-fonte">
-          
+        <nav className="hidden md:flex items-center gap-6 justify-center text-cores-fonte">
           <div>
             <Link
               href={"/"}
@@ -89,6 +80,9 @@ export const Header = ({ logoLogo }) => {
               E-BOOKS
             </Link>
           </div>
+        </nav>
+        <div className="block md:hidden">
+          <MenuMobile />
         </div>
       </div>
     </div>

@@ -22,8 +22,8 @@ const MenuMobile = () => {
   const currentRoute = usePathname();
   return (
     <>
-      <Button ref={btnRef} colorScheme="blackAlpha" onClick={onOpen}>
-      <Image href={iconMenu} alt="icone de menu"/>
+      <Button ref={btnRef} colorScheme="blackAlpha" onClick={onOpen} padding={0}>
+      <Image src={iconMenu} alt="icone de menu" className="w-[40px] h-[40px]"/>
       </Button>
       <Drawer
         isOpen={isOpen}
