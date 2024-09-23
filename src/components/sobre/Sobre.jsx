@@ -1,16 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
-const Sobre = props => {
+// usa o children para inserir qualquer conteudo dentro da página
+const Sobre = ({ children, title }) => {
   return (
-    <div className="">
-        
-    </div>
-  )
-}
+    <section className="h-svh text-cores-fonte flex flex-col justify-center p-4 sm:p-8 gap-6">
+      <h2 className="text-center text-3xl">{title}</h2>
+      {children}
+    </section>
+  );
+};
 
-Sobre.propTypes = {
+Sobre.propTypes = {};
 
-}
-
-export default Sobre
+export default Sobre;
