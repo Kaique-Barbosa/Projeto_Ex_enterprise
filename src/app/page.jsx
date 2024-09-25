@@ -29,7 +29,7 @@ export default function Home({}) {
             soluções inovadoras e personalizadas.
           </p>
         </Sobre>
-        {/* <Cards/> */}
+        <Cards/>
       </div>
     </WindowWidthProvider>
   );
