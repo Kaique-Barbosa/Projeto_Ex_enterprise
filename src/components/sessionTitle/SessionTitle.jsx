@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
-
 import iconSeta from "@/public/img/setaBaixo.png";
 import Link from "next/link";
 
 const Session = ({ texto }) => {
+  const rolarParaBaixo = () => {
+    window.scrollTo({
+      top: window.innerHeight, // Rola para a altura da tela
+      behavior: "smooth", // Rolagem suave
+    });
+  };
+
   return (
     <header
       className={
@@ -23,12 +29,9 @@ const Session = ({ texto }) => {
           <strong className="text-[#e3e3e6] font-semibold">{texto[1]}</strong>
         </h1>
       </div>
-      <Link
-        href={"/"}
-        className="py-4"
-      >
+      <button href={""} onClick={rolarParaBaixo} className="py-4">
         <Image src={iconSeta} alt="" />
-      </Link>
+      </button>
     </header>
   );
 };

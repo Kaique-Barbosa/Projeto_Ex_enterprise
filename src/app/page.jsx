@@ -2,9 +2,10 @@
 import { Header } from "@/components/header/Header";
 import SessionTitle from "@/components/sessionTitle/SessionTitle";
 import { WindowWidthProvider } from "./WindowWidthContext";
+import {Cards} from "@/components/cards/Cards"
 
 // importação de imagens
-import logo from "@/public//img/logo.png";
+import logo from "@/public/img/logo.png";
 import Sobre from "@/components/sobre/Sobre";
 
 export default function Home({}) {
@@ -28,6 +29,7 @@ export default function Home({}) {
             soluções inovadoras e personalizadas.
           </p>
         </Sobre>
+        {/* <Cards/> */}
       </div>
     </WindowWidthProvider>
   );
