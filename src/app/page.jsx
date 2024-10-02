@@ -3,6 +3,7 @@ import { Header } from "@/components/header/Header";
 import SessionTitle from "@/components/sessionTitle/SessionTitle";
 import { WindowWidthProvider } from "./WindowWidthContext";
 import {Cards} from "@/components/cards/Cards"
+import {Card} from "@/components/cards/card/Card"
 
 // importação de imagens
 import logo from "@/public/img/logo.png";
@@ -29,7 +30,17 @@ export default function Home({}) {
             soluções inovadoras e personalizadas.
           </p>
         </Sobre>
-        <Cards/>
+        {/* <Cards/> */}
+        <Card 
+          modoResponsiv="descktop"  
+          imagem= "https://images.pexels.com/photos/20044365/pexels-photo-20044365/free-photo-of-computador-portatil-laptop-notebook-trabalhando.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          titulo="teste teste"  
+          subTitulo="subtitulo"
+          altLink="iamgem de escritorio"
+          inverter = {true}
+          linkButton = '/'
+         />
+       
       </div>
     </WindowWidthProvider>
   );
