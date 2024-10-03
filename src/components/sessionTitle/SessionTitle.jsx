@@ -1,8 +1,11 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
 import iconSeta from "@/public/img/setaBaixo.png";
 import Link from "next/link";
+
+import { WindowWidthContext } from "@/app/WindowWidthContext";
+import logo from '@/public/img/logo2.png'
 
 const Session = ({ texto }) => {
   const rolarParaBaixo = () => {
@@ -11,14 +14,20 @@ const Session = ({ texto }) => {
       behavior: "smooth", // Rolagem suave
     });
   };
+  const larguraDaTela = useContext(WindowWidthContext);
 
   return (
+    
     <header
       className={
         "h-[calc(100vh-80px)] flex flex-col gap-2 relative justify-center items-center"
       }
-      data-responsividade-mode="desktop"
+      data-responsividade-mode={larguraDaTela}
     >
+      <div className="w-full flex items-center justify-center p-4 relative flex-1 self-stretch  grow">
+      <Image src={logo} alt="Logo Da empresa"  className=" w-full flex flex-wrap"/>
+
+      </div>
       <div
         className={
           "w-full flex items-center justify-center p-4 relative flex-1 self-stretch  grow"

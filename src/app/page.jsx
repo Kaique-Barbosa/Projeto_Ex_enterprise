@@ -2,8 +2,7 @@
 import { Header } from "@/components/header/Header";
 import SessionTitle from "@/components/sessionTitle/SessionTitle";
 import { WindowWidthProvider } from "./WindowWidthContext";
-import {Cards} from "@/components/cards/Cards"
-import {Card} from "@/components/cards/card/Card"
+import {Card} from "@/components/card/Card"
 
 // importação de imagens
 import logo from "@/public/img/logo.png";
@@ -30,15 +29,38 @@ export default function Home({}) {
             soluções inovadoras e personalizadas.
           </p>
         </Sobre>
-        {/* <Cards/> */}
+       
         <Card 
-          modoResponsiv="descktop"  
-          imagem= "https://images.pexels.com/photos/20044365/pexels-photo-20044365/free-photo-of-computador-portatil-laptop-notebook-trabalhando.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          titulo="teste teste"  
-          subTitulo="subtitulo"
-          altLink="iamgem de escritorio"
+          imagem= "https://media.istockphoto.com/id/1502896527/pt/foto/office-meeting-and-documents-of-business-people-clients-or-team-for-taxes-audit-or-revenue.jpg?s=2048x2048&w=is&k=20&c=__C0XQbjhAOJNf5mRY52YM7TdSODmGbnU_9_W2AAeCo="
+          titulo="Consultoria"  
+          subTitulo="Realize conosco uma sessão com os melhores profissionais do mercado"
+          altLink="iamgem representando consultoria"
           inverter = {true}
-          linkButton = '/'
+          linkButton = '/consultoria'
+         />
+        <Card 
+          imagem= "https://images.pexels.com/photos/20044365/pexels-photo-20044365/free-photo-of-computador-portatil-laptop-notebook-trabalhando.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          titulo="Locação de Imóveis"  
+          subTitulo="Aloque um de nossos escritorios, aconpanhe a disponibilidade no site"
+          altLink="iamgem de locação de imoveis"
+          inverter = {false}
+          linkButton = '/imoveis'
+         />
+        <Card 
+          imagem= "https://images.pexels.com/photos/20044365/pexels-photo-20044365/free-photo-of-computador-portatil-laptop-notebook-trabalhando.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          titulo="Locação de Imóveis"  
+          subTitulo="Aloque um de nossos escritorios, aconpanhe a disponibilidade no site"
+          altLink="iamgem de locação de imoveis"
+          inverter = {true}
+          linkButton = '/imoveis'
+         />
+        <Card 
+          imagem= "https://images.pexels.com/photos/20044365/pexels-photo-20044365/free-photo-of-computador-portatil-laptop-notebook-trabalhando.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          titulo="Locação de Imóveis"  
+          subTitulo="Aloque um de nossos escritorios, aconpanhe a disponibilidade no site"
+          altLink="iamgem de locação de imoveis"
+          inverter = {false}
+          linkButton = '/imoveis'
          />
        
       </div>

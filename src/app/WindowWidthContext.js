@@ -1,5 +1,12 @@
 import React, { createContext, useState, useEffect } from "react";
 
+// como usar nos componentes:
+// importar :
+// import { WindowWidthContext } from "@/app/WindowWidthContext";
+//definir uma constante:
+//const larguraDaTela = useContext(WindowWidthContext);
+// só chamar a variavel para usar o a string passada
+
 // Criação do contexto
 export const WindowWidthContext = createContext();
 
