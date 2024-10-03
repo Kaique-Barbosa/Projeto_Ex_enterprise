@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Image from "next/image";
 import Link from "next/link";
 import { WindowWidthContext } from "@/app/WindowWidthContext";
+import BotaoLinks from "@/components/botaoLinks/BotaoLinks"
 
 export const Card = ({
   imagem,
@@ -16,7 +17,12 @@ export const Card = ({
 
   return (
     <div
-      className={`flex min-h-[20em] max-w-7xl items-center justify-center bg-cores-container-fundo rounded-lg [font-family:'Work_Sans-Bold',Helvetica] tracking-[1.44px]`}
+      data-cores-mode="tema-escuro"
+      className={` bg-gray-900 bg-opacity-50 mt-2 mb-12 flex min-h-[20em] max-w-7xl items-center justify-center  rounded-lg [font-family:'Work_Sans-Bold',Helvetica] tracking-[1.44px]
+      data-responsividade-mode= ${larguraDaTela}
+       
+      ${larguraDaTela === "tablet" || larguraDaTela === "mobile"  ? "mx-8" : ""
+      } `}
     >
       <div
         className={`flex flex-1 self-stretch flex-col ${
@@ -44,15 +50,16 @@ export const Card = ({
               </h3>
               <p className={`font-light text-cores-laranja`}>{subTitulo}</p>
             </div>
-            <span className={`text-cores-fonte self-start`}>Acesse abaixo</span>
+            {/* <span className={`text-cores-fonte self-start`}>Acesse abaixo</span> */}
           </div>
-          <Link
+          {/* <Link
             href={linkButton}
             alt={altLink}
-            className={`w-fit text-cores-fonte self-start uppercase px-4 py-2 rounded-2xl border border-solid border-cores-laranja hover:bg-cores-laranja hover:text-white`}
+            className={`w-fit text-cores-fonte self-start px-4 py-2 rounded-2xl border border-solid border-cores-laranja hover:bg-cores-laranja hover:text-white`}
           >
-            ir para á página
-          </Link>
+            Acessar
+          </Link> */}
+          <BotaoLinks href={linkButton} alt={altLink}  texto="Acessar" />
         </div>
       </div>
     </div>
@@ -60,11 +67,11 @@ export const Card = ({
 };
 
 Card.propTypes = {
-  modoResponsiv: PropTypes.string,
-  imagem: PropTypes.string,
-  titulo: PropTypes.string,
-  subTitulo: PropTypes.string,
-  linkButton: PropTypes.string,
-  altLink: PropTypes.string,
-  inverter: PropTypes.bool,
+  modoResponsiv: PropTypes.string.isRequired,
+  imagem: PropTypes.string.isRequired,
+  titulo: PropTypes.string.isRequired,
+  subTitulo: PropTypes.string.isRequired,
+  linkButton: PropTypes.string.isRequired,
+  altLink: PropTypes.string.isRequired,
+  inverter: PropTypes.bool.isRequired,
 };

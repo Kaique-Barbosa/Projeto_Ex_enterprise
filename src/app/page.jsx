@@ -4,9 +4,12 @@ import SessionTitle from "@/components/sessionTitle/SessionTitle";
 import { WindowWidthProvider } from "./WindowWidthContext";
 import { Card } from "@/components/card/Card";
 
+
 // importação de imagens
 import logo from "@/public/img/logo.png";
 import consultoria from "@/public/img/consultoria.jpg";
+import locacao from "@/public/img/imoveis.jpg"
+import ecommerce from "@/public/img/ecommerce.jpg"
 import Sobre from "@/components/sobre/Sobre";
 
 export default function Home({}) {
@@ -40,7 +43,7 @@ export default function Home({}) {
           linkButton="/consultoria"
         />
         <Card
-          imagem={consultoria}
+          imagem={locacao}
           titulo="Locação de Imóveis"
           subTitulo="Aloque um de nossos escritorios, aconpanhe a disponibilidade no site"
           altLink="iamgem de locação de imoveis"
@@ -48,21 +51,14 @@ export default function Home({}) {
           linkButton="/imoveis"
         />
         <Card
-          imagem={consultoria}
-          titulo="Locação de Imóveis"
-          subTitulo="Aloque um de nossos escritorios, aconpanhe a disponibilidade no site"
+          imagem={ecommerce}
+          titulo="E-commerce"
+          subTitulo="Adiquira produtos de tecnologia com qualidade e confiança"
           altLink="iamgem de locação de imoveis"
           inverter={true}
-          linkButton="/imoveis"
+          linkButton="/ecomerce"
         />
-        <Card
-          imagem={consultoria}
-          titulo="Locação de Imóveis"
-          subTitulo="Aloque um de nossos escritorios, aconpanhe a disponibilidade no site"
-          altLink="iamgem de locação de imoveis"
-          inverter={false}
-          linkButton="/imoveis"
-        />
+
       </div>
     </WindowWidthProvider>
   );

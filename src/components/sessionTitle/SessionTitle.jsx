@@ -25,7 +25,7 @@ const Session = ({ texto }) => {
       data-responsividade-mode={larguraDaTela}
     >
       <div className="w-full flex items-center justify-center p-4 relative flex-1 self-stretch  grow">
-      <Image src={logo} alt="Logo Da empresa"  className=" w-full flex flex-wrap"/>
+      {/* <Image src={logo} alt="Logo Da empresa"  className=" w-full flex flex-wrap"/> */}
 
       </div>
       <div

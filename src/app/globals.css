@@ -13,6 +13,7 @@
   --cinza: rgba(227, 228, 230, 1);
   --cinza-secondrio: rgba(153, 153, 153, 1);
   --cores-container-fundo: rgba(9, 8, 8, 1);
+  
   --cores-dourado: rgba(251, 193, 2, 1);
   --cores-fonte: rgba(227, 228, 230, 1);
   --cores-fonte-p-gina: rgba(255, 255, 255, 1);
@@ -219,6 +220,7 @@
   /* --responsividade-view-width: 1512px;  */
   /* --responsividade-view-width: 1920px; */
   --margim-espacamento-padrao: 1%;
+
 }
 
 /*
@@ -240,6 +242,8 @@ You can apply the theme on any DOM node, not just the `body`
   --cores-fonte-p-gina: rgba(255, 255, 255, 1);
   --cores-fundo: rgba(0, 0, 0, 1);
   --cores-laranja: rgba(235, 117, 0, 1);
+
+  
 }
 
 [data-cores-mode="tema-claro"] {
