@@ -59,6 +59,23 @@ export default function Home({}) {
           linkButton="/ecomerce"
         />
 
+        <div className="text-white">
+
+        <div className=" bg-white flex-col gap-6 w-full flex-[0_0_auto] flex items-center relative self-stretch">
+            <div className=" bg-blue flex flex-col items-start gap-4 relative self-stretch w-full flex-[0_0_auto]">
+              <h3 className={` w-full font-bold text-cores-fonte text-2xl`}>
+              dwadwaddwadwaddawdwadwadwdwadadwa
+              </h3>
+              <p className={`font-light text-cores-laranja`}>dwadwa</p>
+            </div>
+            <div className=" bg-red flex flex-col items-start gap-4 relative self-stretch w-full flex-[0_0_auto]">
+           
+            </div>
+           
+          </div>
+
+
+        </div>
       </div>
     </WindowWidthProvider>
   );
