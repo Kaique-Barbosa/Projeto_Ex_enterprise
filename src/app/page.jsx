@@ -3,16 +3,16 @@ import { Header } from "@/components/header/Header";
 import SessionTitle from "@/components/sessionTitle/SessionTitle";
 import { WindowWidthProvider } from "./WindowWidthContext";
 import { Card } from "@/components/card/Card";
-
-
+import  SobreEmpresa  from "@/components/sobreEmpresa/SobreEmpresa";
 // importação de imagens
 import logo from "@/public/img/logo.png";
 import consultoria from "@/public/img/consultoria.jpg";
-import locacao from "@/public/img/imoveis.jpg"
-import ecommerce from "@/public/img/ecommerce.jpg"
+import locacao from "@/public/img/imoveis.jpg";
+import ecommerce from "@/public/img/ecommerce.jpg";
 import Sobre from "@/components/sobre/Sobre";
 
-export default function Home({}) {
+
+export default function Home({})  {
   return (
     <WindowWidthProvider>
       <div
@@ -58,24 +58,7 @@ export default function Home({}) {
           inverter={true}
           linkButton="/ecomerce"
         />
-
-        <div className="text-white">
-
-        <div className=" bg-white flex-col gap-6 w-full flex-[0_0_auto] flex items-center relative self-stretch">
-            <div className=" bg-blue flex flex-col items-start gap-4 relative self-stretch w-full flex-[0_0_auto]">
-              <h3 className={` w-full font-bold text-cores-fonte text-2xl`}>
-              dwadwaddwadwaddawdwadwadwdwadadwa
-              </h3>
-              <p className={`font-light text-cores-laranja`}>dwadwa</p>
-            </div>
-            <div className=" bg-red flex flex-col items-start gap-4 relative self-stretch w-full flex-[0_0_auto]">
-           
-            </div>
-           
-          </div>
-
-
-        </div>
+    <SobreEmpresa/>
       </div>
     </WindowWidthProvider>
   );
