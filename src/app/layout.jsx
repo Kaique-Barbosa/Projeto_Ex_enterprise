@@ -11,9 +11,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" className="dark">
       <body
-        className={`${workSans.className} antialiased`}
+        className={`${workSans.className} antialiased bg-branco text-preto dark:bg-preto dark:text-cinza`}
       >
         <ChakraProvider>{children}</ChakraProvider>
       </body>

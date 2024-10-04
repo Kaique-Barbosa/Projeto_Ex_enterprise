@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 import { WindowWidthContext } from "@/app/WindowWidthContext";
 
 import MenuMobile from "../drawner/MenuMobile";
+import ThemeButton from "../themeButton/ThemeButton";
 export const Header = ({ logoLogo }) => {
   const currentRoute = usePathname(); // Obtém o caminho da URL atual
 
@@ -26,6 +27,8 @@ export const Header = ({ logoLogo }) => {
           alt="Logo Da empresa"
           className="h-16 w-16"
         />
+
+        <ThemeButton />
 
         <nav className="hidden md:flex items-center gap-6 justify-center text-cores-fonte">
           <div>

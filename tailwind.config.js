@@ -5,25 +5,18 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'selector',
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        branco: "var(--branco)",
-        cinza: "var(--cinza)",
-        "cinza-secondrio": "var(--cinza-secondrio)",
-        // "cores-container-fundo": "var(--cores-container-fundo)",
-        "cores-dourado": "var(--cores-dourado)",
-        "cores-fonte": "var(--cores-fonte)",
-        "cores-fonte-p-gina": "var(--cores-fonte-p-gina)",
-        "cores-fundo": "var(--cores-fundo)",
-        "cores-laranja": "var(--cores-laranja)",
-        "cards-container-fundo": "var(--cards-conteiner-fundo)",
-        dourado: "var(--dourado)",
-        laranja: "var(--laranja)",
-        primaria: "var(--primaria)",
+        preto: "#000000",
+        branco: "#FFFFFF",
+        cinza: "#E3E4E6",
+        dourado: "#F0A90E",
+        laranja_primario: "#EB7500",
+        laranja_secondario: "#F64C03",
       },
+      //remover fontFamily abaixo depois
       fontFamily: {
         "fontes-fonte-grande-bold": "var(--fontes-fonte-grande-bold-font-family)",
         "fontes-fonte-grande-bold-uppercase": "var(--fontes-fonte-grande-bold-uppercase-font-family)",
