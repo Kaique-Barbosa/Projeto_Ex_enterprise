@@ -24,7 +24,7 @@ const MenuMobile = () => {
     <>
       <Button
         ref={btnRef}
-        colorScheme="blackAlpha"
+        color="transparent"
         onClick={onOpen}
         padding={0}
       >

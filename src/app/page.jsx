@@ -17,7 +17,6 @@ export default function Home({})  {
     <WindowWidthProvider>
       <div
         className="flex flex-col items-center justify-center  relative bg-[--cores-container-fundo] w-[100%]"
-        data-cores-mode="tema-escuro"
       >
         {/* <HomePage/> */}
         <Header logoLogo={logo} />

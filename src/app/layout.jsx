@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-br" className="dark">
       <body
-        className={`${workSans.className} antialiased bg-branco text-preto dark:bg-preto dark:text-cinza`}
+        className={`${workSans.className} antialiased bg-branco text-preto_primario dark:bg-preto_primario dark:text-cinza`}
       >
         <ChakraProvider>{children}</ChakraProvider>
       </body>

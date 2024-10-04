@@ -9,12 +9,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        preto: "#000000",
+        preto_primario: "#000000",
+        preto_secondario: "#111111",
         branco: "#FFFFFF",
         cinza: "#E3E4E6",
         dourado: "#F0A90E",
-        laranja_primario: "#EB7500",
-        laranja_secondario: "#F64C03",
+        laranja: "#EB7500",
       },
       //remover fontFamily abaixo depois
       fontFamily: {

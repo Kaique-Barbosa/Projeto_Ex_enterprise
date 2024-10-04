@@ -17,8 +17,7 @@ export const Card = ({
 
   return (
     <div
-      data-cores-mode="tema-escuro"
-      className={` bg-gray-900 bg-opacity-50 mt-2 mb-12 flex min-h-[20em] max-w-7xl items-center justify-center  rounded-lg [font-family:'Work_Sans-Bold',Helvetica] tracking-[1.44px]
+      className={`bg-cinza dark:bg-preto_secondario bg-opacity-50 mt-2 mb-12 flex min-h-[20em] max-w-7xl items-center justify-center  rounded-lg [font-family:'Work_Sans-Bold',Helvetica] tracking-[1.44px]
       data-responsividade-mode= ${larguraDaTela}
        
       ${larguraDaTela === "tablet" || larguraDaTela === "mobile"  ? "mx-8" : ""
@@ -41,14 +40,14 @@ export const Card = ({
           />
         </div>
         <div
-          className={`flex flex-col  justify-center gap-8 p-8 relative flex-1 self-stretch grow`}
+          className={`flex flex-col justify-center gap-8 p-8 relative flex-1 self-stretch grow`}
         >
           <div className="flex-col gap-6 w-full flex-[0_0_auto] flex items-center relative self-stretch">
             <div className="flex flex-col items-start gap-4 relative self-stretch w-full flex-[0_0_auto]">
               <h3 className={`font-bold text-cores-fonte text-2xl`}>
                 {titulo}
               </h3>
-              <p className={`font-light text-cores-laranja`}>{subTitulo}</p>
+              <p className={`font-light text-laranja`}>{subTitulo}</p>
             </div>
             {/* <span className={`text-cores-fonte self-start`}>Acesse abaixo</span> */}
           </div>

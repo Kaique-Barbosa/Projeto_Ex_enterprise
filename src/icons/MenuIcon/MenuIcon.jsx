@@ -7,7 +7,7 @@ export const MenuIcon = ({ color = "#E3E4E6" }) => {
       height="48px"
       viewBox="0 -960 960 960"
       width="48px"
-      fill={color}
+      className="text-preto_primario dark:text-cinza fill-current"
     >
       <path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
     </svg>
