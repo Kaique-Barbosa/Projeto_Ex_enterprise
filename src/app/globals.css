@@ -7,30 +7,3 @@
     all: unset;
   }
 }
-  
-[data-navbar-mode="desktop"] {
-  /* --navbar-nav-menu-width: 776px;
-  --navbar-show-actions: initial;
-  --navbar-show-links: initial;
-  --navbar-show-menu-button: none;
-  --navbar-show-nav-menu-actions: none;
-  --navbar-width-breakpoint: 1512px; */
-  --navbar-show-links: initial;
-}
-
-[data-navbar-mode="tablet"] {
-  /* --navbar-nav-menu-width: 418px;
-  --navbar-show-links: initial;
-  --div--links: 100%; */
-  --navbar-show-links: initial;
-}
-
-[data-navbar-mode="mobile"] {
-  /* --navbar-nav-menu-width: 350px;
-  --navbar-show-actions: none;
-  --navbar-show-links: none;
-  --navbar-show-menu-button: initial;
-  --navbar-show-nav-menu-actions: initial;
-  --navbar-width-breakpoint: 393px; */
-  --navbar-show-links: none;
-}
