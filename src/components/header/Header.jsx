@@ -27,13 +27,14 @@ export const Header = ({ logoLogo }) => {
           alt="Logo Da empresa"
           className="h-16 w-16"
         />
-        <div className="flex gap-8">
-          <nav className="hidden md:flex items-center gap-6 justify-center text-cores-fonte">
+        <div className="flex gap-8 items-center">
+          <nav className="hidden md:flex items-center gap-2 justify-center text-cores-fonte">
             <div>
               <Link
+                aria-disabled={currentRoute === "/"}
                 href={"/"}
-                className={` hover:text-cores-laranja  ${
-                  currentRoute === "/" ? "text-cores-laranja" : ""
+                className={` py-2 px-2 rounded-sm  ${
+                  currentRoute === "/" ? "text-laranja" : "hover:text-branco hover:bg-laranja"
                 }`}
               >
                 HOME
@@ -41,9 +42,10 @@ export const Header = ({ logoLogo }) => {
             </div>
             <div>
               <Link
+                aria-disabled={currentRoute === "/imoveis"}
                 href={"/imoveis"}
-                className={`hover:text-cores-laranja  ${
-                  currentRoute === "/imoveis" ? "text-cores-laranja" : ""
+                className={`py-2 px-2 rounded-sm ${
+                  currentRoute === "/imoveis" ? "text-laranja" : "hover:text-branco hover:bg-laranja"
                 }`}
               >
                 IMÓVEIS
@@ -51,9 +53,10 @@ export const Header = ({ logoLogo }) => {
             </div>
             <div>
               <Link
+                aria-disabled={currentRoute === "/consultoria"}
                 href={"/consultoria"}
-                className={`hover:text-cores-laranja ${
-                  currentRoute === "/consultoria" ? "text-cores-laranja" : ""
+                className={`py-2 px-2 rounded-sm ${
+                  currentRoute === "/consultoria" ? "text-laranja" : "hover:text-branco hover:bg-laranja"
                 }`}
               >
                 CONSULTORIA
@@ -61,9 +64,10 @@ export const Header = ({ logoLogo }) => {
             </div>
             <div>
               <Link
+                aria-disabled={currentRoute === "/e-commerce"}
                 href={"/e-commerce"}
-                className={`hover:text-cores-laranja  ${
-                  currentRoute === "/e-commerce" ? "text-cores-laranja" : ""
+                className={`py-2 px-2 rounded-sm  ${
+                  currentRoute === "/e-commerce" ? "text-laranja" : "hover:text-branco hover:bg-laranja"
                 }`}
               >
                 E-COMMERCE
@@ -71,9 +75,10 @@ export const Header = ({ logoLogo }) => {
             </div>
             <div>
               <Link
+                aria-disabled={currentRoute === "/ebooks"}
                 href={"/ebooks"}
-                className={`hover:text-cores-laranja  ${
-                  currentRoute === "/ebooks" ? "text-cores-laranja" : ""
+                className={`py-2 px-2 rounded-sm  ${
+                  currentRoute === "/ebooks" ? "text-laranja" : "hover:text-branco hover:bg-laranja"
                 }`}
               >
                 E-BOOKS
