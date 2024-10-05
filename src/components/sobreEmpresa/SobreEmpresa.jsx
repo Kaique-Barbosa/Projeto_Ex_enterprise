@@ -21,7 +21,7 @@ export default function SobreEmpresa() {
             <h2 className="font-semibold text-3xl text-center text-pretty tracking-wider leading-tight">
               Conheca mais sobre a empresa
             </h2>
-            <p className="tracking-wider leading-normal text-balance">
+            <p className="tracking-wider text-center leading-normal text-balance">
               <span className="text-laranja">Nossa missão é oferecer</span>
               <span>&nbsp;</span>
               <span>
