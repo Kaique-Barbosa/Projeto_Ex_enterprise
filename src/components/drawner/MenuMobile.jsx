@@ -13,22 +13,22 @@ import { useDisclosure } from "@chakra-ui/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import Image from "next/image";
-import { MenuIcon } from "@/icons/MenuIcon/index";
-
 const MenuMobile = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   const currentRoute = usePathname();
   return (
     <>
-      <Button
-        ref={btnRef}
-        color="transparent"
-        onClick={onOpen}
-        padding={0}
-      >
-        <MenuIcon />
+      <Button ref={btnRef} colorScheme="default" onClick={onOpen} padding={0}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="32px"
+          viewBox="0 -960 960 960"
+          width="32px"
+          className="fill-preto_primario dark:fill-cinza"
+        >
+          <path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
+        </svg>
       </Button>
       <Drawer
         isOpen={isOpen}
@@ -41,12 +41,12 @@ const MenuMobile = () => {
           <DrawerCloseButton />
           {/* <DrawerHeader className="bg-[--cores-laranja]">Páginas</DrawerHeader> */}
 
-          <DrawerBody className="bg-[--cores-laranja] text-lg ">
+          <DrawerBody className="bg-cinza dark:bg-preto_secondario">
             <div className=" flex items-center mt-[20%]   w-full h-[2rem]">
               <Link
                 href={"/"}
-                className={` p-1 w-[100%] rounded-xl hover:bg-slate-200   ${
-                  currentRoute === "/" ? "text-black" : ""
+                className={`p-1 w-[100%] rounded-xl ${
+                  currentRoute === "/" ? "text-laranja" : "hover:text-laranja"
                 }`}
               >
                 HOME
@@ -55,8 +55,8 @@ const MenuMobile = () => {
             <div className=" flex items-center mt-[5%]   w-full h-[2rem]">
               <Link
                 href={"/imoveis"}
-                className={`p-1 w-[100%] rounded-xl hover:bg-slate-200   ${
-                  currentRoute === "/imoveis" ? "text-black" : ""
+                className={`p-1 w-[100%] rounded-xl ${
+                  currentRoute === "/imoveis" ? "text-black" : "hover:text-laranja"
                 }`}
               >
                 IMÓVEIS
@@ -65,8 +65,8 @@ const MenuMobile = () => {
             <div className=" flex items-center mt-[5%]   w-full h-[2rem]">
               <Link
                 href={"/consultoria"}
-                className={`p-1 w-[100%] rounded-xl hover:bg-slate-200  ${
-                  currentRoute === "/consultoria" ? "text-black" : ""
+                className={`p-1 w-[100%] rounded-xl ${
+                  currentRoute === "/consultoria" ? "text-laranja" : "hover:text-laranja"
                 }`}
               >
                 CONSULTORIA
@@ -75,8 +75,8 @@ const MenuMobile = () => {
             <div className=" flex items-center mt-[5%]   w-full h-[2rem]">
               <Link
                 href={"/e-commerce"}
-                className={`p-1 w-[100%] rounded-xl hover:bg-slate-200  ${
-                  currentRoute === "/e-commerce" ? "text-black" : ""
+                className={`p-1 w-[100%] rounded-xl ${
+                  currentRoute === "/e-commerce" ? "text-laranja" : "hover:text-laranja"
                 }`}
               >
                 E-COMMERCE
@@ -85,8 +85,8 @@ const MenuMobile = () => {
             <div className=" flex items-center mt-[5%]   w-full h-[2rem]">
               <Link
                 href={"/ebooks"}
-                className={`p-1 w-[100%] rounded-xl hover:bg-slate-200  ${
-                  currentRoute === "/ebooks" ? "text-black" : ""
+                className={`p-1 w-[100%] rounded-xl ${
+                  currentRoute === "/ebooks" ? "text-laranja" : "hover:text-laranja"
                 }`}
               >
                 E-BOOKS

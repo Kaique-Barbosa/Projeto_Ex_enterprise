@@ -1,7 +1,8 @@
 "use client";
 
-export default function ThemeButton() {
+import React from "react";
 
+const ThemeButton = () => {
   function toggleTheme() {
     if (document.documentElement.classList.contains("dark")) {
       document.documentElement.classList.remove('dark');
@@ -12,3 +13,5 @@ export default function ThemeButton() {
 
   return <button onClick={toggleTheme}>Alterar tema</button>;
 }
+
+export default ThemeButton;

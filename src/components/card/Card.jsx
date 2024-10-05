@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Image from "next/image";
 import Link from "next/link";
 import { WindowWidthContext } from "@/app/WindowWidthContext";
-import BotaoLinks from "@/components/botaoLinks/BotaoLinks"
+import BotaoLinks from "@/components/botaoLinks/BotaoLinks";
 
 export const Card = ({
   imagem,
@@ -17,10 +17,10 @@ export const Card = ({
 
   return (
     <div
-      className={`bg-cinza dark:bg-preto_secondario bg-opacity-50 mt-2 mb-12 flex min-h-[20em] max-w-7xl items-center justify-center  rounded-lg [font-family:'Work_Sans-Bold',Helvetica] tracking-[1.44px]
+      className={`bg-cinza dark:bg-preto_secondario bg-opacity-50 mt-2 mb-12 flex min-h-[20em] max-w-7xl items-center justify-center rounded-lg tracking-widest leading-tighter
       data-responsividade-mode= ${larguraDaTela}
-       
-      ${larguraDaTela === "tablet" || larguraDaTela === "mobile"  ? "mx-8" : ""
+      ${
+        larguraDaTela === "tablet" || larguraDaTela === "mobile" ? "mx-8" : ""
       } `}
     >
       <div
@@ -28,9 +28,9 @@ export const Card = ({
           inverter ? "sm:flex-row-reverse" : "sm:flex-row"
         }`}
       >
-        <div className="flex-1 max-h-[20em">
+        <div className="flex-1">
           <Image
-            className={`w-full h-full rounded-t-lg ${
+            className={`w-full h-full min-h-[10rem] rounded-t-lg ${
               inverter
                 ? "sm:rounded-r-lg sm:rounded-l-none"
                 : "sm:rounded-l-lg sm:rounded-r-none"
@@ -44,10 +44,10 @@ export const Card = ({
         >
           <div className="flex-col gap-6 w-full flex-[0_0_auto] flex items-center relative self-stretch">
             <div className="flex flex-col items-start gap-4 relative self-stretch w-full flex-[0_0_auto]">
-              <h3 className={`font-bold text-cores-fonte text-2xl`}>
+              <h3 className={`font-bold text-cores-fonte text-2xl text-pretty`}>
                 {titulo}
               </h3>
-              <p className={`font-light text-laranja`}>{subTitulo}</p>
+              <p className={`font-light text-laranja text-balance`}>{subTitulo}</p>
             </div>
             {/* <span className={`text-cores-fonte self-start`}>Acesse abaixo</span> */}
           </div>
@@ -58,7 +58,7 @@ export const Card = ({
           >
             Acessar
           </Link> */}
-          <BotaoLinks href={linkButton} alt={altLink}  texto="Acessar" />
+          <BotaoLinks href={linkButton} alt={altLink} texto="Acessar" />
         </div>
       </div>
     </div>
