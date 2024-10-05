@@ -27,63 +27,63 @@ export const Header = ({ logoLogo }) => {
           alt="Logo Da empresa"
           className="h-16 w-16"
         />
-
-        <ThemeButton />
-
-        <nav className="hidden md:flex items-center gap-6 justify-center text-cores-fonte">
-          <div>
-            <Link
-              href={"/"}
-              className={` hover:text-cores-laranja  ${
-                currentRoute === "/" ? "text-cores-laranja" : ""
-              }`}
-            >
-              HOME
-            </Link>
+        <div className="flex gap-8">
+          <nav className="hidden md:flex items-center gap-6 justify-center text-cores-fonte">
+            <div>
+              <Link
+                href={"/"}
+                className={` hover:text-cores-laranja  ${
+                  currentRoute === "/" ? "text-cores-laranja" : ""
+                }`}
+              >
+                HOME
+              </Link>
+            </div>
+            <div>
+              <Link
+                href={"/imoveis"}
+                className={`hover:text-cores-laranja  ${
+                  currentRoute === "/imoveis" ? "text-cores-laranja" : ""
+                }`}
+              >
+                IMÓVEIS
+              </Link>
+            </div>
+            <div>
+              <Link
+                href={"/consultoria"}
+                className={`hover:text-cores-laranja ${
+                  currentRoute === "/consultoria" ? "text-cores-laranja" : ""
+                }`}
+              >
+                CONSULTORIA
+              </Link>
+            </div>
+            <div>
+              <Link
+                href={"/e-commerce"}
+                className={`hover:text-cores-laranja  ${
+                  currentRoute === "/e-commerce" ? "text-cores-laranja" : ""
+                }`}
+              >
+                E-COMMERCE
+              </Link>
+            </div>
+            <div>
+              <Link
+                href={"/ebooks"}
+                className={`hover:text-cores-laranja  ${
+                  currentRoute === "/ebooks" ? "text-cores-laranja" : ""
+                }`}
+              >
+                E-BOOKS
+              </Link>
+            </div>
+          </nav>
+          <ThemeButton />
+          <div className="block md:hidden">
+            <MenuMobile />
           </div>
-          <div>
-            <Link
-              href={"/imoveis"}
-              className={`hover:text-cores-laranja  ${
-                currentRoute === "/imoveis" ? "text-cores-laranja" : ""
-              }`}
-            >
-              IMÓVEIS
-            </Link>
-          </div>
-          <div>
-            <Link
-              href={"/consultoria"}
-              className={`hover:text-cores-laranja ${
-                currentRoute === "/consultoria" ? "text-cores-laranja" : ""
-              }`}
-            >
-              CONSULTORIA
-            </Link>
-          </div>
-          <div>
-            <Link
-              href={"/e-commerce"}
-              className={`hover:text-cores-laranja  ${
-                currentRoute === "/e-commerce" ? "text-cores-laranja" : ""
-              }`}
-            >
-              E-COMMERCE
-            </Link>
-          </div>
-          <div>
-            <Link
-              href={"/ebooks"}
-              className={`hover:text-cores-laranja  ${
-                currentRoute === "/ebooks" ? "text-cores-laranja" : ""
-              }`}
-            >
-              E-BOOKS
-            </Link>
-          </div>
-        </nav>
-        <div className="block md:hidden">
-          <MenuMobile />
         </div>
       </div>
     </div>
