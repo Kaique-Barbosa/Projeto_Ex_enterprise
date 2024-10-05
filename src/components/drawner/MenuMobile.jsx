@@ -19,7 +19,14 @@ const MenuMobile = () => {
   const currentRoute = usePathname();
   return (
     <>
-      <Button ref={btnRef} colorScheme="default" onClick={onOpen} padding={0}>
+      <Button
+        ref={btnRef}
+        colorScheme="default"
+        onClick={onOpen}
+        paddingBlock={2}
+        paddingInline={2}
+        className="rounded-lg hover:bg-[#e3e4e63d]"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="32px"
@@ -56,7 +63,9 @@ const MenuMobile = () => {
               <Link
                 href={"/imoveis"}
                 className={`p-1 w-[100%] rounded-xl ${
-                  currentRoute === "/imoveis" ? "text-black" : "hover:text-laranja"
+                  currentRoute === "/imoveis"
+                    ? "text-black"
+                    : "hover:text-laranja"
                 }`}
               >
                 IMÓVEIS
@@ -66,7 +75,9 @@ const MenuMobile = () => {
               <Link
                 href={"/consultoria"}
                 className={`p-1 w-[100%] rounded-xl ${
-                  currentRoute === "/consultoria" ? "text-laranja" : "hover:text-laranja"
+                  currentRoute === "/consultoria"
+                    ? "text-laranja"
+                    : "hover:text-laranja"
                 }`}
               >
                 CONSULTORIA
@@ -76,7 +87,9 @@ const MenuMobile = () => {
               <Link
                 href={"/e-commerce"}
                 className={`p-1 w-[100%] rounded-xl ${
-                  currentRoute === "/e-commerce" ? "text-laranja" : "hover:text-laranja"
+                  currentRoute === "/e-commerce"
+                    ? "text-laranja"
+                    : "hover:text-laranja"
                 }`}
               >
                 E-COMMERCE
@@ -86,7 +99,9 @@ const MenuMobile = () => {
               <Link
                 href={"/ebooks"}
                 className={`p-1 w-[100%] rounded-xl ${
-                  currentRoute === "/ebooks" ? "text-laranja" : "hover:text-laranja"
+                  currentRoute === "/ebooks"
+                    ? "text-laranja"
+                    : "hover:text-laranja"
                 }`}
               >
                 E-BOOKS
