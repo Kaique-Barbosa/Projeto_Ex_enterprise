@@ -19,7 +19,7 @@ const ThemeButton = () => {
   }, []);
 
   function toggleTheme() {
-    if (html.classList.contains("dark")) {
+    if (document.documentElement.classList.contains("dark")) {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
       setIsDark(false);
