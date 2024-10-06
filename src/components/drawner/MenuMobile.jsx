@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import {
   Drawer,
+  DrawerHeader,
   DrawerBody,
   DrawerOverlay,
   DrawerContent,
@@ -12,10 +13,18 @@ import {
 import { useDisclosure } from "@chakra-ui/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+
+import logo from "@/public/img/logo.png";
+import IconHome from "@/icons/IconHome/IconHome";
+import IconEstate from "@/icons/IconEstate/IconEstate";
+import IconConsultancy from "@/icons/IconConsultancy/IconConsultancy";
+import IconEcommerce from "@/icons/IconEcommerce/IconEcommerce";
+import IconEbooks from "@/icons/IconEbooks/IconEbooks";
 
 const MenuMobile = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
+  const btnRef = useRef();
   const currentRoute = usePathname();
   return (
     <>
@@ -25,7 +34,7 @@ const MenuMobile = () => {
         onClick={onOpen}
         paddingBlock={2}
         paddingInline={2}
-        className="rounded-lg hover:bg-[#e3e4e63d]"
+        className="rounded-lg hover:bg-[#e3e4e63d] focus:bg-[#e3e4e63d]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -44,77 +53,74 @@ const MenuMobile = () => {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent className="bg-cinza dark:bg-preto_secondario">
           <DrawerCloseButton />
-          {/* <DrawerHeader className="bg-[--cores-laranja]">Páginas</DrawerHeader> */}
+          <DrawerHeader
+            paddingTop={12}
+            className="bg-cinza dark:bg-preto_secondario flex items-center gap-4"
+          >
+            <Image src={logo} className="size-12"/>
+            <h2>Ex Enterprise</h2>
+          </DrawerHeader>
+          <DrawerBody className="bg-cinza dark:bg-preto_secondario flex flex-col gap-4">
+            <Link
+              href={"/"}
+              className={`p-1 flex items-center gap-2 ${
+                currentRoute === "/" ? "text-laranja" : "hover:text-laranja"
+              }`}
+            >
+              <IconHome className="size-5 text-inherit fill-current" />
+              HOME
+            </Link>
 
-          <DrawerBody className="bg-cinza dark:bg-preto_secondario">
-            <div className=" flex items-center mt-[20%]   w-full h-[2rem]">
-              <Link
-                href={"/"}
-                className={`p-1 w-[100%] rounded-xl ${
-                  currentRoute === "/" ? "text-laranja" : "hover:text-laranja"
-                }`}
-              >
-                HOME
-              </Link>
-            </div>
-            <div className=" flex items-center mt-[5%]   w-full h-[2rem]">
-              <Link
-                href={"/imoveis"}
-                className={`p-1 w-[100%] rounded-xl ${
-                  currentRoute === "/imoveis"
-                    ? "text-black"
-                    : "hover:text-laranja"
-                }`}
-              >
-                IMÓVEIS
-              </Link>
-            </div>
-            <div className=" flex items-center mt-[5%]   w-full h-[2rem]">
-              <Link
-                href={"/consultoria"}
-                className={`p-1 w-[100%] rounded-xl ${
-                  currentRoute === "/consultoria"
-                    ? "text-laranja"
-                    : "hover:text-laranja"
-                }`}
-              >
-                CONSULTORIA
-              </Link>
-            </div>
-            <div className=" flex items-center mt-[5%]   w-full h-[2rem]">
-              <Link
-                href={"/e-commerce"}
-                className={`p-1 w-[100%] rounded-xl ${
-                  currentRoute === "/e-commerce"
-                    ? "text-laranja"
-                    : "hover:text-laranja"
-                }`}
-              >
-                E-COMMERCE
-              </Link>
-            </div>
-            <div className=" flex items-center mt-[5%]   w-full h-[2rem]">
-              <Link
-                href={"/ebooks"}
-                className={`p-1 w-[100%] rounded-xl ${
-                  currentRoute === "/ebooks"
-                    ? "text-laranja"
-                    : "hover:text-laranja"
-                }`}
-              >
-                E-BOOKS
-              </Link>
-            </div>
+            <Link
+              href={"/imoveis"}
+              className={`p-1 flex items-center gap-2 ${
+                currentRoute === "/imoveis"
+                  ? "text-laranja"
+                  : "hover:text-laranja"
+              }`}
+            >
+              <IconEstate className="size-5 text-inherit fill-current" />
+              IMÓVEIS
+            </Link>
+
+            <Link
+              href={"/consultoria"}
+              className={`p-1 flex items-center gap-2 ${
+                currentRoute === "/consultoria"
+                  ? "text-laranja"
+                  : "hover:text-laranja"
+              }`}
+            >
+              <IconConsultancy className="size-5 text-inherit fill-current" />
+              CONSULTORIA
+            </Link>
+
+            <Link
+              href={"/e-commerce"}
+              className={`p-1 flex items-center gap-2 ${
+                currentRoute === "/e-commerce"
+                  ? "text-laranja"
+                  : "hover:text-laranja"
+              }`}
+            >
+              <IconEcommerce className="size-5 text-inherit fill-current" />
+              E-COMMERCE
+            </Link>
+
+            <Link
+              href={"/ebooks"}
+              className={`p-1 flex items-center gap-2 ${
+                currentRoute === "/ebooks"
+                  ? "text-laranja"
+                  : "hover:text-laranja"
+              }`}
+            >
+              <IconEbooks className="size-5 text-inherit fill-current" />
+              E-BOOKS
+            </Link>
           </DrawerBody>
-
-          {/* <DrawerFooter className="bg-[--cores-laranja]">
-            <Button variant="outline" mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme="blue">Save</Button>
-          </DrawerFooter> */}
         </DrawerContent>
       </Drawer>
     </>
