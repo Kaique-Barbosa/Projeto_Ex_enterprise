@@ -8,8 +8,8 @@ const IconHome = ({ className }) => {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      <g clip-path="url(#clip0_821_560)">
-        <g clip-path="url(#clip1_821_560)">
+      <g clipPath="url(#clip0_821_560)">
+        <g clipPath="url(#clip1_821_560)">
           <path
             d="M9.6 24V15.5294H14.4V24H20.4V12.7059H24L12 0L0 12.7059H3.6V24H9.6Z"
           />

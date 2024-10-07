@@ -59,7 +59,7 @@ const MenuMobile = () => {
             paddingTop={12}
             className="bg-cinza dark:bg-preto_secondario flex items-center gap-4"
           >
-            <Image src={logo} className="size-12"/>
+            <Image src={logo} alt="Logo da empresa" className="size-12"/>
             <h2>Ex Enterprise</h2>
           </DrawerHeader>
           <DrawerBody className="bg-cinza dark:bg-preto_secondario flex flex-col gap-4">
