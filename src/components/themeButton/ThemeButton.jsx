@@ -6,10 +6,10 @@ import React, { useEffect, useState } from "react";
 
 const ThemeButton = () => {
   
-  const [isDark, setIsDark] = useState();
+  const [isDark, setIsDark] = useState(localStorage.getItem("chakra-ui-color-mode"));
 
   useEffect(() => {
-    localStorage.setItem("chakra-ui-color-mode", "dark");
+    // localStorage.setItem("chakra-ui-color-mode", "dark");
     const theme = localStorage.getItem("chakra-ui-color-mode");
     if (theme == "dark") {
       document.documentElement.classList.add("dark");
