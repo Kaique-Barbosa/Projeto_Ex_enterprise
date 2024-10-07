@@ -5,10 +5,12 @@ import SunIcon from "@/icons/SunIcon/SunIcon";
 import React, { useEffect, useState } from "react";
 
 const ThemeButton = () => {
-  const [isDark, setIsDark] = useState(true);
+  
+  const [isDark, setIsDark] = useState();
 
   useEffect(() => {
-    const theme = localStorage.getItem("theme");
+    localStorage.setItem("chakra-ui-color-mode", "dark");
+    const theme = localStorage.getItem("chakra-ui-color-mode");
     if (theme == "dark") {
       document.documentElement.classList.add("dark");
       setIsDark(true);
@@ -22,11 +24,11 @@ const ThemeButton = () => {
   function toggleTheme() {
     if (document.documentElement.classList.contains("dark")) {
       document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
+      localStorage.setItem("chakra-ui-color-mode", "light");
       setIsDark(false);
     } else {
       document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
+      localStorage.setItem("chakra-ui-color-mode", "dark");
       setIsDark(true);
     }
   }
