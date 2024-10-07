@@ -1,34 +1,35 @@
 import React, { useContext } from "react";
 import Image from "next/image";
-import consultoria from "@/public/img/consultoria.jpg";
-import locacao from "@/public/img/imoveis.jpg";
-import ecommerce from "@/public/img/ecommerce.jpg";
 import { WindowWidthContext } from "@/app/WindowWidthContext";
 import BotaoLinks from "../botaoLinks/BotaoLinks";
+// imagend :
+import devs1 from "@/public/img/devs1.png";
+import devs2 from "@/public/img/devs2.png";
 
-export default function SobreEmpresa() {
+export default function SobreDevs() {
   const larguraDaTela = useContext(WindowWidthContext);
   return (
     <div
-      className={`w-full my-[3%]  p-4 sm:p-8 md:p-12 flex flex-row max-w-screen-2xl items-center justify-center tracking-wide`}
+      className={`w-full my-[3%] p-4 sm:p-8 md:p-12 flex flex-row max-w-screen-2xl items-center justify-center tracking-wide`}
     >
       <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-8">
         <div className="flex flex-col items-center justify-center gap-4 flex-1 p-4">
           <div className=" flex flex-col items-center justify-center gap-4">
             <h2 className="font-semibold text-3xl text-center text-pretty tracking-wider leading-tight">
-              Conheca mais sobre a empresa
+              Conheca mais sobre o time de desenvolvedores
             </h2>
             <p className="tracking-wider text-center leading-normal text-balance">
-              <span className="text-laranja">Nossa missão é oferecer</span>
+              <span >Nosso time de devs</span>
               <span>&nbsp;</span>
               <span>
-                soluções tecnológicas avançadas, produtos de informática de alta
-                qualidade e serviços de locação de imóveis excepcionais,
+                busca inovação com sustentabilidade, utilizando das melhores tecnologias do marcado 
               </span>
               <span>&nbsp;</span>
+              <span >
+              focando na 
+              </span>
               <span className="text-laranja">
-                sempre com foco na inovação, na satisfação do cliente e na
-                criação de valor sustentável.
+                {" "} usabilidade, eficiencia e seguranda do sistema.
               </span>
             </p>
           </div>
@@ -36,15 +37,15 @@ export default function SobreEmpresa() {
             <BotaoLinks href={"/"} alt={"Botao link"} texto={"Acessar"} />
           </div>
         </div>
-        <div className="flex-1">
-          <div className="p-4 lg:p-0 grid xs:grid-cols-2 items-center justify-center gap-4">
+        <div className="flex-1 ">
+          <div className="p-4 lg:p-0 grid xs:  items-center justify-center gap-4">
             <Image
               className="items-center w-full h-80 row-span-2"
               alt="Cover"
-              src={consultoria}
+              src={devs1}
             />
-            <Image className="w-full h-80" alt="Cover" src={locacao} />
-            <Image className="w-full h-80" alt="Cover" src={ecommerce} />
+         
+            <Image className="w-full h-80" alt="Cover" src={devs2} />
           </div>
         </div>
       </div>

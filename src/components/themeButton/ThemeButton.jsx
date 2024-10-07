@@ -5,22 +5,22 @@ import SunIcon from "@/icons/SunIcon/SunIcon";
 import React, { useEffect, useState } from "react";
 
 const ThemeButton = () => {
-  
-  const [isDark, setIsDark] = useState(localStorage.getItem("chakra-ui-color-mode"));
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // localStorage.setItem("chakra-ui-color-mode", "dark");
-    const theme = localStorage.getItem("chakra-ui-color-mode");
-    if (theme == "dark") {
-      document.documentElement.classList.add("dark");
-      setIsDark(true);
-    } else {
-      document.documentElement.classList.remove("dark");
-      setIsDark(false);
+    // Verifica se o código está rodando no cliente (navegador)
+    if (typeof window !== "undefined") {
+      const theme = localStorage.getItem("chakra-ui-color-mode");
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+        setIsDark(true);
+      } else {
+        document.documentElement.classList.remove("dark");
+        setIsDark(false);
+      }
     }
   }, []);
 
-  
   function toggleTheme() {
     if (document.documentElement.classList.contains("dark")) {
       document.documentElement.classList.remove("dark");
