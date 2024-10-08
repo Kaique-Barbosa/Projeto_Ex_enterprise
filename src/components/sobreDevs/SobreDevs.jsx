@@ -19,17 +19,17 @@ export default function SobreDevs() {
               Conheca mais sobre o time de desenvolvedores
             </h2>
             <p className="tracking-wider text-center leading-normal text-balance">
-              <span >Nosso time de devs</span>
+              <span>Nosso time de devs</span>
               <span>&nbsp;</span>
               <span>
-                busca inovação com sustentabilidade, utilizando das melhores tecnologias do marcado 
+                busca inovação com sustentabilidade, utilizando das melhores
+                tecnologias do marcado
               </span>
               <span>&nbsp;</span>
-              <span >
-              focando na 
-              </span>
+              <span>focando na</span>
               <span className="text-laranja">
-                {" "} usabilidade, eficiencia e seguranda do sistema.
+                {" "}
+                usabilidade, eficiencia e seguranda do sistema.
               </span>
             </p>
           </div>
@@ -44,7 +44,7 @@ export default function SobreDevs() {
               alt="Cover"
               src={devs1}
             />
-         
+
             <Image className="w-full h-80" alt="Cover" src={devs2} />
           </div>
         </div>
