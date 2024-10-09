@@ -16,7 +16,7 @@ export const Header = ({ logoLogo }) => {
 
   return (
     <div
-      className="flex items-center  justify-center w-full"
+      className="flex items-center  justify-center w-full font-bold"
       data-navbar-mode={larguraDaTela}
     >
       <div className="w-full max-w-[1440px] flex items-center px-8 py-2 justify-between">

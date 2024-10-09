@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 
-const BotaoLinks = ({ href, alt, texto }) => {
+const BotaoLinks = ({ href, alt, texto, css }) => {
     return (
         <>
             <Link
                 href={href}
                 alt={alt}
-                className={`w-fit text-cores-fonte self-start px-4 py-2 rounded-3xl border border-solid border-laranja hover:bg-laranja hover:text-branco`}
+                className={`${css} w-fit font-semibold text-cores-fonte self-start px-4 py-2 rounded-3xl border border-solid border-laranja hover:bg-laranja hover:text-branco`}
             >
                 {texto}
             </Link>

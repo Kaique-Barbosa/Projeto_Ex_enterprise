@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const Sobre = ({ children, title }) => {
   return (
     <section className="h-svh text-cores-fonte flex flex-col text-center justify-center p-4 sm:p-8  md:p-12 gap-10 tracking-wide">
-      <h2 className="text-center text-3xl text-pretty">{title}</h2>
+      <h2 className="text-center text-3xl text-pretty font-bold ">{title}</h2>
       {children}
     </section>
   );

@@ -1,7 +1,6 @@
 "use client";
 import { Header } from "@/components/header/Header";
 import SessionTitle from "@/components/sessionTitle/SessionTitle";
-import { WindowWidthProvider } from "@/app/WindowWidthContext";
 import { Card } from "@/components/card/Card";
 import SobreEmpresa from "@/components/sobreEmpresa/SobreEmpresa";
 // importação de imagens
@@ -10,20 +9,19 @@ import consultoria from "@/public/img/consultoria.jpg";
 import locacao from "@/public/img/imoveis.jpg";
 import ecommerce from "@/public/img/ecommerce.jpg";
 import Sobre from "@/components/sobre/Sobre";
-import { useEffect, useState } from "react";
 import SobreDevs from "@/components/sobreDevs/SobreDevs";
 import { Footer } from "@/components/footer/Footer";
 
 export function HomePage() {
   return (
-    <WindowWidthProvider>
-      <div className="flex flex-col items-center justify-center  relative bg-[--cores-container-fundo] w-[100%]">
+      <div className="flex flex-col items-center  justify-center  relative bg-[--cores-container-fundo] w-[100%]">
         {/* <HomePage/> */}
         <Header logoLogo={logo} />
 
         <SessionTitle texto={["Conheça a ", "Ex Enterprise"]} />
+        
         <Sobre title="Conheça um pouco sobre a empresa">
-          <p className="text-balance">
+          <p className="text-balance font-semibold">
             Empresa multifacetada que oferece consultoria especializada em
             tecnologia da informação, um e-commerce robusto para venda de
             produtos de informática e serviços de locação de imóveis. Com uma
@@ -63,6 +61,6 @@ export function HomePage() {
         <SobreDevs />
         <Footer/>
       </div>
-    </WindowWidthProvider>
+    
   );
 }

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +13,11 @@ export const Card = ({
   altLink,
   inverter,
 }) => {
+
   const larguraDaTela = useContext(WindowWidthContext);
+  const [tema, setTema] = useState(localStorage.getItem("chakra-ui-color-mode"));
+
+  
 
   return (
     <div
@@ -47,7 +51,7 @@ export const Card = ({
               <h3 className={`font-bold text-cores-fonte text-2xl text-pretty`}>
                 {titulo}
               </h3>
-              <p className={`font-light text-laranja text-balance`}>{subTitulo}</p>
+              <p className={`font-semibold ${tema === "light"? 'text-black' : 'text-laranja'} text-laranja text-balance`}>{subTitulo}</p>
             </div>
             {/* <span className={`text-cores-fonte self-start`}>Acesse abaixo</span> */}
           </div>
@@ -58,7 +62,7 @@ export const Card = ({
           >
             Acessar
           </Link> */}
-          <BotaoLinks href={linkButton} alt={altLink} texto="Acessar" />
+          <BotaoLinks href={linkButton} alt={altLink} texto="Acessar" css={larguraDaTela==="mobile" ? "m-auto" : ""} />
         </div>
       </div>
     </div>
