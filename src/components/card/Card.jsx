@@ -1,3 +1,4 @@
+// "Use client"
 import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
@@ -12,13 +13,16 @@ export const Card = ({
   linkButton,
   altLink,
   inverter,
+  css,
+  usarBotao,
 }) => {
 
   const larguraDaTela = useContext(WindowWidthContext);
-  const [tema, setTema] = useState(localStorage.getItem("chakra-ui-color-mode"));
+  // const [tema, setTema] = useState();
 
+  // setTema(localStorage.getItem("chakra-ui-color-mode"))
   
-
+  
   return (
     <div
       className={`bg-cinza dark:bg-preto_secondario bg-opacity-50 mt-2 mb-12 flex min-h-[20em] max-w-7xl items-center justify-center rounded-lg tracking-widest leading-tighter
@@ -51,7 +55,8 @@ export const Card = ({
               <h3 className={`font-bold text-cores-fonte text-2xl text-pretty`}>
                 {titulo}
               </h3>
-              <p className={`font-semibold ${tema === "light"? 'text-black' : 'text-laranja'} text-laranja text-balance`}>{subTitulo}</p>
+              <p className={`font-semibold  text-black text-balance dark:text-laranja`}>{subTitulo}</p>
+              {/* ${tema === "light"? 'text-black' : 'text-laranja'} */}
             </div>
             {/* <span className={`text-cores-fonte self-start`}>Acesse abaixo</span> */}
           </div>
@@ -62,7 +67,12 @@ export const Card = ({
           >
             Acessar
           </Link> */}
-          <BotaoLinks href={linkButton} alt={altLink} texto="Acessar" css={larguraDaTela==="mobile" ? "m-auto" : ""} />
+    
+            <BotaoLinks href={linkButton} alt={altLink} texto="Acessar" css={larguraDaTela==="mobile" ? "m-auto" : ""} />
+          
+
+          
+          
         </div>
       </div>
     </div>
@@ -77,4 +87,5 @@ Card.propTypes = {
   linkButton: PropTypes.string.isRequired,
   altLink: PropTypes.string.isRequired,
   inverter: PropTypes.bool.isRequired,
+  usarBotao: PropTypes.bool,
 };
