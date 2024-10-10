@@ -37,7 +37,7 @@ const Session = ({ texto, notBotao, margemy, height }) => {
   return (
     <div
       className={
-        ` ${height || "!h-[60vh]"}  ${margemy || "mt-[8%]"} flex flex-col gap-2 relative justify-center items-center `
+        ` ${height || "h-[calc(90vh-80px)]"}  ${margemy || "mt-[8%]"} flex flex-col gap-2 relative justify-center items-center `
       }
       data-responsividade-mode={larguraDaTela}
     >
@@ -51,7 +51,7 @@ const Session = ({ texto, notBotao, margemy, height }) => {
           <strong className="text-laranja font-semibold">{texto[1]}</strong>
         </h1>
       </div>
-        {botao()}
+        <div className="pb-8">{botao()}</div>
     </div>
   );
 };

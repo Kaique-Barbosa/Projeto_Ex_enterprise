@@ -1,6 +1,6 @@
 "use client";
 import { Header } from "@/components/header/Header";
-import SessionTitle from "@/components/sessionTitle/SessionTitle";
+import SectionTitle from "@/components/sectionTitle/SectionTitle";
 import { Card } from "@/components/card/Card";
 import SobreEmpresa from "@/components/sobreEmpresa/SobreEmpresa";
 // importação de imagens
@@ -18,7 +18,7 @@ export function HomePage() {
         {/* <HomePage/> */}
         <Header />
 
-        <SessionTitle texto={["Conheça a ", "Ex Enterprise"]} />
+        <SectionTitle texto={["Conheça a ", "Ex Enterprise"]} />
         
         <Sobre title="Conheça um pouco sobre a empresa">
           <p className="text-balance font-semibold">

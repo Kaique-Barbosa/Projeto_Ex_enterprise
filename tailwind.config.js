@@ -20,6 +20,9 @@ module.exports = {
         xs: "450px",
         'mobile': '375px',
       },
+      boxShadow:{
+        'temaEscuro': '2px 2px 8px 1px rgba(235,117,0,.5);'
+      }
     },
   },
   plugins: [],
