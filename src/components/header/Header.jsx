@@ -5,10 +5,11 @@ import Image from "next/image";
 import { usePathname } from "next/navigation"; // Substitui o useRouter por usePathname
 import PropTypes from "prop-types";
 import { WindowWidthContext } from "@/app/WindowWidthContext";
+import logo from "@/public/img/logo.png";
 
 import MenuMobile from "../drawner/MenuMobile";
 import ThemeButton from "../themeButton/ThemeButton";
-export const Header = ({ logoLogo }) => {
+export const Header = () => {
   const currentRoute = usePathname(); // Obtém o caminho da URL atual
 
   const larguraDaTela = useContext(WindowWidthContext);
@@ -23,7 +24,7 @@ export const Header = ({ logoLogo }) => {
         {/* <Link href={"/"} alt={"logo Da Empresa/ Home Page"}> */}
         <Image
           priority
-          src={logoLogo}
+          src={logo}
           alt="Logo Da empresa"
           className="h-16 w-16"
         />

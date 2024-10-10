@@ -4,7 +4,7 @@ import SessionTitle from "@/components/sessionTitle/SessionTitle";
 import { Card } from "@/components/card/Card";
 import SobreEmpresa from "@/components/sobreEmpresa/SobreEmpresa";
 // importação de imagens
-import logo from "@/public/img/logo.png";
+
 import consultoria from "@/public/img/consultoria.jpg";
 import locacao from "@/public/img/imoveis.jpg";
 import ecommerce from "@/public/img/ecommerce.jpg";
@@ -16,7 +16,7 @@ export function HomePage() {
   return (
       <div className="flex flex-col items-center  justify-center  relative bg-[--cores-container-fundo] w-[100%]">
         {/* <HomePage/> */}
-        <Header logoLogo={logo} />
+        <Header />
 
         <SessionTitle texto={["Conheça a ", "Ex Enterprise"]} />
         

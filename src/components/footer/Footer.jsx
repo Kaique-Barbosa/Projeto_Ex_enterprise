@@ -14,10 +14,10 @@ export const Footer = () => {
           Nossos canais de atendimento e contato para resolução de duvidas
         </p>
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-4 p-4 relative self-stretch w-full flex-[0_0_auto]">
+      <div className="flex flex-wrap  w-full  items-center justify-center gap-4 p-4 relative self-stretch ">
         <Link
           href={"/"}
-          className="flex flex-1 max-w-48 items-center justify-center gap-4 px-4 py-3 hover:text-laranja"
+          className="flex flex-1 max-w-48 items-center justify-around gap-4 px-4 py-3 hover:text-laranja"
         >
           <IconWhatsapp className="text-inherit fill-current" />
           WHATSAPP
@@ -25,7 +25,7 @@ export const Footer = () => {
 
         <Link
           href={"/"}
-          className="flex flex-1 max-w-48 items-center justify-center gap-4 px-4 py-3 hover:text-laranja"
+          className="flex flex-1 max-w-48  items-center justify-around gap-4 px-4 py-3 hover:text-laranja"
         >
           <Facebook1 className="text-inherit fill-current" />
           FACEBOOK
@@ -33,15 +33,15 @@ export const Footer = () => {
 
         <Link
           href={"/"}
-          className="flex flex-1 max-w-48 items-center justify-center gap-4 px-4 py-3 hover:text-laranja"
+          className="flex flex-1 max-w-48  items-center justify-around gap-4 px-4 py-3 hover:text-laranja"
         >
-          <Instagram1 className="text-inherit fill-current" />
+          <Instagram1 className="text-inherit fill-current w-full m-auto" />
           INSTRAGRAM
         </Link>
 
         <Link
           href={"/"}
-          className="flex flex-1 max-w-48 items-center justify-center gap-4 px-4 py-3 hover:text-laranja"
+          className="flex flex-1 max-w-48 items-center justify-around gap-4 px-4 py-3 hover:text-laranja"
         >
           <Linkedin1 className="text-inherit fill-current" />
           LINKEDIN
