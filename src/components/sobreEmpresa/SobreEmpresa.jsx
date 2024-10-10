@@ -37,14 +37,14 @@ export default function SobreEmpresa() {
           </div>
         </div>
         <div className="flex-1">
-          <div className="p-4 lg:p-0 grid xs:grid-cols-2 items-center justify-center gap-4">
+          <div className="p-4  lg:p-0 grid xs:grid-cols-2 items-center justify-center gap-4">
             <Image
-              className="items-center w-full h-80 row-span-2 object-cover"
+              className="items-center w-full h-80 row-span-2 object-cover shadow-lg  shadow-slate-700 rounded-lg "
               alt="imagens ilustrativas"
               src={consultoria}
             />
-            <Image className="w-full h-80 object-cover" alt="imagens ilustrativas" src={locacao} />
-            <Image className="w-full h-80 object-cover" alt="imagens ilustrativas" src={ecommerce} />
+            <Image className="w-full h-80 object-cover shadow-lg shadow-slate-700 rounded-lg" alt="imagens ilustrativas " src={locacao} />
+            <Image className="w-full h-80 object-cover shadow-lg shadow-slate-700 rounded-lg" alt="imagens ilustrativas" src={ecommerce} />
           </div>
         </div>
       </div>
