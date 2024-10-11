@@ -6,7 +6,7 @@ import { Card } from "@/components/card/Card";
 import { Header } from "@/components/header/Header";
 import { WindowWidthProvider } from "@/app/WindowWidthContext";
 import cardModel2 from "@/components/cardModel2/cardModel2";
-
+import SectionWithImg from "@/components/sectionWithImg/SectionWithImg";
 
 // importação de imagens
 import logo from "@/public/img/logo.png";
@@ -58,66 +58,62 @@ const cardsData = [
 ];
 
 const ConsultoriaPage = () =>
-// Props
-{
-  return (
-    <WindowWidthProvider>
-      <div className="flex flex-col items-center  justify-center  relative bg-[--cores-container-fundo] w-[100%]">
-        <Header />
+  // Props
+  {
+    return (
+      <WindowWidthProvider>
+        <div className="flex flex-col items-center  justify-center  relative bg-[--cores-container-fundo] w-[100%]">
+          <Header />
 
-        <SectionTitle texto={["Conheça a nossa", "Consultoria em T.I"]} />
+          <SectionTitle texto={["Conheça a nossa", "Consultoria em T.I"]} />
 
-        {/* card maior */}
-        <div className="mt-[15%]">
-          <Card
-            imagem={consultoria2}
-            titulo="Uma empresa especializada em renovar o seu negócio"
-            subTitulo="Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. "
-            altLink="texto alternativo"
-            inverter={false}
-            linkButton="/consultoria"
-            naoUsarBotao={true}
-            cssImagem={[
-              "!flex-2 lg:!w-[60%] mobile:!w-[100%] ",
-              "!w-[100%] m-auto",
-            ]} //o primerio valor muda a div e o segundo a imagem
+          <SectionWithImg
+            title="Uma empresa especializada em renovar o seu negócio"
+            imgSrc={consultoria2}
+            imgAlt="Imagem de um escritório"
+          >
+            <p className="text-laranja">
+              Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              vulputate libero et velit interdum, ac aliquet odio mattis. Borem
+              ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
+              libero et velit interdum, ac aliquet odio mattis.
+            </p>
+          </SectionWithImg>
+
+          <SectionTitle
+            notBotao={true}
+            height="h-fit"
+            texto={["Veja o que oferecemos em", "soluções para TI"]}
           />
+
+          {/* sequencia de cards. valores estão acima em um array de objetos */}
+          <div className="p-4 sm:p-8 lg:p-12">
+            {cardsData.map((card, index) => (
+              <Card
+                key={index} // Adicione uma key para cada Card
+                imagem={card.imagem}
+                titulo={card.titulo}
+                subTitulo={card.subTitulo}
+                altLink={card.altLink}
+                inverter={card.inverter}
+                linkButton={card.linkButton}
+              />
+            ))}
+          </div>
+          <SectionTitle
+            notBotao={true}
+            height={"h-[2rem]"}
+            margemy="mb-10"
+            texto={["Público Alvo", null]}
+          />
+
+          <cardModel2 />
+
+          <Footer />
         </div>
-
-        <SectionTitle
-          notBotao={true}
-          height="h-fit"
-          texto={["Veja o que oferecemos em", "soluções para TI"]}
-        />
-
-        {/* sequencia de cards. valores estão acima em um array de objetos */}
-        <div className="my-[15%]">
-          {cardsData.map((card, index) => (
-            <Card
-              key={index} // Adicione uma key para cada Card
-              imagem={card.imagem}
-              titulo={card.titulo}
-              subTitulo={card.subTitulo}
-              altLink={card.altLink}
-              inverter={card.inverter}
-              linkButton={card.linkButton}
-            />
-          ))}
-        </div>
-        <SectionTitle
-          notBotao={true}
-          height={'h-[2rem]'}
-          margemy="mb-10"
-          texto={["Público Alvo", null]}
-        />
-
-          <cardModel2/>
-
-        <Footer />
-      </div>
-    </WindowWidthProvider>
-  );
-};
+      </WindowWidthProvider>
+    );
+  };
 
 ConsultoriaPage.propTypes = {};
 
