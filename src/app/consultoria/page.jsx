@@ -86,6 +86,7 @@ const ConsultoriaPage = () =>
 
         <SectionTitle
           notBotao={true}
+          height="h-fit"
           texto={["Veja o que oferecemos em", "soluções para TI"]}
         />
 
