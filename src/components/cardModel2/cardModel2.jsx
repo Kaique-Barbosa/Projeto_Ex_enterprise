@@ -2,22 +2,27 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Image from 'next/image'
 
-const cardModel2 = (imagemSrc, titulo, descricao) => {
+const CardModel2 = ({ imagemSrc, titulo, descricao }) => {
   return (
-    <div className=" w-full flex flex-col md:flex-row p-4">
-    <div className="flex flex-col mx-[1rem] flex-wrap flex-grow">
-      <Image src={imagemSrc} alt="" />
-      <h1 className="my-5 text-center">{titulo}</h1>
-      <p className='text-laranja_light dark:text-laranja_dark'>{descricao}</p>
-    </div>
-  </div>
+    
+      <div className="w-[25rem]  rounded-lg bg-slate-500">
+        <div className="flex flex-col">
+          <div className="h-60">
+            <Image src={imagemSrc} alt="foto" className='w-full h-full rounded-t-lg' />
+          </div>
+          <div className='p-4'>
+            <h1 className="my-5 text-center">{titulo}</h1>
+            <p className="text-balance break-words text-laranja_light dark:text-laranja_dark">{descricao}</p>
+          </div>
+        </div>
+      </div>
   )
 }
 
-cardModel2.propTypes = {
-imagemSrc: PropTypes.string.isRequired,
-titulo: PropTypes.string,
-descricao: PropTypes.string,
+CardModel2.propTypes = {
+  imagemSrc: PropTypes.string.isRequired,
+  titulo: PropTypes.string,
+  descricao: PropTypes.string,
 }
 
-export default cardModel2
+export default CardModel2

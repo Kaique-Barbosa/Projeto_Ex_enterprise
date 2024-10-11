@@ -9,7 +9,7 @@ const SectionWithImg = ({ children, title, imgSrc, imgAlt }) => {
       <div className="flex-1 w-full max-h-[30rem]">
         <Image
           src={imgSrc}
-          className="w-full max-h-[30rem] object-cove"
+          className="w-full max-h-[30rem] object-cove rounded-lg"
           alt={imgAlt}
         />
       </div>
