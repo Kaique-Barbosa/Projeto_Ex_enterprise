@@ -21,7 +21,6 @@ export const Header = () => {
       data-navbar-mode={larguraDaTela}
     >
       <div className="w-full max-w-[1440px] flex items-center px-8 py-2 justify-between">
-        {/* <Link href={"/"} alt={"logo Da Empresa/ Home Page"}> */}
         <Image
           priority
           src={logo}
@@ -35,7 +34,7 @@ export const Header = () => {
                 aria-disabled={currentRoute === "/"}
                 href={"/"}
                 className={` py-2 px-2 rounded-sm  ${
-                  currentRoute === "/" ? "text-laranja" : "hover:text-branco hover:bg-laranja"
+                  currentRoute === "/" ? "text-laranja_light dark:text-laranja_dark" : "hover:text-branco hover:bg-laranja_light dark:hover:bg-laranja_dark"
                 }`}
               >
                 HOME
@@ -46,7 +45,7 @@ export const Header = () => {
                 aria-disabled={currentRoute === "/imoveis"}
                 href={"/imoveis"}
                 className={`py-2 px-2 rounded-sm ${
-                  currentRoute === "/imoveis" ? "text-laranja" : "hover:text-branco hover:bg-laranja"
+                  currentRoute === "/imoveis" ? "text-laranja_light dark:text-laranja_dark" : "hover:text-branco hover:bg-laranja_light dark:hover:bg-laranja_dark"
                 }`}
               >
                 IMÓVEIS
@@ -57,7 +56,7 @@ export const Header = () => {
                 aria-disabled={currentRoute === "/consultoria"}
                 href={"/consultoria"}
                 className={`py-2 px-2 rounded-sm ${
-                  currentRoute === "/consultoria" ? "text-laranja" : "hover:text-branco hover:bg-laranja"
+                  currentRoute === "/consultoria" ? "text-laranja_light dark:text-laranja_dark" : "hover:text-branco hover:bg-laranja_light dark:hover:bg-laranja_dark"
                 }`}
               >
                 CONSULTORIA
@@ -68,7 +67,7 @@ export const Header = () => {
                 aria-disabled={currentRoute === "/e-commerce"}
                 href={"/e-commerce"}
                 className={`py-2 px-2 rounded-sm  ${
-                  currentRoute === "/e-commerce" ? "text-laranja" : "hover:text-branco hover:bg-laranja"
+                  currentRoute === "/e-commerce" ? "text-laranja_light dark:text-laranja_dark" : "hover:text-branco hover:bg-laranja_light dark:hover:bg-laranja_dark"
                 }`}
               >
                 E-COMMERCE
@@ -79,7 +78,7 @@ export const Header = () => {
                 aria-disabled={currentRoute === "/ebooks"}
                 href={"/ebooks"}
                 className={`py-2 px-2 rounded-sm  ${
-                  currentRoute === "/ebooks" ? "text-laranja" : "hover:text-branco hover:bg-laranja"
+                  currentRoute === "/ebooks" ? "text-laranja_light dark:text-laranja_dark" : "hover:text-branco hover:bg-laranja_light dark:hover:bg-laranja_dark"
                 }`}
               >
                 E-BOOKS

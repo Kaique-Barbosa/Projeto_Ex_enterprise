@@ -14,7 +14,8 @@ module.exports = {
         branco: "#FFFFFF",
         cinza: "#E3E4E6",
         dourado: "#F0A90E",
-        laranja: "#EB7500",
+        laranja_dark: "#EB7500",
+        laranja_light: "#F64C03"
       },
       screens: {
         xs: "450px",

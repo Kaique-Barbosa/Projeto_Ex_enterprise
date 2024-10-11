@@ -27,7 +27,7 @@ export default function SobreDevs() {
               </span>
               <span>&nbsp;</span>
               <span>focando na</span>
-              <span className="text-laranja">
+              <span className="text-laranja_light dark:text-laranja_dark">
                 {" "}
                 usabilidade, eficiencia e seguranda do sistema.
               </span>

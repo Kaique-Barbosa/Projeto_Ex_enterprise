@@ -8,7 +8,7 @@ const cardModel2 = (imagemSrc, titulo, descricao) => {
     <div className="flex flex-col mx-[1rem] flex-wrap flex-grow">
       <Image src={imagemSrc} alt="" />
       <h1 className="my-5 text-center">{titulo}</h1>
-      <p className='text-laranja'>{descricao}</p>
+      <p className='text-laranja_light dark:text-laranja_dark'>{descricao}</p>
     </div>
   </div>
   )

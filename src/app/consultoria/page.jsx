@@ -72,7 +72,7 @@ const ConsultoriaPage = () =>
             imgSrc={consultoria2}
             imgAlt="Imagem de um escritório"
           >
-            <p className="text-laranja">
+            <p className="text-laranja_light dark:text-laranja_dark">
               Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
               vulputate libero et velit interdum, ac aliquet odio mattis. Borem
               ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate

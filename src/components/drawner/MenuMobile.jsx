@@ -66,7 +66,7 @@ const MenuMobile = () => {
             <Link
               href={"/"}
               className={`p-1 flex items-center gap-2 ${
-                currentRoute === "/" ? "text-laranja" : "hover:text-laranja"
+                currentRoute === "/" ? "text-laranja_light dark:text-laranja_dark" : "hover:text-laranja_light hover:dark:text-laranja_dark"
               }`}
             >
               <IconHome className="size-5 text-inherit fill-current" />
@@ -76,9 +76,7 @@ const MenuMobile = () => {
             <Link
               href={"/imoveis"}
               className={`p-1 flex items-center gap-2 ${
-                currentRoute === "/imoveis"
-                  ? "text-laranja"
-                  : "hover:text-laranja"
+                currentRoute === "/imoveis" ? "text-laranja_light dark:text-laranja_dark" : "hover:text-laranja_light hover:dark:text-laranja_dark"
               }`}
             >
               <IconEstate className="size-5 text-inherit fill-current" />
@@ -89,8 +87,7 @@ const MenuMobile = () => {
               href={"/consultoria"}
               className={`p-1 flex items-center gap-2 ${
                 currentRoute === "/consultoria"
-                  ? "text-laranja"
-                  : "hover:text-laranja"
+                  ? "text-laranja_light dark:text-laranja_dark" : "hover:text-laranja_light hover:dark:text-laranja_dark"
               }`}
             >
               <IconConsultancy className="size-5 text-inherit fill-current" />
@@ -101,8 +98,7 @@ const MenuMobile = () => {
               href={"/e-commerce"}
               className={`p-1 flex items-center gap-2 ${
                 currentRoute === "/e-commerce"
-                  ? "text-laranja"
-                  : "hover:text-laranja"
+                  ? "text-laranja_light dark:text-laranja_dark" : "hover:text-laranja_light hover:dark:text-laranja_dark"
               }`}
             >
               <IconEcommerce className="size-5 text-inherit fill-current" />
@@ -113,8 +109,7 @@ const MenuMobile = () => {
               href={"/ebooks"}
               className={`p-1 flex items-center gap-2 ${
                 currentRoute === "/ebooks"
-                  ? "text-laranja"
-                  : "hover:text-laranja"
+                  ? "text-laranja_light dark:text-laranja_dark" : "hover:text-laranja_light hover:dark:text-laranja_dark"
               }`}
             >
               <IconEbooks className="size-5 text-inherit fill-current" />

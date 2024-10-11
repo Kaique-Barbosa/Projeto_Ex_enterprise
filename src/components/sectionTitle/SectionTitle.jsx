@@ -48,7 +48,7 @@ const Session = ({ texto, notBotao, margemy, height }) => {
       >
         <h1 className="text-cores-laranja   [font-family:'Work_Sana-Light, Helvetica]  text-center tracking-wider leading-tight text-4xl sm:text-5xl">
           {texto[0] + " "}
-          <strong className="text-laranja font-semibold">{texto[1]}</strong>
+          <strong className="text-laranja_light dark:text-laranja_dark font-semibold">{texto[1]}</strong>
         </h1>
       </div>
         <div className="pb-8">{botao()}</div>
