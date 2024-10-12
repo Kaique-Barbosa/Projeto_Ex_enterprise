@@ -58,74 +58,79 @@ const cardsData = [
 ];
 
 const ConsultoriaPage = () =>
-// Props
-{
-  return (
-    <WindowWidthProvider>
-      <div className="flex flex-col items-center  justify-center  relative bg-[--cores-container-fundo] w-[100%]">
-        <Header />
+  // Props
+  {
+    return (
+      <WindowWidthProvider>
+        <div className="flex flex-col items-center justify-center w-full">
+          <Header />
 
-        <SectionTitle texto={["Conheça a nossa", "Consultoria em T.I"]} />
+          <SectionTitle texto={["Conheça a nossa", "Consultoria em T.I"]} />
 
-        <SectionWithImg
-          title="Uma empresa especializada em renovar o seu negócio"
-          imgSrc={consultoria2}
-          imgAlt="Imagem de um escritório"
-        >
-          <p className="text-laranja_light dark:text-laranja_dark">
-            Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            vulputate libero et velit interdum, ac aliquet odio mattis. Borem
-            ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
-            libero et velit interdum, ac aliquet odio mattis.
-          </p>
-        </SectionWithImg>
+          <SectionWithImg
+            title="Uma empresa especializada em renovar o seu negócio"
+            imgSrc={consultoria2}
+            imgAlt="Imagem de um escritório"
+          >
+            <p className="text-laranja_light dark:text-laranja_dark">
+              Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              vulputate libero et velit interdum, ac aliquet odio mattis. Borem
+              ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
+              libero et velit interdum, ac aliquet odio mattis.
+            </p>
+          </SectionWithImg>
 
-        <SectionTitle
-          notBotao={true}
-          height="h-fit"
-          texto={["Veja o que oferecemos em", "soluções para TI"]}
-        />
+          <SectionTitle
+            notBotao={true}
+            height="h-fit"
+            texto={["Veja o que oferecemos em", "soluções para TI"]}
+          />
 
-        {/* sequencia de cards. valores estão acima em um array de objetos */}
-        <div className="p-4 sm:p-8 lg:p-12">
-          {cardsData.map((card, index) => (
-            <Card
-              key={index} // Adicione uma key para cada Card
-              imagem={card.imagem}
-              titulo={card.titulo}
-              subTitulo={card.subTitulo}
-              altLink={card.altLink}
-              inverter={card.inverter}
-              linkButton={card.linkButton}
+          {/* sequencia de cards. valores estão acima em um array de objetos */}
+          <div className="p-4 sm:p-8 lg:p-12">
+            {cardsData.map((card, index) => (
+              <Card
+                key={index} // Adicione uma key para cada Card
+                imagem={card.imagem}
+                titulo={card.titulo}
+                subTitulo={card.subTitulo}
+                altLink={card.altLink}
+                inverter={card.inverter}
+                linkButton={card.linkButton}
+              />
+            ))}
+          </div>
+          <SectionTitle
+            notBotao={true}
+            height={"h-[2rem]"}
+            margemy="mb-10"
+            texto={["Público Alvo", null]}
+          />
+
+          <div className="w-full max-w-7xl justify-between flex flex-wrap gap-8 p-4 sm:p-8 lg:p-12">
+            <CardModel2
+              imagemSrc={consultoria}
+              titulo="Empresas de Pequeno, Médio e Grande Porte"
+              descricao="Negócios que buscam otimizar seus processos tecnológicos, implementar novas soluções de TI ou necessitam de suporte especializado para projetos específicos."
             />
-          ))}
+            <CardModel2
+              imagemSrc={consultoria}
+              titulo="Startups e Empresas de Tecnologia"
+              descricao="Organizações emergentes e inovadoras que
+              necessitam de orientação técnica para desenvolver seus produtos e serviços, bem como estruturar sua infraestrutura de TI."
+            />
+            <CardModel2
+              imagemSrc={consultoria}
+              titulo="Setor Público e Organizações Sem Fins Lucrativos"
+              descricao="Instituições governamentais e ONGs que precisam de soluções tecnológicas eficientes para melhorar sua operação e impacto social."
+            />
+          </div>
+
+          <Footer />
         </div>
-        <SectionTitle
-          notBotao={true}
-          height={"h-[2rem]"}
-          margemy="mb-10"
-          texto={["Público Alvo", null]}
-        />
-
-        <div className="w-full justify-around flex flex-wrap gap-8 p-4  bg-slate-200 ">
-
-          <CardModel2 imagemSrc={consultoria}
-            titulo="testewdwadwadwadwadwadwa"
-            descricao="dwadwadawdwadwadwafjafjesnjnfsnefenfneanfesnfnesfnsenfesnfiesnfinseifnesinfesnfuesniufnesungdrinjiljrhnigulhrguildrhziguhdrguihdriudprhidhiujgnsjknvkshnindjkfns\gfvirhjgurjknjfkbdzçfb" />
-          <CardModel2 imagemSrc={consultoria}
-            titulo="testewdwadwadwadwadwadwa"
-            descricao="dwadwadawdwadwadwafjafjesnjnfsnefenfneanfesnfnesfnsenfesnfiesnfinseifnesinfesnfuesniufnesungdrinjiljrhnigulhrguildrhziguhdrguihdriudprhidhiujgnsjknvkshnindjkfns\gfvirhjgurjknjfkbdzçfb" />
-          <CardModel2 imagemSrc={consultoria}
-            titulo="testewdwadwadwadwadwadwa"
-            descricao="dwadwadawdwadwadwafjafjesnjnfsnefenfneanfesnfnesfnsenfesnfiesnfinseifnesinfesnfuesniufnesungdrinjiljrhnigulhrguildrhziguhdrguihdriudprhidhiujgnsjknvkshnindjkfns\gfvirhjgurjknjfkbdzçfb" />
-
-        </div>
-
-        <Footer />
-      </div>
-    </WindowWidthProvider>
-  );
-};
+      </WindowWidthProvider>
+    );
+  };
 
 ConsultoriaPage.propTypes = {};
 
