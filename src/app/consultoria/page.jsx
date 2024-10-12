@@ -7,6 +7,7 @@ import { Header } from "@/components/header/Header";
 import { WindowWidthProvider } from "@/app/WindowWidthContext";
 import CardModel2 from "@/components/cardModel2/cardModel2";
 import SectionWithImg from "@/components/sectionWithImg/SectionWithImg";
+import { Footer } from "@/components/footer/Footer";
 
 // importação de imagens
 import logo from "@/public/img/logo.png";
@@ -14,7 +15,9 @@ import consultoria from "@/public/img/consultoria.jpg";
 import consultoria2 from "@/public/img/consultoria2.jpg";
 import locacao from "@/public/img/imoveis.jpg";
 import ecommerce from "@/public/img/ecommerce.jpg";
-import { Footer } from "@/components/footer/Footer";
+import { GlobeIcon } from "@/icons/GlobeIcon/GlobeIcon";
+import { EnterpriseIcon } from "@/icons/EnterpriseIcon/EnterpriseIcon";
+import { RoctketIcon } from "@/icons/RocketIcon/RoctketIcon";
 
 // const larguraDaTela = useContext(WindowWidthContext);
 
@@ -109,18 +112,18 @@ const ConsultoriaPage = () =>
 
           <div className="w-full max-w-7xl justify-between flex flex-wrap gap-8 p-4 sm:p-8 lg:p-12">
             <CardModel2
-              imagemSrc={consultoria}
+              icon=<EnterpriseIcon css="size-20 fill-preto_primario dark:fill-cinza" />
               titulo="Empresas de Pequeno, Médio e Grande Porte"
               descricao="Negócios que buscam otimizar seus processos tecnológicos, implementar novas soluções de TI ou necessitam de suporte especializado para projetos específicos."
             />
             <CardModel2
-              imagemSrc={consultoria}
+              icon=<RoctketIcon css="size-20 fill-preto_primario dark:fill-cinza" />
               titulo="Startups e Empresas de Tecnologia"
               descricao="Organizações emergentes e inovadoras que
               necessitam de orientação técnica para desenvolver seus produtos e serviços, bem como estruturar sua infraestrutura de TI."
             />
             <CardModel2
-              imagemSrc={consultoria}
+              icon=<GlobeIcon css="size-20 fill-preto_primario dark:fill-cinza" />
               titulo="Setor Público e Organizações Sem Fins Lucrativos"
               descricao="Instituições governamentais e ONGs que precisam de soluções tecnológicas eficientes para melhorar sua operação e impacto social."
             />

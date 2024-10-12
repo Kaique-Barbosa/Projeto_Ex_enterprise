@@ -1,21 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
-import css from "styled-jsx/css";
 
-const CardModel2 = ({ imagemSrc, titulo, descricao }) => {
+const CardModel2 = ({ icon, titulo, descricao }) => {
   return (
-    <div className="flex flex-col grow basis-60 rounded-lg bg-slate-500">
-      <div className="h-60">
-        <Image
-          src={imagemSrc}
-          alt="foto"
-          className="w-full h-full rounded-t-lg"
-        />
-      </div>
-      <div className="flex flex-col self-baseline gap-4 flex-1 p-4">
+    <div className="flex flex-col items-center p-4 gap-6 grow basis-60">
+      {icon}
+      <div className="flex flex-col gap-4 flex-1">
         <h3 className="text-center text-lg font-bold">{titulo}</h3>
-        <p className="text-laranja_light dark:text-laranja_dark">
+        <p className="text-center text-laranja_light dark:text-laranja_dark">
           {descricao}
         </p>
       </div>
