@@ -1,5 +1,5 @@
 "use client";
-import { React, useContext } from "react";
+import { React, useContext, useState } from "react";
 import PropTypes from "prop-types";
 import SectionTitle from "@/components/sectionTitle/SectionTitle";
 import { Card } from "@/components/card/Card";
@@ -8,6 +8,8 @@ import { WindowWidthProvider } from "@/app/WindowWidthContext";
 import CardModel2 from "@/components/cardModel2/cardModel2";
 import SectionWithImg from "@/components/sectionWithImg/SectionWithImg";
 import { Footer } from "@/components/footer/Footer";
+import PerguntasFrequentes from "@/components/perguntasFrequentes/PerguntasFrequentes";
+import BotaoOnClick from "@/components/botaoOnClick/BotaoOnClick";
 
 // importação de imagens
 import logo from "@/public/img/logo.png";
@@ -18,9 +20,11 @@ import ecommerce from "@/public/img/ecommerce.jpg";
 import { GlobeIcon } from "@/icons/GlobeIcon/GlobeIcon";
 import { EnterpriseIcon } from "@/icons/EnterpriseIcon/EnterpriseIcon";
 import { RoctketIcon } from "@/icons/RocketIcon/RoctketIcon";
+import BotaoLinks from "@/components/botaoLinks/BotaoLinks";
 
 // const larguraDaTela = useContext(WindowWidthContext);
 
+// INICIO -------------- area dos dados dos componentes ------------------
 const cardsData = [
   {
     imagem: consultoria,
@@ -60,9 +64,26 @@ const cardsData = [
   },
 ];
 
-const ConsultoriaPage = () =>
-  // Props
-  {
+const PerguntasFrequentesData = [
+  { titulo: "Pergunta 1", texto: "texto texto texto texto", aberto: true },
+  { titulo: "Pergunta 2", texto: "texto texto texto texto", aberto: false },
+  { titulo: "Pergunta 3", texto: "texto texto texto texto", aberto: false },
+  { titulo: "Pergunta 4", texto: "texto texto texto texto", aberto: false },
+  { titulo: "Pergunta 5", texto: "texto texto texto texto", aberto: false },
+  { titulo: "Pergunta 6", texto: "texto texto texto texto", aberto: false },
+  { titulo: "Pergunta 7", texto: "texto texto texto texto", aberto: false },
+  { titulo: "Pergunta 8", texto: "texto texto texto texto", aberto: false },
+];
+
+// ----------------- FIM  area dos dados dos componentes-----------------
+
+const ConsultoriaPage = () =>{
+  const [visibleCount, setVisibleCount] = useState(3); // Inicialmente 5 perguntas visíveis
+
+  const vermais = () => {
+    setVisibleCount((prevCount) => prevCount + 3); // Aumenta a contagem visível em 5
+  };
+
     return (
       <WindowWidthProvider>
         <div className="flex flex-col items-center justify-center w-full">
@@ -110,7 +131,7 @@ const ConsultoriaPage = () =>
             texto={["Público Alvo", null]}
           />
 
-          <div className="w-full max-w-7xl justify-between flex flex-wrap gap-8 p-4 sm:p-8 lg:p-12">
+          <div className="w-full mt-5 mb-32 max-w-7xl justify-between flex flex-wrap gap-8 p-4 sm:p-8 lg:p-12">
             <CardModel2
               icon=<EnterpriseIcon css="size-20 fill-preto_primario dark:fill-cinza" />
               titulo="Empresas de Pequeno, Médio e Grande Porte"
@@ -128,7 +149,26 @@ const ConsultoriaPage = () =>
               descricao="Instituições governamentais e ONGs que precisam de soluções tecnológicas eficientes para melhorar sua operação e impacto social."
             />
           </div>
+          <SectionTitle
+            notBotao={true}
+            height={"h-[2rem]"}
+            margemy="mb-10"
+            texto={["Perguntas Frequentes", null]}
+          />
 
+        {PerguntasFrequentesData.slice(0, visibleCount).map((pergunta, index) => (
+          <PerguntasFrequentes
+            key={index}
+            titulo={pergunta.titulo}
+            texto={pergunta.texto}
+            aberto={pergunta.aberto}
+          />
+        ))}
+         {visibleCount < PerguntasFrequentesData.length && (
+          <div className="my-5">
+            <BotaoOnClick texto={"ver mais"} funcaoOnclick={vermais} />
+          </div>
+        )}
           <Footer />
         </div>
       </WindowWidthProvider>
