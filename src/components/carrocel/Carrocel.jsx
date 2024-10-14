@@ -1,5 +1,5 @@
-// import Swiper core and required modules
-import { Pagination, Scrollbar, A11y } from 'swiper/modules';
+"use client";
+import { Pagination, A11y } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -10,46 +10,68 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 
+
 import CardModel3 from '../cardModel3/CardModel3';
 
 function Carrocel({ }) {
+    const dadosPerguntas = [
+        {
+            titulo: "titulo teste",
+            subtitulo: "subtitulo",
+            mensagem: "dwadwagrsgsergdrgdrghfthdt"
+        },
+        {
+            titulo: "titulo teste",
+            subtitulo: "subtitulo",
+            mensagem: "dwadwagrsgsergdrgdrghfthdt"
+        },
+        {
+            titulo: "titulo teste",
+            subtitulo: "subtitulo",
+            mensagem: "dwadwagrsgsergdrgdrghfthdt"
+        },
+    ]
+
+
     return (
         <Swiper
             // install Swiper modules
-            modules={[ Pagination, A11y]}
+            modules={[Pagination, A11y]}
             spaceBetween={10}
-            slidesPerView={1}
+            // slidesPerView={1}
             // navigation={{ clickable: true }}
             pagination={{ clickable: true }}
-            
-            
+
+
 
             breakpoints={{
                 640: {
-                  slidesPerView: 2,
-                  spaceBetween: 20,
+                    slidesPerView: 2,
+                    spaceBetween: 20,
                 },
                 1024: {
-                  slidesPerView: 3,
-                  spaceBetween: 50,
+                    slidesPerView: 3,
+                    spaceBetween: 50,
                 },
-              }}
-           
+            }}
+
+            className=''
         >
-            
-                <SwiperSlide >
-                    <CardModel3 />
+
+
+            {dadosPerguntas.map((card, index) => (
+                <SwiperSlide>
+                    <CardModel3
+                        key={index}
+                        titulo={card.titulo}
+                        subtitulo={card.subtitulo}
+                        mensagem={card.mensagem}
+                    />
                 </SwiperSlide>
-               
-                <SwiperSlide >
-                    <CardModel3 />
-                </SwiperSlide>
-               
-                <SwiperSlide >
-                    <CardModel3 />
-                </SwiperSlide>
-               
-            
+            ))}
+
+
+
         </Swiper>
     );
 };

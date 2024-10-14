@@ -125,32 +125,36 @@ const ConsultoriaPage = () => {
             />
           ))}
         </div>
-        <SectionTitle
-          notBotao={true}
-          height={"h-[2rem]"}
-          margemy="mb-10"
-          texto={["Público Alvo", null]}
-        />
-
-        <div className="w-full mt-5 mb-32 max-w-7xl justify-between flex flex-wrap gap-8 p-4 sm:p-8 lg:p-12">
-          <CardModel2
-            icon=<EnterpriseIcon css="size-20 fill-preto_primario dark:fill-cinza" />
-            titulo="Empresas de Pequeno, Médio e Grande Porte"
-            descricao="Negócios que buscam otimizar seus processos tecnológicos, implementar novas soluções de TI ou necessitam de suporte especializado para projetos específicos."
+        
+        <div className="my-14">
+          <SectionTitle
+            notBotao={true}
+            height={"h-[2rem]"}
+            margemy="mb-10"
+            texto={["Público Alvo", null]}
           />
-          <CardModel2
-            icon=<RoctketIcon css="size-20 fill-preto_primario dark:fill-cinza" />
-            titulo="Startups e Empresas de Tecnologia"
-            descricao="Organizações emergentes e inovadoras que
+
+          <div className="w-full mt-5 mb-32 max-w-7xl justify-between flex flex-wrap gap-8 p-4 sm:p-8 lg:p-12">
+            <CardModel2
+              icon=<EnterpriseIcon css="size-20 fill-preto_primario dark:fill-cinza" />
+              titulo="Empresas de Pequeno, Médio e Grande Porte"
+              descricao="Negócios que buscam otimizar seus processos tecnológicos, implementar novas soluções de TI ou necessitam de suporte especializado para projetos específicos."
+            />
+            <CardModel2
+              icon=<RoctketIcon css="size-20 fill-preto_primario dark:fill-cinza" />
+              titulo="Startups e Empresas de Tecnologia"
+              descricao="Organizações emergentes e inovadoras que
               necessitam de orientação técnica para desenvolver seus produtos e serviços, bem como estruturar sua infraestrutura de TI."
-          />
-          <CardModel2
-            icon=<GlobeIcon css="size-20 fill-preto_primario dark:fill-cinza" />
-            titulo="Setor Público e Organizações Sem Fins Lucrativos"
-            descricao="Instituições governamentais e ONGs que precisam de soluções tecnológicas eficientes para melhorar sua operação e impacto social."
-          />
-
+            />
+            <CardModel2
+              icon=<GlobeIcon css="size-20 fill-preto_primario dark:fill-cinza" />
+              titulo="Setor Público e Organizações Sem Fins Lucrativos"
+              descricao="Instituições governamentais e ONGs que precisam de soluções tecnológicas eficientes para melhorar sua operação e impacto social."
+            />
+          </div>
         </div>
+
+
         <div className="w-full mb-14 m-auto flex flex-col justify-center items-center">
 
           <SectionTitle
