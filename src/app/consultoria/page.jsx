@@ -21,6 +21,7 @@ import { GlobeIcon } from "@/icons/GlobeIcon/GlobeIcon";
 import { EnterpriseIcon } from "@/icons/EnterpriseIcon/EnterpriseIcon";
 import { RoctketIcon } from "@/icons/RocketIcon/RoctketIcon";
 import BotaoLinks from "@/components/botaoLinks/BotaoLinks";
+import Carrocel from "@/components/carrocel/Carrocel";
 
 // const larguraDaTela = useContext(WindowWidthContext);
 
@@ -77,103 +78,121 @@ const PerguntasFrequentesData = [
 
 // ----------------- FIM  area dos dados dos componentes-----------------
 
-const ConsultoriaPage = () =>{
+const ConsultoriaPage = () => {
   const [visibleCount, setVisibleCount] = useState(3); // Inicialmente 5 perguntas visíveis
 
   const vermais = () => {
     setVisibleCount((prevCount) => prevCount + 3); // Aumenta a contagem visível em 5
   };
 
-    return (
-      <WindowWidthProvider>
-        <div className="flex flex-col items-center justify-center w-full">
-          <Header />
+  return (
+    <WindowWidthProvider>
+      <div className="flex flex-col items-center justify-center w-full">
+        <Header />
 
-          <SectionTitle texto={["Conheça a nossa", "Consultoria em T.I"]} />
+        <SectionTitle texto={["Conheça a nossa", "Consultoria em T.I"]} />
 
-          <SectionWithImg
-            title="Uma empresa especializada em renovar o seu negócio"
-            imgSrc={consultoria2}
-            imgAlt="Imagem de um escritório"
-          >
-            <p className="text-laranja_light dark:text-laranja_dark">
-              Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-              vulputate libero et velit interdum, ac aliquet odio mattis. Borem
-              ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
-              libero et velit interdum, ac aliquet odio mattis.
-            </p>
-          </SectionWithImg>
+        <SectionWithImg
+          title="Uma empresa especializada em renovar o seu negócio"
+          imgSrc={consultoria2}
+          imgAlt="Imagem de um escritório"
+        >
+          <p className="text-laranja_light dark:text-laranja_dark">
+            Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            vulputate libero et velit interdum, ac aliquet odio mattis. Borem
+            ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
+            libero et velit interdum, ac aliquet odio mattis.
+          </p>
+        </SectionWithImg>
 
-          <SectionTitle
-            notBotao={true}
-            height="h-fit"
-            texto={["Veja o que oferecemos em", "soluções para TI"]}
+        <SectionTitle
+          notBotao={true}
+          height="h-fit"
+          texto={["Veja o que oferecemos em", "soluções para TI"]}
+        />
+
+        {/* sequencia de cards. valores estão acima em um array de objetos */}
+        <div className="p-4 sm:p-8 lg:p-12">
+          {cardsData.map((card, index) => (
+            <Card
+              key={index} // Adicione uma key para cada Card
+              imagem={card.imagem}
+              titulo={card.titulo}
+              subTitulo={card.subTitulo}
+              altLink={card.altLink}
+              inverter={card.inverter}
+              linkButton={card.linkButton}
+            />
+          ))}
+        </div>
+        <SectionTitle
+          notBotao={true}
+          height={"h-[2rem]"}
+          margemy="mb-10"
+          texto={["Público Alvo", null]}
+        />
+
+        <div className="w-full mt-5 mb-32 max-w-7xl justify-between flex flex-wrap gap-8 p-4 sm:p-8 lg:p-12">
+          <CardModel2
+            icon=<EnterpriseIcon css="size-20 fill-preto_primario dark:fill-cinza" />
+            titulo="Empresas de Pequeno, Médio e Grande Porte"
+            descricao="Negócios que buscam otimizar seus processos tecnológicos, implementar novas soluções de TI ou necessitam de suporte especializado para projetos específicos."
+          />
+          <CardModel2
+            icon=<RoctketIcon css="size-20 fill-preto_primario dark:fill-cinza" />
+            titulo="Startups e Empresas de Tecnologia"
+            descricao="Organizações emergentes e inovadoras que
+              necessitam de orientação técnica para desenvolver seus produtos e serviços, bem como estruturar sua infraestrutura de TI."
+          />
+          <CardModel2
+            icon=<GlobeIcon css="size-20 fill-preto_primario dark:fill-cinza" />
+            titulo="Setor Público e Organizações Sem Fins Lucrativos"
+            descricao="Instituições governamentais e ONGs que precisam de soluções tecnológicas eficientes para melhorar sua operação e impacto social."
           />
 
-          {/* sequencia de cards. valores estão acima em um array de objetos */}
-          <div className="p-4 sm:p-8 lg:p-12">
-            {cardsData.map((card, index) => (
-              <Card
-                key={index} // Adicione uma key para cada Card
-                imagem={card.imagem}
-                titulo={card.titulo}
-                subTitulo={card.subTitulo}
-                altLink={card.altLink}
-                inverter={card.inverter}
-                linkButton={card.linkButton}
-              />
-            ))}
-          </div>
+        </div>
+        <div className="w-full mb-14 m-auto flex flex-col justify-center items-center">
+
           <SectionTitle
             notBotao={true}
             height={"h-[2rem]"}
             margemy="mb-10"
-            texto={["Público Alvo", null]}
+            texto={["Depoimentos", null]}
           />
 
-          <div className="w-full mt-5 mb-32 max-w-7xl justify-between flex flex-wrap gap-8 p-4 sm:p-8 lg:p-12">
-            <CardModel2
-              icon=<EnterpriseIcon css="size-20 fill-preto_primario dark:fill-cinza" />
-              titulo="Empresas de Pequeno, Médio e Grande Porte"
-              descricao="Negócios que buscam otimizar seus processos tecnológicos, implementar novas soluções de TI ou necessitam de suporte especializado para projetos específicos."
-            />
-            <CardModel2
-              icon=<RoctketIcon css="size-20 fill-preto_primario dark:fill-cinza" />
-              titulo="Startups e Empresas de Tecnologia"
-              descricao="Organizações emergentes e inovadoras que
-              necessitam de orientação técnica para desenvolver seus produtos e serviços, bem como estruturar sua infraestrutura de TI."
-            />
-            <CardModel2
-              icon=<GlobeIcon css="size-20 fill-preto_primario dark:fill-cinza" />
-              titulo="Setor Público e Organizações Sem Fins Lucrativos"
-              descricao="Instituições governamentais e ONGs que precisam de soluções tecnológicas eficientes para melhorar sua operação e impacto social."
-            />
+          <div className=" w-full px-[10%] mx-16">
+            <Carrocel />
           </div>
+        </div>
+
+        <div className="w-full my-14 mx-auto flex flex-col justify-center items-center">
           <SectionTitle
             notBotao={true}
             height={"h-[2rem]"}
             margemy="mb-10"
             texto={["Perguntas Frequentes", null]}
           />
-
-        {PerguntasFrequentesData.slice(0, visibleCount).map((pergunta, index) => (
-          <PerguntasFrequentes
-            key={index}
-            titulo={pergunta.titulo}
-            texto={pergunta.texto}
-            aberto={pergunta.aberto}
-          />
-        ))}
-         {visibleCount < PerguntasFrequentesData.length && (
-          <div className="my-5">
-            <BotaoOnClick texto={"ver mais"} funcaoOnclick={vermais} />
-          </div>
-        )}
-          <Footer />
+          {PerguntasFrequentesData.slice(0, visibleCount).map((pergunta, index) => (
+            <PerguntasFrequentes
+              key={index}
+              titulo={pergunta.titulo}
+              texto={pergunta.texto}
+              aberto={pergunta.aberto}
+            />
+          ))}
+          {visibleCount < PerguntasFrequentesData.length && (
+            <div className="mb-36 my-5">
+              <BotaoOnClick texto={"ver mais"} funcaoOnclick={vermais} />
+            </div>
+          )}
         </div>
-      </WindowWidthProvider>
-    );
-  };
+
+
+        <Footer />
+      </div>
+    </WindowWidthProvider>
+  );
+};
 
 ConsultoriaPage.propTypes = {};
 

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const PerguntasFrequentes = ({ titulo, texto, aberto }) => {
   return (
-    <div className="space-y-4 w-[80%]">
+    <div className="space-y-4 w-[80%] ">
       <details
         className="rounded-lg my-1 group border-s-4 border-laranja_dark bg-gray-50 p-6 dark:bg-gray-900 [&_summary::-webkit-details-marker]:hidden"
         open={aberto}
