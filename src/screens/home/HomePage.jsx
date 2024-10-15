@@ -60,7 +60,7 @@ export function HomePage() {
         </div>
         <SobreEmpresa />
         <SobreDevs />
-        <EntreEmContato />
+        {/* <EntreEmContato /> */}
         <Footer/>
       </div>
     
