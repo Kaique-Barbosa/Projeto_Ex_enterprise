@@ -21,8 +21,9 @@ import ecommerce from "@/public/img/ecommerce.jpg";
 import { GlobeIcon } from "@/icons/GlobeIcon/GlobeIcon";
 import { EnterpriseIcon } from "@/icons/EnterpriseIcon/EnterpriseIcon";
 import { RoctketIcon } from "@/icons/RocketIcon/RoctketIcon";
-import BotaoLinks from "@/components/botaoLinks/BotaoLinks";
+
 import Carrocel from "@/components/carrocel/Carrocel";
+import FaleConosco from "@/components/faleConosco/FaleConosco";
 
 // const larguraDaTela = useContext(WindowWidthContext);
 
@@ -137,18 +138,24 @@ const ConsultoriaPage = () => {
 
           <div className="w-full mt-5 max-w-7xl justify-between flex flex-wrap gap-8 p-4 sm:p-8 lg:p-12">
             <CardModel2
-              icon={<EnterpriseIcon css="size-20 fill-preto_primario dark:fill-cinza" />}
+              icon={
+                <EnterpriseIcon css="size-20 fill-preto_primario dark:fill-cinza" />
+              }
               titulo="Empresas de Pequeno, Médio e Grande Porte"
               descricao="Negócios que buscam otimizar seus processos tecnológicos, implementar novas soluções de TI ou necessitam de suporte especializado para projetos específicos."
             />
             <CardModel2
-              icon={<RoctketIcon css="size-20 fill-preto_primario dark:fill-cinza" />}
+              icon={
+                <RoctketIcon css="size-20 fill-preto_primario dark:fill-cinza" />
+              }
               titulo="Startups e Empresas de Tecnologia"
               descricao="Organizações emergentes e inovadoras que
               necessitam de orientação técnica para desenvolver seus produtos e serviços, bem como estruturar sua infraestrutura de TI."
             />
             <CardModel2
-              icon={<GlobeIcon css="size-20 fill-preto_primario dark:fill-cinza" />}
+              icon={
+                <GlobeIcon css="size-20 fill-preto_primario dark:fill-cinza" />
+              }
               titulo="Setor Público e Organizações Sem Fins Lucrativos"
               descricao="Instituições governamentais e ONGs que precisam de soluções tecnológicas eficientes para melhorar sua operação e impacto social."
             />
@@ -162,6 +169,8 @@ const ConsultoriaPage = () => {
               height={"h-fit"}
               texto={["Depoimentos", null]}
             />
+          </div>
+          <div className="w-[80%] m-auto">
             <Carrocel />
           </div>
         </div>
@@ -190,6 +199,9 @@ const ConsultoriaPage = () => {
           )}
         </div>
 
+        <FaleConosco/>
+        
+          {/* <EntreEmContato/> */}
         <Footer />
       </div>
     </WindowWidthProvider>

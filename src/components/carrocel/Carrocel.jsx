@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
+import imagem from "@/public/img/logo.png";
 import CardModel3 from "../cardModel3/CardModel3";
 
 function Carrocel({}) {
@@ -48,9 +49,9 @@ function Carrocel({}) {
       className=""
     >
       {dadosPerguntas.map((card, index) => (
-        <SwiperSlide className="mb-12">
+        <SwiperSlide key={index} className="mb-12">
           <CardModel3
-            key={index}
+            logo={imagem}
             titulo={card.titulo}
             subtitulo={card.subtitulo}
             mensagem={card.mensagem}
