@@ -10,11 +10,12 @@ import locacao from "@/public/img/imoveis.jpg";
 import ecommerce from "@/public/img/ecommerce.jpg";
 import Sobre from "@/components/sobre/Sobre";
 import SobreDevs from "@/components/sobreDevs/SobreDevs";
-import { Footer } from "@/components/footer/Footer";
+import { EntreEmContato } from "@/components/entreEmContato/EntreEmContato";
+import Footer from "@/components/footer/Footer";
 
 export function HomePage() {
   return (
-      <div className="flex flex-col items-center  justify-center  relative bg-[--cores-container-fundo] w-[100%]">
+      <div className="flex flex-col items-center justify-center w-full">
         {/* <HomePage/> */}
         <Header />
 
@@ -59,6 +60,7 @@ export function HomePage() {
         </div>
         <SobreEmpresa />
         <SobreDevs />
+        <EntreEmContato />
         <Footer/>
       </div>
     

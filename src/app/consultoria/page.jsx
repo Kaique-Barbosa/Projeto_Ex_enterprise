@@ -7,9 +7,10 @@ import { Header } from "@/components/header/Header";
 import { WindowWidthProvider } from "@/app/WindowWidthContext";
 import CardModel2 from "@/components/cardModel2/cardModel2";
 import SectionWithImg from "@/components/sectionWithImg/SectionWithImg";
-import { Footer } from "@/components/footer/Footer";
+import { EntreEmContato } from "@/components/entreEmContato/EntreEmContato";
 import PerguntasFrequentes from "@/components/perguntasFrequentes/PerguntasFrequentes";
 import BotaoOnClick from "@/components/botaoOnClick/BotaoOnClick";
+import Footer from "@/components/footer/Footer";
 
 // importação de imagens
 import logo from "@/public/img/logo.png";

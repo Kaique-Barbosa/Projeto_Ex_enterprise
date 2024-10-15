@@ -23,7 +23,12 @@ module.exports = {
       },
       boxShadow: {
         temaEscuro: "2px 2px 8px 1px rgba(235,117,0,.5);",
-      }
+      },
+      maxWidth: {
+        '7xl': '80rem',
+        '8xl': '88rem',
+        '9xl': '96rem',
+      },
     },
   },
   plugins: [],

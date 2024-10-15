@@ -1,52 +1,39 @@
 import React from "react";
-import { Facebook1 } from "@/icons/Facebook1/Facebook1";
-import { Instagram1 } from "@/icons/Instagram1/Instagram1";
-import { Linkedin1 } from "@/icons/Linkedin1/Linkedin1";
-import { IconWhatsapp } from "@/icons/IconWhatsapp/IconWhatsapp";
-import Link from "next/link";
+import Image from "next/image";
+import logo from "@/public/img/logo.png";
+import { appNavigation, appSocialMedias } from "@/app/links";
+import NavLinks from "@/components/navLinks/NavLinks";
 
-export const Footer = () => {
+export default function Footer() {
   return (
-    <div className="flex flex-col w-full max-w-7xl items-center justify-center gap-8 px-4 py-8 leading-tight tracking-wider">
-      <div className="text-center">
-        <h2 className="text-6xl text-laranja_light dark:text-laranja_dark mb-4">Contato</h2>
-        <p className="text-lg">
-          Nossos canais de atendimento e contato para resolução de duvidas
+    <div className="w-full max-w-screen-2xl p-4 sm:p-8 lg-12 flex flex-col justify-center gap-6">
+      <div className="flex flex-1 items-center justify-center gap-4">
+        <Image src={logo} className="size-12" alt="logo" />
+        <p className="font-semibold text-2xl">Ex Enterprise</p>
+      </div>
+      <div className="flex flex-col xs:flex-wrap xs:flex-row gap-4 items-center justify-center">
+        {appNavigation.map((item, index) => (
+          <NavLinks key={index} title={item.title} path={item.path} />
+        ))}
+      </div>
+      <div className="flex flex-wrap items-center justify-center gap-[1rem_2rem]">
+        <p className="text-lg font-semibold text-laranja_light dark:text-laranja_dark">
+          Siga Nós
         </p>
+
+        <div className="flex gap-6">
+          {appSocialMedias.map((item, index) => (
+            <a
+              key={index}
+              href={item.href}
+              className="size-6 hover:text-laranja_light dark:hover:text-laranja_dark"
+            >
+              {item.icon} 
+            </a>
+          ))}
+        </div>
       </div>
-      <div className="flex flex-wrap w-full items-center justify-center gap-4 p-4 relative self-stretch">
-        <Link
-          href={"/"}
-          className="flex flex-1 max-w-48 items-center justify-around gap-4 px-4 py-3 hover:text-laranja_light dark:hover:text-laranja_dark"
-        >
-          <IconWhatsapp className="text-inherit fill-current" />
-          WHATSAPP
-        </Link>
-
-        <Link
-          href={"/"}
-          className="flex flex-1 max-w-48  items-center justify-around gap-4 px-4 py-3 hover:text-laranja_light dark:hover:text-laranja_dark"
-        >
-          <Facebook1 className="text-inherit fill-current" />
-          FACEBOOK
-        </Link>
-
-        <Link
-          href={"/"}
-          className="flex flex-1 max-w-48  items-center justify-around gap-4 px-4 py-3 hover:text-laranja_light dark:hover:text-laranja_dark"
-        >
-          <Instagram1 className="text-inherit fill-current w-full m-auto" />
-          INSTRAGRAM
-        </Link>
-
-        <Link
-          href={"/"}
-          className="flex flex-1 max-w-48 items-center justify-around gap-4 px-4 py-3 hover:text-laranja_light dark:hover:text-laranja_dark"
-        >
-          <Linkedin1 className="text-inherit fill-current" />
-          LINKEDIN
-        </Link>
-      </div>
+      <p className="text-center text-laranja_light dark:text-laranja_dark">Ex enterprise Copyright © 2024</p>
     </div>
   );
-};
+}
