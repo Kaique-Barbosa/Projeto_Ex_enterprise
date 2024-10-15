@@ -1,79 +1,64 @@
 "use client";
-import { Pagination, A11y } from 'swiper/modules';
+import { Pagination, A11y } from "swiper/modules";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
+import CardModel3 from "../cardModel3/CardModel3";
 
+function Carrocel({}) {
+  const dadosPerguntas = [
+    {
+      titulo: "titulo teste",
+      subtitulo: "subtitulo",
+      mensagem: "dwadwagrsgsergdrgdrghfthdt",
+    },
+    {
+      titulo: "titulo teste",
+      subtitulo: "subtitulo",
+      mensagem: "dwadwagrsgsergdrgdrghfthdt",
+    },
+    {
+      titulo: "titulo teste",
+      subtitulo: "subtitulo",
+      mensagem: "dwadwagrsgsergdrgdrghfthdt",
+    },
+  ];
 
-import CardModel3 from '../cardModel3/CardModel3';
-
-function Carrocel({ }) {
-    const dadosPerguntas = [
-        {
-            titulo: "titulo teste",
-            subtitulo: "subtitulo",
-            mensagem: "dwadwagrsgsergdrgdrghfthdt"
+  return (
+    <Swiper
+      modules={[Pagination, A11y]}
+      spaceBetween={10}
+      pagination={{ clickable: true }}
+      breakpoints={{
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
         },
-        {
-            titulo: "titulo teste",
-            subtitulo: "subtitulo",
-            mensagem: "dwadwagrsgsergdrgdrghfthdt"
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 50,
         },
-        {
-            titulo: "titulo teste",
-            subtitulo: "subtitulo",
-            mensagem: "dwadwagrsgsergdrgdrghfthdt"
-        },
-    ]
+      }}
+      className=""
+    >
+      {dadosPerguntas.map((card, index) => (
+        <SwiperSlide className="mb-12">
+          <CardModel3
+            key={index}
+            titulo={card.titulo}
+            subtitulo={card.subtitulo}
+            mensagem={card.mensagem}
+          />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
+}
 
-
-    return (
-        <Swiper
-            // install Swiper modules
-            modules={[Pagination, A11y]}
-            spaceBetween={10}
-            // slidesPerView={1}
-            // navigation={{ clickable: true }}
-            pagination={{ clickable: true }}
-
-
-
-            breakpoints={{
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 50,
-                },
-            }}
-
-            className=''
-        >
-
-
-            {dadosPerguntas.map((card, index) => (
-                <SwiperSlide>
-                    <CardModel3
-                        key={index}
-                        titulo={card.titulo}
-                        subtitulo={card.subtitulo}
-                        mensagem={card.mensagem}
-                    />
-                </SwiperSlide>
-            ))}
-
-
-
-        </Swiper>
-    );
-};
-
-export default Carrocel
+export default Carrocel;
