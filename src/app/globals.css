@@ -7,3 +7,22 @@
     all: unset;
   }
 }
+
+span.swiper-pagination-bullet {
+  @apply bg-black dark:bg-cinza size-3
+}
+
+span.swiper-pagination-bullet-active {
+  @apply bg-laranja_light dark:bg-laranja_dark size-3
+}
+
+.card {
+  container-type: inline-size;
+  container-name: card-container;
+}
+
+@container card-container (width > 320px) {
+  .card-header {
+    @apply flex-row justify-start text-start;
+  }
+}

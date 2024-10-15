@@ -15,14 +15,14 @@ module.exports = {
         cinza: "#E3E4E6",
         dourado: "#F0A90E",
         laranja_dark: "#EB7500",
-        laranja_light: "#F64C03"
+        laranja_light: "#F64C03",
       },
       screens: {
         xs: "450px",
-        'mobile': '375px',
+        '2xs': "320px",
       },
-      boxShadow:{
-        'temaEscuro': '2px 2px 8px 1px rgba(235,117,0,.5);'
+      boxShadow: {
+        temaEscuro: "2px 2px 8px 1px rgba(235,117,0,.5);",
       }
     },
   },
