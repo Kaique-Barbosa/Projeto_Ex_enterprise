@@ -110,11 +110,16 @@ const ConsultoriaPage = () => {
 
         {/* sequencia de cards. valores estão acima em um array de objetos */}
         <div className="container max-w-9xl flex flex-col items-center gap-12 my-12">
-          <SectionTitle
-            notBotao={true}
-            height="h-fit"
-            texto={["Veja o que oferecemos em", "soluções para TI"]}
-          />
+          <div>
+            <Heading
+              type="h2"
+              css="text-center text-pretty mb-4"
+              content={[{ text: "Nosso serviços" }]}
+            />
+            <p className="text-lg text-laranja_light dark:text-laranja_dark">
+              Veja o que oferecemos em soluções para TI
+            </p>
+          </div>
           {cardsData.map((card, index) => (
             <Card
               key={index} // Adicione uma key para cada Card
@@ -128,10 +133,10 @@ const ConsultoriaPage = () => {
           ))}
         </div>
 
-        <div className="my-8">
+        <div className="container my-12 max-w-7xl">
           <Heading
             type="h2"
-            css="text-center text-pretty"
+            css="text-center text-pretty mb-8"
             content={[
               {
                 text: "Público alvo",
@@ -139,7 +144,7 @@ const ConsultoriaPage = () => {
             ]}
           />
 
-          <div className="w-full mt-5 max-w-7xl justify-between flex flex-wrap gap-8 p-4 sm:p-8 lg:p-12">
+          <div className="w-full justify-between flex flex-wrap gap-8 p-4 my-12">
             <CardModel2
               icon={
                 <EnterpriseIcon css="size-20 fill-preto_primario dark:fill-cinza" />
@@ -165,25 +170,26 @@ const ConsultoriaPage = () => {
           </div>
         </div>
 
-        <div className="w-full mb-14">
-          <div className="w-full p-4 xs:p-8 lg:p-12">
-            <SectionTitle
-              notBotao={true}
-              height={"h-fit"}
-              texto={["Depoimentos", null]}
-            />
-          </div>
-          <div className="w-[80%] m-auto">
+        <div className="container max-w-9xl my-12">
+          <Heading
+            type="h2"
+            css="text-center text-pretty mb-12"
+            content={[{ text: "Nossos Clientes" }]}
+          />
+          <div className="w-full">
             <Carrocel />
           </div>
         </div>
 
-        <div className="w-full my-14 mx-auto flex flex-col justify-center items-center">
-          <SectionTitle
-            notBotao={true}
-            height={"h-[2rem]"}
-            margemy="mb-10"
-            texto={["Perguntas Frequentes", null]}
+        <div className="container max-w-9xl my-12 flex flex-col justify-center items-center">
+          <Heading
+            type="h2"
+            css="text-center text-pretty mb-8"
+            content={[
+              {
+                text: "Perguntas Frequentes",
+              },
+            ]}
           />
           {PerguntasFrequentesData.slice(0, visibleCount).map(
             (pergunta, index) => (
