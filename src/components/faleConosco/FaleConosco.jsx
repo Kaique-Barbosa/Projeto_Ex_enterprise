@@ -1,34 +1,34 @@
-import React from 'react'
+import React from "react";
 import BotaoLinks from "@/components/botaoLinks/BotaoLinks";
 
 const FaleConosco = () => {
   return (
-    <div className="flex gap-4 flex-col w-[80%]  items-center justify-center p-5 relative ">
-         
-          <div className="  w-full  font-semibold text-laranja_dark text-7xl ">
-            Fale Conosco
-          </div>
+    <div className="container flex gap-4 flex-col max-w-9xl items-center justify-center">
+      <h2 className="font-semibold text-center text-laranja_light dark:text-laranja_dark text-6xl ">
+        Fale Conosco
+      </h2>
 
-          <div className="flex  text-black dark:text-white items-center justify-center w-full p-5 g-5 ">
-
-            <div className="flex  w-full ">
-              <p className=" font-fontes-fonte-normal-regular font-medium ">
-                Quer conversar com os noosos consultores?
-                <br />
-                Quer conhecer mais sobre os nossos servicos?
-                <br />
-                Ainda têm mais duvidas sobre a nossa consultoria?
-                <br />
-                Entre em contato pelo nosso formulário de contato.
-              </p>
-            </div>
-
-            <div className="w-[30%]   flex items-center justify-center rounded-lg ">
-              <BotaoLinks href="/" texto="entre em contato"  alt={"botão para página de contato"} css={"w-full text-center"} />
-            </div>
-          </div>
+      <div className="flex flex-col text-center md:flex-row md:text-start w-full max-w-5xl items-center justify-between py-4 gap-6">
+        <div className="flex-1">
+          <p className="font-medium text-balance">
+            Quer conversar com os noosos consultores?
+            <br />
+            Quer conhecer mais sobre os nossos servicos?
+            <br />
+            Ainda têm mais duvidas sobre a nossa consultoria?
+            <br />
+            Entre em contato pelo nosso formulário de contato.
+          </p>
         </div>
-  )
-}
 
-export default FaleConosco
+        <BotaoLinks
+          href="/"
+          texto="Entre em contato"
+          alt={"botão para página de contato"}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default FaleConosco;

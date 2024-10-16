@@ -26,8 +26,15 @@ module.exports = {
       },
       maxWidth: {
         '7xl': '80rem',
-        '8xl': '88rem',
+        '8xl': '90rem',
         '9xl': '96rem',
+      },
+      container: {
+        padding: {
+          DEFAULT: '1rem',
+          sm: '2rem',
+          lg: '3rem',
+        }
       },
     },
   },

@@ -16,7 +16,7 @@ export default function Footer() {
           <NavLinks key={index} title={item.title} path={item.path} />
         ))}
       </div>
-      <div className="flex flex-col flex-wrap items-center justify-center gap-[1rem_2rem]">
+      <div className="flex flex-col items-center justify-center gap-[1rem_2rem]">
         <p className="text-lg font-semibold text-laranja_light dark:text-laranja_dark">
           Siga Nós
         </p>
