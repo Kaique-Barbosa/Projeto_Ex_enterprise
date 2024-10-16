@@ -36,7 +36,7 @@ export const Card = ({
 
   return (
     <div
-      className={`${css} bg-[#cccccc] shadow-2xl dark:shadow-temaEscuro  dark:bg-preto_secondario dark:bg-opacity-90 bg-opacity-60  mb-12 flex min-h-[20em] max-w-7xl items-center justify-center rounded-lg tracking-widest leading-tighter
+      className={`${css} bg-[#cccccc] shadow-2xl dark:shadow-temaEscuro  dark:bg-preto_secondario dark:bg-opacity-90 bg-opacity-60 flex min-h-[20em] max-w-7xl items-center justify-center rounded-lg tracking-widest leading-tighter
       data-responsividade-mode= ${larguraDaTela}
       ${
         larguraDaTela === "tablet" || larguraDaTela === "mobile" ? "mx-8" : ""

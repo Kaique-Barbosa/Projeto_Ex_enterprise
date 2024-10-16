@@ -24,6 +24,7 @@ import { RoctketIcon } from "@/icons/RocketIcon/RoctketIcon";
 
 import Carrocel from "@/components/carrocel/Carrocel";
 import FaleConosco from "@/components/faleConosco/FaleConosco";
+import Heading from "@/components/Heading/Heading";
 
 // const larguraDaTela = useContext(WindowWidthContext);
 
@@ -107,14 +108,13 @@ const ConsultoriaPage = () => {
           </p>
         </SectionWithImg>
 
-        <SectionTitle
-          notBotao={true}
-          height="h-fit"
-          texto={["Veja o que oferecemos em", "soluções para TI"]}
-        />
-
         {/* sequencia de cards. valores estão acima em um array de objetos */}
-        <div className="p-4 sm:p-8 lg:p-12">
+        <div className="container max-w-9xl flex flex-col items-center gap-12 my-12">
+          <SectionTitle
+            notBotao={true}
+            height="h-fit"
+            texto={["Veja o que oferecemos em", "soluções para TI"]}
+          />
           {cardsData.map((card, index) => (
             <Card
               key={index} // Adicione uma key para cada Card
@@ -129,11 +129,14 @@ const ConsultoriaPage = () => {
         </div>
 
         <div className="my-8">
-          <SectionTitle
-            notBotao={true}
-            height="h-fit"
-            margemy="mb-10"
-            texto={["Público Alvo", null]}
+          <Heading
+            type="h2"
+            css="text-center text-pretty"
+            content={[
+              {
+                text: "Público alvo",
+              },
+            ]}
           />
 
           <div className="w-full mt-5 max-w-7xl justify-between flex flex-wrap gap-8 p-4 sm:p-8 lg:p-12">
@@ -199,9 +202,9 @@ const ConsultoriaPage = () => {
           )}
         </div>
 
-        <FaleConosco/>
-        
-          {/* <EntreEmContato/> */}
+        <FaleConosco />
+
+        {/* <EntreEmContato/> */}
         <Footer />
       </div>
     </WindowWidthProvider>
