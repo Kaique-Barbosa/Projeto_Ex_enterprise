@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export const EntreEmContato = () => {
   return (
-    <div className="flex flex-col w-full max-w-7xl items-center justify-center gap-8 px-4 py-8 leading-tight tracking-wider">
+    <section className="flex flex-col w-full max-w-7xl items-center justify-center gap-8 px-4 py-8 leading-tight tracking-wider">
       <div className="text-center">
         <h2 className="text-6xl text-laranja_light dark:text-laranja_dark mb-4">Contato</h2>
         <p className="text-lg">
@@ -47,6 +47,6 @@ export const EntreEmContato = () => {
           LINKEDIN
         </Link>
       </div>
-    </div>
+    </section>
   );
 };

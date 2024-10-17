@@ -10,7 +10,7 @@ export default function SobreEmpresa() {
   const larguraDaTela = useContext(WindowWidthContext);
   return (
     <div
-      className={`w-full my-[3%]  p-4 sm:p-8 md:p-12 flex flex-row max-w-screen-2xl items-center justify-center tracking-wide`}
+      className={`container my-12 flex flex-row max-w-screen-2xl items-center justify-center tracking-wide`}
     >
       <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-8">
         <div className="flex flex-col items-center justify-center gap-4 flex-1 p-4">

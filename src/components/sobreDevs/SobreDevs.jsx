@@ -1,16 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import Image from "next/image";
-import { WindowWidthContext } from "@/app/WindowWidthContext";
 import BotaoLinks from "../botaoLinks/BotaoLinks";
-// imagend :
 import devs1 from "@/public/img/devs1.png";
 import devs2 from "@/public/img/devs2.png";
 
 export default function SobreDevs() {
-  const larguraDaTela = useContext(WindowWidthContext);
   return (
     <div
-      className={`w-full my-[3%] p-4 sm:p-8 md:p-12 flex flex-row max-w-screen-2xl items-center justify-center tracking-wide`}
+      className={`container my-12 flex flex-row max-w-screen-2xl items-center justify-center tracking-wide`}
     >
       <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-8">
         <div className="flex flex-col items-center justify-center gap-4 flex-1 p-4">

@@ -46,7 +46,9 @@ span.swiper-pagination-bullet-active {
 }
 
 @container card-container (width > 320px) {
-  .card-header {
+  .card-align-start {
     @apply flex-row justify-start text-start;
   }
 }
+
+@containe

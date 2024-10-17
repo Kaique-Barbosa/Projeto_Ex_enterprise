@@ -1,4 +1,5 @@
 "use client";
+
 import { Header } from "@/components/header/Header";
 import SectionTitle from "@/components/sectionTitle/SectionTitle";
 import { Card } from "@/components/card/Card";
@@ -10,13 +11,11 @@ import locacao from "@/public/img/imoveis.jpg";
 import ecommerce from "@/public/img/ecommerce.jpg";
 import Sobre from "@/components/sobre/Sobre";
 import SobreDevs from "@/components/sobreDevs/SobreDevs";
-import { EntreEmContato } from "@/components/entreEmContato/EntreEmContato";
 import Footer from "@/components/footer/Footer";
 
 export function HomePage() {
   return (
       <div className="flex flex-col items-center justify-center w-full">
-        {/* <HomePage/> */}
         <Header />
 
         <SectionTitle texto={["Conheça a ", "Ex Enterprise"]} />
@@ -32,7 +31,9 @@ export function HomePage() {
           </p>
         </Sobre>
 
-        <div>
+        <div className="container max-w-9xl items-center flex flex-col gap-8 my-12">
+          <h2 className="text-center">Veja os nossos serviços</h2>
+
           <Card
             imagem={consultoria}
             titulo="Consultoria"
@@ -60,7 +61,6 @@ export function HomePage() {
         </div>
         <SobreEmpresa />
         <SobreDevs />
-        {/* <EntreEmContato /> */}
         <Footer/>
       </div>
     

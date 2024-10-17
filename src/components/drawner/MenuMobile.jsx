@@ -60,7 +60,7 @@ const MenuMobile = () => {
             className="bg-cinza dark:bg-preto_secondario flex items-center gap-4"
           >
             <Image src={logo} alt="Logo da empresa" className="size-12"/>
-            <h2>Ex Enterprise</h2>
+            <p className="text-lg">Ex Enterprise</p>
           </DrawerHeader>
           <DrawerBody className="bg-cinza dark:bg-preto_secondario flex flex-col gap-4">
             <Link
