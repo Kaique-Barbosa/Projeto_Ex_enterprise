@@ -8,10 +8,15 @@ const ThemeButton = () => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // Verifica se o código está rodando no cliente (navegador)
+    // Verpoŕemifica se o código está rodando no cliente (navegador)
     if (typeof window !== "undefined") {
       const theme = localStorage.getItem("chakra-ui-color-mode");
-      if (theme === "dark") {
+      
+      if(theme === null) {
+        localStorage.setItem("chakra-ui-color-mode", "dark");
+        document.documentElement.classList.add("dark");
+        setIsDark(true);
+      } else if (theme === "dark") {
         document.documentElement.classList.add("dark");
         setIsDark(true);
       } else {
