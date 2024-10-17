@@ -1,8 +1,7 @@
 // "Use client"
-import React, { useContext } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
-import { WindowWidthContext } from "@/app/WindowWidthContext";
 import BotaoLinks from "@/components/botaoLinks/BotaoLinks";
 
 export const Card = ({
@@ -15,8 +14,6 @@ export const Card = ({
   naoUsarBotao, //(prop para não usar o botao "acessar", o default é com botao)
   css,
 }) => {
-  const larguraDaTela = useContext(WindowWidthContext);
-
   // Função condicional para renderizar o botão
   const botao = () => {
     if (naoUsarBotao) {

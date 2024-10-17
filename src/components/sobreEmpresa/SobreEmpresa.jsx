@@ -3,11 +3,9 @@ import Image from "next/image";
 import consultoria from "@/public/img/consultoria.jpg";
 import locacao from "@/public/img/imoveis.jpg";
 import ecommerce from "@/public/img/ecommerce.jpg";
-import { WindowWidthContext } from "@/app/WindowWidthContext";
 import BotaoLinks from "../botaoLinks/BotaoLinks";
 
 export default function SobreEmpresa() {
-  const larguraDaTela = useContext(WindowWidthContext);
   return (
     <div
       className={`container my-12 flex flex-row max-w-screen-2xl items-center justify-center tracking-wide`}
