@@ -49,7 +49,7 @@ function Carrocel({}) {
       className=""
     >
       {dadosPerguntas.map((card, index) => (
-        <SwiperSlide key={index} className="mb-12">
+        <SwiperSlide key={index} className="mb-12 p-3">
           <CardModel3
             logo={imagem}
             titulo={card.titulo}
