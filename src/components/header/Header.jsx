@@ -1,26 +1,19 @@
 "use client";
-import React, { useContext, useState } from "react";
-import Link from "next/link";
+import React from "react";
 import Image from "next/image";
-import { usePathname } from "next/navigation"; // Substitui o useRouter por usePathname
-import PropTypes from "prop-types";
-import { WindowWidthContext } from "@/app/WindowWidthContext";
 import logo from "@/public/img/logo.png";
-
+import { appNavigation } from "@/app/links";
 import MenuMobile from "../drawner/MenuMobile";
 import ThemeButton from "../themeButton/ThemeButton";
+import NavLinks from "../navLinks/NavLinks";
+
 export const Header = () => {
-  const currentRoute = usePathname(); // Obtém o caminho da URL atual
-
-  const larguraDaTela = useContext(WindowWidthContext);
-  console.log(larguraDaTela);
-
+  
   return (
-    <div
-      className="flex items-center  justify-center w-full font-bold"
-      data-navbar-mode={larguraDaTela}
+    <header
+      className="flex items-center justify-center w-full font-bold"
     >
-      <div className="w-full max-w-[1440px] flex items-center px-8 py-2 justify-between">
+      <div className="w-full max-w-8xl flex items-center px-8 py-2 justify-between">
         <Image
           priority
           src={logo}
@@ -28,62 +21,10 @@ export const Header = () => {
           className="h-16 w-16"
         />
         <div className="flex gap-8 items-center">
-          <nav className="hidden md:flex items-center gap-2 justify-center text-cores-fonte">
-            <div>
-              <Link
-                aria-disabled={currentRoute === "/"}
-                href={"/"}
-                className={` py-2 px-2 rounded-sm  ${
-                  currentRoute === "/" ? "text-laranja_light dark:text-laranja_dark" : "hover:text-branco hover:bg-laranja_light dark:hover:bg-laranja_dark"
-                }`}
-              >
-                HOME
-              </Link>
-            </div>
-            <div>
-              <Link
-                aria-disabled={currentRoute === "/imoveis"}
-                href={"/imoveis"}
-                className={`py-2 px-2 rounded-sm ${
-                  currentRoute === "/imoveis" ? "text-laranja_light dark:text-laranja_dark" : "hover:text-branco hover:bg-laranja_light dark:hover:bg-laranja_dark"
-                }`}
-              >
-                IMÓVEIS
-              </Link>
-            </div>
-            <div>
-              <Link
-                aria-disabled={currentRoute === "/consultoria"}
-                href={"/consultoria"}
-                className={`py-2 px-2 rounded-sm ${
-                  currentRoute === "/consultoria" ? "text-laranja_light dark:text-laranja_dark" : "hover:text-branco hover:bg-laranja_light dark:hover:bg-laranja_dark"
-                }`}
-              >
-                CONSULTORIA
-              </Link>
-            </div>
-            <div>
-              <Link
-                aria-disabled={currentRoute === "/e-commerce"}
-                href={"/e-commerce"}
-                className={`py-2 px-2 rounded-sm  ${
-                  currentRoute === "/e-commerce" ? "text-laranja_light dark:text-laranja_dark" : "hover:text-branco hover:bg-laranja_light dark:hover:bg-laranja_dark"
-                }`}
-              >
-                E-COMMERCE
-              </Link>
-            </div>
-            <div>
-              <Link
-                aria-disabled={currentRoute === "/ebooks"}
-                href={"/ebooks"}
-                className={`py-2 px-2 rounded-sm  ${
-                  currentRoute === "/ebooks" ? "text-laranja_light dark:text-laranja_dark" : "hover:text-branco hover:bg-laranja_light dark:hover:bg-laranja_dark"
-                }`}
-              >
-                E-BOOKS
-              </Link>
-            </div>
+          <nav className="hidden md:flex items-center gap-2 justify-center">
+            {appNavigation.map((link) => (
+              <NavLinks key={link.title} title={link.title} path={link.path} />
+            ))}
           </nav>
           <ThemeButton />
           <div className="block md:hidden">
@@ -91,11 +32,6 @@ export const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
-};
-
-Header.propTypes = {
-  className: PropTypes.string,
-  logoLogo: PropTypes.string,
 };

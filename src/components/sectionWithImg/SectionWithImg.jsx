@@ -5,11 +5,11 @@ import Image from "next/image";
 // usa o children para inserir qualquer conteudo dentro da página
 const SectionWithImg = ({ children, title, imgSrc, imgAlt }) => {
   return (
-    <section className="h-fit max-w-7xl text-cores-fonte flex flex-col md:flex-row text-center items-center justify-center p-4 sm:p-8 md:p-12 gap-8 tracking-wide">
+    <section className="h-fit container max-w-9xl flex flex-col md:flex-row text-center items-center justify-center tracking-wide my-12">
       <div className="flex-1 w-full max-h-[30rem]">
         <Image
           src={imgSrc}
-          className="w-full max-h-[30rem] object-cove rounded-lg"
+          className="w-full max-h-[30rem] object-cover rounded-lg"
           alt={imgAlt}
         />
       </div>

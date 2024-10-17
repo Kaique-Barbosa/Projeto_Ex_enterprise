@@ -6,7 +6,7 @@ import NavLinks from "@/components/navLinks/NavLinks";
 
 export default function Footer() {
   return (
-    <div className="w-full max-w-screen-2xl p-4 sm:p-8 lg-12 flex flex-col justify-center gap-6">
+    <footer className="container mt-12 max-w-screen-2xl py-6 flex flex-col justify-center gap-6">
       <div className="flex flex-1 items-center justify-center gap-4">
         <Image src={logo} className="size-12" alt="logo" />
         <p className="font-semibold text-2xl">Ex Enterprise</p>
@@ -34,6 +34,6 @@ export default function Footer() {
         </div>
       </div>
       <p className="text-center text-laranja_light dark:text-laranja_dark">Ex enterprise Copyright © 2024</p>
-    </div>
+    </footer>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import PropTypes from "prop-types";
 
 export default function NavLinks({ title, path }) {
 
@@ -20,3 +21,8 @@ export default function NavLinks({ title, path }) {
     </Link>
   );
 }
+
+NavLinks.propTypes = {
+  title: PropTypes.string,
+  path: PropTypes.string,
+};

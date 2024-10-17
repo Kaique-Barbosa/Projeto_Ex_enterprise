@@ -1,19 +1,20 @@
 "use client";
-import { React, useContext, useState } from "react";
-import PropTypes from "prop-types";
+import { React, useState } from "react";
+
+//importação de componentes
 import SectionTitle from "@/components/sectionTitle/SectionTitle";
 import { Card } from "@/components/card/Card";
 import { Header } from "@/components/header/Header";
-import { WindowWidthProvider } from "@/app/WindowWidthContext";
 import CardModel2 from "@/components/cardModel2/cardModel2";
 import SectionWithImg from "@/components/sectionWithImg/SectionWithImg";
-import { EntreEmContato } from "@/components/entreEmContato/EntreEmContato";
 import PerguntasFrequentes from "@/components/perguntasFrequentes/PerguntasFrequentes";
 import BotaoOnClick from "@/components/botaoOnClick/BotaoOnClick";
 import Footer from "@/components/footer/Footer";
+import Carrocel from "@/components/carrocel/Carrocel";
+import FaleConosco from "@/components/faleConosco/FaleConosco";
+import Heading from "@/components/Heading/Heading";
 
-// importação de imagens
-import logo from "@/public/img/logo.png";
+// importação de imagens e logos
 import consultoria from "@/public/img/consultoria.jpg";
 import consultoria2 from "@/public/img/consultoria2.jpg";
 import locacao from "@/public/img/imoveis.jpg";
@@ -21,12 +22,6 @@ import ecommerce from "@/public/img/ecommerce.jpg";
 import { GlobeIcon } from "@/icons/GlobeIcon/GlobeIcon";
 import { EnterpriseIcon } from "@/icons/EnterpriseIcon/EnterpriseIcon";
 import { RoctketIcon } from "@/icons/RocketIcon/RoctketIcon";
-
-import Carrocel from "@/components/carrocel/Carrocel";
-import FaleConosco from "@/components/faleConosco/FaleConosco";
-import Heading from "@/components/Heading/Heading";
-
-// const larguraDaTela = useContext(WindowWidthContext);
 
 // INICIO -------------- area dos dados dos componentes ------------------
 const cardsData = [
@@ -89,7 +84,6 @@ const ConsultoriaPage = () => {
   };
 
   return (
-    <WindowWidthProvider>
       <div className="flex flex-col items-center justify-center w-full">
         <Header />
 
@@ -133,7 +127,7 @@ const ConsultoriaPage = () => {
           ))}
         </div>
 
-        <div className="container my-12 max-w-7xl">
+        <div className="container my-12 max-w-9xl">
           <Heading
             type="h2"
             css="text-center text-pretty mb-8"
@@ -209,11 +203,8 @@ const ConsultoriaPage = () => {
         </div>
 
         <FaleConosco />
-
-        {/* <EntreEmContato/> */}
         <Footer />
       </div>
-    </WindowWidthProvider>
   );
 };
 
