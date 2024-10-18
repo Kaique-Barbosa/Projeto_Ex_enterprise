@@ -1,8 +1,16 @@
+import Image from 'next/image'
 import React from 'react'
 
 const CardModel4 = () => {
   return (
-    <div>CardModel4</div>
+    <div>
+      <div className="">
+          <Image src={""} alt='' />
+      </div>
+      <div className="">
+
+      </div>
+    </div>
   )
 }
 
