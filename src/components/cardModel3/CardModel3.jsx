@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const CardModel3 = ({ logo, titulo, subtitulo, mensagem }) => {
   return (
-    <div className="card w-full p-4 rounded-lg bg-cinza dark:bg-preto_secondario">
+    <div className="card w-full p-4 rounded-lg bg-cinza dark:bg-preto_secondario shadow-neutro">
       <div className="card-align-start flex flex-col items-center text-center justify-center gap-6 mb-6">
         <Image className="w-14 rounded-full" src={logo} alt="logo" />
         <div>

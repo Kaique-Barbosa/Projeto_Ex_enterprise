@@ -13,6 +13,7 @@ module.exports = {
         preto_secondario: "#111111",
         branco: "#FFFFFF",
         cinza: "#E3E4E6",
+        cinza_neutro: "#999999",
         dourado: "#F0A90E",
         laranja_dark: "#EB7500",
         laranja_light: "#F64C03",
@@ -22,7 +23,8 @@ module.exports = {
         '2xs': "320px",
       },
       boxShadow: {
-        temaEscuro: "2px 2px 8px 1px rgba(235,117,0,.5);",
+        temaEscuro: "3px 3px 12px 1px rgba(235,117,0,.5);",
+        neutro: "3px 3px 12px 3px rgb(62, 60, 60, .5);",
       },
       maxWidth: {
         '7xl': '80rem',
