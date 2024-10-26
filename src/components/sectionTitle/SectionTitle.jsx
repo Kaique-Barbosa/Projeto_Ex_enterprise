@@ -26,13 +26,12 @@ const Session = ({ texto, notBotao, margemy, height }) => {
 
   return (
     <div
-      className={` ${height || "h-[calc(90vh-80px)]"}  ${
-        margemy || "mt-[8%]"
-      } flex flex-col gap-2 relative justify-center items-center `}
+      className={` ${height || "h-[100dvh]"}
+       flex flex-col gap-2 justify-center items-center pt-20 `}
     >
       <div
         className={
-          " !font-bold w-full flex items-center justify-center p-4 relative flex-1 self-stretch  grow"
+          "w-full flex items-center justify-center flex-1 self-stretch"
         }
       >
         <h1 className="text-center tracking-wider leading-tight text-4xl sm:text-5xl">
@@ -42,7 +41,7 @@ const Session = ({ texto, notBotao, margemy, height }) => {
           </strong>
         </h1>
       </div>
-      <div className="pb-8">{botao()}</div>
+      <div className="">{botao()}</div>
     </div>
   );
 };
