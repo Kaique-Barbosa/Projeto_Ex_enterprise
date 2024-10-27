@@ -25,6 +25,7 @@ module.exports = {
       boxShadow: {
         temaEscuro: "3px 3px 12px 1px rgba(235,117,0,.5);",
         neutro: "3px 3px 12px 3px rgb(62, 60, 60, .5);",
+        neutro_sm: "1px 1px 3px 1px rgb(62, 60, 60, .5);",
       },
       maxWidth: {
         '7xl': '80rem',
