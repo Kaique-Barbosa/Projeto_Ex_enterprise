@@ -7,6 +7,8 @@ import MenuMobile from "../drawner/MenuMobile";
 import ThemeButton from "../themeButton/ThemeButton";
 import NavLinks from "../navLinks/NavLinks";
 
+const headerNavigation = appNavigation.filter((link) => link.title !== "Contato");
+
 export const Header = () => {
   const headerRef = useRef(null);
 
@@ -18,12 +20,16 @@ export const Header = () => {
           "shadow-neutro_sm",
           "backdrop-blur-sm",
           "backdrop-filter",
+          "bg-branco_75%",
+          "dark:bg-preto_75%"
         );
       } else {
         header.classList.remove(
           "shadow-neutro_sm",
           "backdrop-blur-sm",
           "backdrop-filter",
+          "bg-branco_75%",
+          "dark:bg-preto_75%"
         );
       }
     };
@@ -36,7 +42,7 @@ export const Header = () => {
 
   return (
     <header
-      className="flex items-center justify-center w-full font-bold fixed top-0 z-50 transition-all duration-300"
+      className="flex items-center justify-center w-full fixed top-0 z-50 transition-all duration-300"
       ref={headerRef}
     >
       <div className="w-full max-w-8xl flex items-center px-8 py-2 justify-between">
@@ -48,7 +54,7 @@ export const Header = () => {
         />
         <div className="flex gap-8 items-center">
           <nav className="hidden md:flex items-center gap-2 justify-center">
-            {appNavigation.map((link) => (
+            {headerNavigation.map((link) => (
               <NavLinks key={link.title} title={link.title} path={link.path} />
             ))}
           </nav>

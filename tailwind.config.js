@@ -11,7 +11,9 @@ module.exports = {
       colors: {
         preto_primario: "#000000",
         preto_secondario: "#111111",
+        'preto_75%': "rgba(0,0,0,.75)",
         branco: "#FFFFFF",
+        'branco_75%': "rgba(255,255,255,.75)",
         cinza: "#E3E4E6",
         cinza_neutro: "#999999",
         dourado: "#F0A90E",

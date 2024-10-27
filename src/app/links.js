@@ -23,6 +23,10 @@ const appNavigation = [
     {
         title: "E-books",
         path: "/ebooks"
+    },
+    {
+        title: "Contato",
+        path: "/contato"
     }
 ];
 
