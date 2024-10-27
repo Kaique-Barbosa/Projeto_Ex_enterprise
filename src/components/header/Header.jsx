@@ -8,28 +8,35 @@ import ThemeButton from "../themeButton/ThemeButton";
 import NavLinks from "../navLinks/NavLinks";
 
 export const Header = () => {
-
   const headerRef = useRef(null);
 
   useEffect(() => {
     const header = headerRef.current;
     const handleScroll = () => {
       if (window.scrollY > 100) {
-        header.classList.add("shadow-neutro");
+        header.classList.add(
+          "shadow-neutro_sm",
+          "backdrop-blur-sm",
+          "backdrop-filter",
+        );
       } else {
-        header.classList.remove("shadow-neutro");
+        header.classList.remove(
+          "shadow-neutro_sm",
+          "backdrop-blur-sm",
+          "backdrop-filter",
+        );
       }
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
+
   return (
     <header
-      className="flex items-center justify-center w-full font-bold fixed top-0 z-50 transition-all duration-300 bg-gradient-to-l from-branco dark:from-preto_primario from-50% to-[#FBFAFA] dark:to-preto_secondario"
+      className="flex items-center justify-center w-full font-bold fixed top-0 z-50 transition-all duration-300"
       ref={headerRef}
     >
       <div className="w-full max-w-8xl flex items-center px-8 py-2 justify-between">
