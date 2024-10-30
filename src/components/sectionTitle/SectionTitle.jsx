@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Image from "next/image";
 import iconSetaBranco from "@/public/img/setaBaixoWhite.png";
 
-const Session = ({ texto, notBotao, margemy, height }) => {
+const Session = ({ texto, notBotao, height}) => {
   const rolarParaBaixo = () => {
     window.scrollTo({
       top: window.innerHeight, // Rola para a altura da tela
