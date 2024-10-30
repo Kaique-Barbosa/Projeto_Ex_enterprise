@@ -8,6 +8,7 @@ const CardModel4 = () => {
           <Image src={""} alt='' />
       </div>
       <div className="">
+        
 
       </div>
     </div>

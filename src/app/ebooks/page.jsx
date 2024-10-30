@@ -5,7 +5,7 @@ import { React, useState } from "react";
 import SectionTitle from "@/components/sectionTitle/SectionTitle";
 import { Header } from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
-import CardModel4 from "@/components/cardModel4/CardModel4";
+import CardModel5 from "@/components/cardModel5/cardModel5";
 
 // importação de imagens e logos
 
@@ -13,7 +13,7 @@ import CardModel4 from "@/components/cardModel4/CardModel4";
 
 // ----------------- FIM  area dos dados dos componentes-----------------
 
-const ConsultoriaPage = () => {
+const EbooksPage = () => {
   const [visibleCount, setVisibleCount] = useState(3); // Inicialmente 5 perguntas visíveis
 
   const vermais = () => {
@@ -26,13 +26,13 @@ const ConsultoriaPage = () => {
 
       <SectionTitle texto={["BAIXE GRATUITAMENTE", "E-BOOKS    "]} />
 
-      <CardModel4/>
-   
+      <div className="container max-w-9xl p-4 sm:p-8 lg:p-12 flex flex-col items-center"><CardModel5 /></div>
+
       <Footer />
     </div>
   );
 };
 
-ConsultoriaPage.propTypes = {};
+EbooksPage.propTypes = {};
 
-export default ConsultoriaPage;
+export default EbooksPage;
