@@ -3,39 +3,20 @@
 import MoonIcon from "@/icons/MoonIcon/MoonIcon";
 import SunIcon from "@/icons/SunIcon/SunIcon";
 import React, { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 const ThemeButton = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    // Verpoŕemifica se o código está rodando no cliente (navegador)
-    if (typeof window !== "undefined") {
-      const theme = localStorage.getItem("chakra-ui-color-mode");
-      
-      if(theme === null) {
-        localStorage.setItem("chakra-ui-color-mode", "dark");
-        document.documentElement.classList.add("dark");
-        setIsDark(true);
-      } else if (theme === "dark") {
-        document.documentElement.classList.add("dark");
-        setIsDark(true);
-      } else {
-        document.documentElement.classList.remove("dark");
-        setIsDark(false);
-      }
-    }
+    setMounted(true);
   }, []);
 
+  if (!mounted) return null;
+
   function toggleTheme() {
-    if (document.documentElement.classList.contains("dark")) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("chakra-ui-color-mode", "light");
-      setIsDark(false);
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("chakra-ui-color-mode", "dark");
-      setIsDark(true);
-    }
+    setTheme(theme === "dark" ? "light" : "dark");
   }
 
   return (
@@ -43,7 +24,7 @@ const ThemeButton = () => {
       className="size-10 p-2 rounded-lg hover:bg-[#e3e4e63d]"
       onClick={toggleTheme}
     >
-      {isDark ? <SunIcon /> : <MoonIcon />}
+      {theme === "dark" ? <SunIcon /> : <MoonIcon />}
     </button>
   );
 };

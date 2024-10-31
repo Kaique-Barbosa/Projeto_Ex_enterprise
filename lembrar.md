@@ -9,3 +9,9 @@ Usado a biblioteca swiper para criar carrocel. (Pesquisar do cno site)
 componentes uteis do chakra ui:
 
 "Trapping Focus within Popover"
+
+Biblioteca para temas no Next
+https://github.com/pacocoursey/next-themes
+
+Possivel biblioteca de componentes para usar
+https://ui.shadcn.com/

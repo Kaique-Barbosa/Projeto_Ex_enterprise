@@ -1,5 +1,6 @@
 import {Work_Sans} from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 import { ChakraProvider } from "@chakra-ui/react";
 
 const workSans = Work_Sans({subsets: ['latin']})
@@ -11,11 +12,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-br" className="dark">
+    <html lang="pt-br" suppressHydrationWarning>
       <body
         className={`${workSans.className} antialiased bg-gradient-to-b from-branco dark:from-preto_primario via-[#FBFAFA] dark:via-preto_secondario via-40% via-[#F2F3F3] dark:via-[#212020] via-60%  to-cinza dark:to-[#232222] to-80% text-preto_primario  dark:text-cinza relative`}
       >
-        <ChakraProvider>{children}</ChakraProvider>
+        <ThemeProvider atribute="class" defaultTheme="dark">
+          <ChakraProvider>{children}</ChakraProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
