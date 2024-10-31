@@ -17,8 +17,16 @@ module.exports = {
         cinza: "#E3E4E6",
         cinza_neutro: "#999999",
         dourado: "#F0A90E",
-        laranja_dark: "#EB7500",
-        laranja_light: "#F64C03",
+        'laranja-dark': {
+          normal: "#EB7500",
+          hover: "#FFB132",
+          disabled: "#FFE5A5"
+        },
+        'laranja-light':{
+          normal: "#F64C03",
+          hover: "#FF7E4C",
+          disabled: "#FFBDA5"
+        } 
       },
       screens: {
         xs: "450px",

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const BotaoOnClick = ({ texto, css, funcaoOnclick }) => {
   return (
     <button
-      className={`${css} w-fit px-4 py-2 hover:text-white rounded-lg border border-solid border-laranja_light dark:border-laranja_dark hover:bg-laranja_light dark:hover:bg-laranja_dark`}
+      className={`${css} w-fit px-4 py-2 hover:text-white rounded-lg border border-solid border-laranja-light-normal dark:border-laranja-dark-normal hover:bg-laranja-light-normal dark:hover:bg-laranja-dark-normal`}
       onClick={funcaoOnclick}
     >
       {texto}

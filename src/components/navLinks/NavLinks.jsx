@@ -13,8 +13,8 @@ export default function NavLinks({ title, path }) {
       href={path}
       className={`py-2 px-2 rounded-sm uppercase ${
         currentRoute === path
-          ? "text-laranja_light dark:text-laranja_dark"
-          : "hover:text-branco hover:bg-laranja_light dark:hover:bg-laranja_dark"
+          ? "text-laranja-light-normal dark:text-laranja-dark-normal"
+          : "hover:text-branco hover:bg-laranja-light-normal dark:hover:bg-laranja-dark-normal"
       }`}
     >
         {title}

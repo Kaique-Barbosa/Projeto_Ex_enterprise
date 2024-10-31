@@ -94,7 +94,7 @@ const ConsultoriaPage = () => {
         imgSrc={consultoria2}
         imgAlt="Imagem de um escritório"
       >
-        <p className="text-laranja_light dark:text-laranja_dark">
+        <p className="text-laranja-light-normal dark:text-laranja-dark-normal">
           Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
           vulputate libero et velit interdum, ac aliquet odio mattis. Borem
           ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
@@ -111,7 +111,7 @@ const ConsultoriaPage = () => {
           >
             Nossos Serviços
           </Heading>
-          <p className="text-lg text-laranja_light dark:text-laranja_dark">
+          <p className="text-lg text-laranja-light-normal dark:text-laranja-dark-normal">
             Veja o que oferecemos em soluções para TI
           </p>
         </div>

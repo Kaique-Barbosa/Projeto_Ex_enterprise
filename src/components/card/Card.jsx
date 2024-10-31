@@ -46,7 +46,7 @@ export const Card = ({
         <div className="flex flex-col items-center sm:items-start justify-center text-center sm:text-start gap-8 p-5 flex-1 self-stretch grow">
           <div className="flex flex-col gap-4 self-stretch">
             <h3 className="font-bold text-2xl text-pretty">{titulo}</h3>
-            <p className="text-laranja_light dark:text-laranja_dark text-balance dark:text-laranja">
+            <p className="text-laranja-light-normal dark:text-laranja-dark-normal text-balance dark:text-laranja">
               {subTitulo}
             </p>
           </div>

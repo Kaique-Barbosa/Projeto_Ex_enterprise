@@ -8,7 +8,7 @@ const BotaoLinks = ({ href, alt, texto, css }) => {
             <Link
                 href={href}
                 alt={alt}
-                className={`${css} w-fit font-semibold px-4 py-2 rounded-3xl border border-solid border-laranja_light dark:border-laranja_dark hover:bg-laranja_light dark:hover:bg-laranja_dark hover:text-branco`}
+                className={`${css} w-fit font-semibold px-4 py-2 rounded-3xl border border-solid border-laranja-light-normal dark:border-laranja-dark-normal hover:bg-laranja-light-normal dark:hover:bg-laranja-dark-normal hover:text-branco`}
             >
                 {texto}
             </Link>

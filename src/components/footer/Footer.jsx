@@ -17,7 +17,7 @@ export default function Footer() {
         ))}
       </div>
       <div className="flex flex-col items-center justify-center gap-[1rem_2rem]">
-        <p className="text-lg font-semibold text-laranja_light dark:text-laranja_dark">
+        <p className="text-lg font-semibold text-laranja-light-normal dark:text-laranja-dark-normal">
           Siga Nós
         </p>
 
@@ -26,14 +26,14 @@ export default function Footer() {
             <a
               key={index}
               href={item.href}
-              className="size-6 hover:text-laranja_light dark:hover:text-laranja_dark"
+              className="size-6 hover:text-laranja-light-normal dark:hover:text-laranja-dark-normal"
             >
               {item.icon} 
             </a>
           ))}
         </div>
       </div>
-      <p className="text-center text-laranja_light dark:text-laranja_dark">Ex enterprise Copyright © 2024</p>
+      <p className="text-center text-laranja-light-normal dark:text-laranja-dark-normal">Ex enterprise Copyright © 2024</p>
     </footer>
   );
 }
