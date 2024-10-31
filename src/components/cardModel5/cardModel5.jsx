@@ -9,15 +9,13 @@ import ButtonWithIcon from "@/components/buttonWithIcon/ButtonWithIcon";
 
 export default function cardModel5() {
   return (
-    <div className="w-80 md:w-full h-fit md:h-[30em] flex flex-col md:flex-row  justify-between items-center ">
+    <div className="w-80 md:w-full h-fit md:h-96 flex flex-col md:flex-row  justify-between items-center bg-cinza_neutro bg-opacity-10 p-4 gap-6 rounded-xl backdrop-filter backdrop-blur-lg backdrop-saturate-150">
       <Image
         src={imagem}
-        className="w-80 h-[30em] rounded-xl"
+        className="w-80 h-96 md:h-fit rounded-lg"
         alt="Capa de ebook"
       />
-      {/* <Image src={imagem} className='w-64' alt='capa dos ebooks' /> */}
-
-      <div className="w-full h-full flex flex-col gap-3 p-6">
+      <div className="w-full h-full flex flex-col gap-3">
         <div className="flex-1 self-stretch">
           <h3 className="mb-4">Nome do Ebook</h3>
           <p>

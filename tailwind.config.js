@@ -24,8 +24,8 @@ module.exports = {
         },
         'laranja-light':{
           normal: "#F64C03",
-          hover: "#FF7E4C",
-          disabled: "#FFBDA5"
+          hover: "#FF8834",
+          disabled: "#FFD3A7"
         } 
       },
       screens: {

@@ -26,7 +26,12 @@ const EbooksPage = () => {
 
       <SectionTitle texto={["BAIXE GRATUITAMENTE", "E-BOOKS    "]} />
 
-      <div className="container max-w-9xl p-4 sm:p-8 lg:p-12 flex flex-col items-center"><CardModel5 /></div>
+      <div className="container max-w-9xl p-4 sm:p-8 lg:p-12 flex flex-col items-center gap-8">
+        <CardModel5 />
+        <CardModel5 />
+        <CardModel5 />
+        <CardModel5 />
+      </div>
 
       <Footer />
     </div>
