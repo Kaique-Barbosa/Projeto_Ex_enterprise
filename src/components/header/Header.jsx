@@ -6,8 +6,11 @@ import { appNavigation } from "@/app/links";
 import MenuMobile from "../drawner/MenuMobile";
 import ThemeButton from "../themeButton/ThemeButton";
 import NavLinks from "../navLinks/NavLinks";
+import Link from "next/link";
 
-const headerNavigation = appNavigation.filter((link) => link.title !== "Contato");
+const headerNavigation = appNavigation.filter(
+  (link) => link.title !== "Contato"
+);
 
 export const Header = () => {
   const headerRef = useRef(null);
@@ -46,12 +49,14 @@ export const Header = () => {
       ref={headerRef}
     >
       <div className="w-full max-w-8xl flex items-center px-8 py-2 justify-between">
-        <Image
-          priority
-          src={logo}
-          alt="Logo Da empresa"
-          className="h-16 w-16"
-        />
+        <Link href={"/"} alt="Ir para home">
+          <Image
+            priority
+            src={logo}
+            alt="Logo Da empresa"
+            className="h-16 w-16"
+          />
+        </Link>
         <div className="flex gap-8 items-center">
           <nav className="hidden md:flex items-center gap-2 justify-center">
             {headerNavigation.map((link) => (
