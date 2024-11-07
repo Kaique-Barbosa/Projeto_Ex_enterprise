@@ -5,7 +5,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: ['selector', '[data-theme="dark"]'],
+  darkMode: ["selector", '[data-theme="dark"]'],
   theme: {
     extend: {
       colors: {
@@ -17,16 +17,16 @@ module.exports = {
         cinza: "#E3E4E6",
         cinza_neutro: "#999999",
         dourado: "#F0A90E",
-        'laranja-dark': {
+        "laranja-dark": {
           normal: "#EB7500",
           hover: "#FFB132",
-          disabled: "#FFE5A5"
+          disabled: "#FFE5A5",
         },
-        'laranja-light':{
+        "laranja-light": {
           normal: "#F64C03",
           hover: "#FF8834",
-          disabled: "#FFD3A7"
-        } 
+          disabled: "#FFD3A7",
+        },
       },
       screens: {
         xs: "450px",
@@ -41,6 +41,7 @@ module.exports = {
         "7xl": "80rem",
         "8xl": "90rem",
         "9xl": "96rem",
+        "10xl": "120rem",
       },
       container: {
         padding: {
@@ -51,5 +52,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('daisyui'),],
+  plugins: [require("daisyui")],
 };

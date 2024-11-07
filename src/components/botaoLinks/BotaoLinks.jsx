@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 
-const BotaoLinks = ({ href, alt, texto, css }) => {
+const BotaoLinks = ({ href, alt, texto, css}) => {
     return (
         <>
             <Link
