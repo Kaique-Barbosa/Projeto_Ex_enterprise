@@ -139,14 +139,14 @@ const ConsultoriaPage = () => {
         <div className="w-full justify-between flex flex-wrap gap-8 p-4 my-12">
           <CardModel2
             icon={
-              <EnterpriseIcon css="size-20 fill-preto_primario dark:fill-cinza" />
+              <EnterpriseIcon css="size-20 fill-preto-950 dark:fill-cinza-200" />
             }
             titulo="Empresas de Pequeno, Médio e Grande Porte"
             descricao="Negócios que buscam otimizar seus processos tecnológicos, implementar novas soluções de TI ou necessitam de suporte especializado para projetos específicos."
           />
           <CardModel2
             icon={
-              <RoctketIcon css="size-20 fill-preto_primario dark:fill-cinza" />
+              <RoctketIcon css="size-20 fill-preto-950 dark:fill-cinza-200" />
             }
             titulo="Startups e Empresas de Tecnologia"
             descricao="Organizações emergentes e inovadoras que
@@ -154,7 +154,7 @@ const ConsultoriaPage = () => {
           />
           <CardModel2
             icon={
-              <GlobeIcon css="size-20 fill-preto_primario dark:fill-cinza" />
+              <GlobeIcon css="size-20 fill-preto-950 dark:fill-cinza-200" />
             }
             titulo="Setor Público e Organizações Sem Fins Lucrativos"
             descricao="Instituições governamentais e ONGs que precisam de soluções tecnológicas eficientes para melhorar sua operação e impacto social."

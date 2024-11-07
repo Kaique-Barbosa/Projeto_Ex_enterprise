@@ -9,13 +9,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        preto_primario: "#000000",
-        preto_secondario: "#111111",
+        preto: {
+          950: "#000000",
+          900: "#111111",
+          850: "#212020",
+          800: "#232222",
+        },
         "preto_75%": "rgba(0,0,0,.75)",
         branco: "#FFFFFF",
         "branco_75%": "rgba(255,255,255,.75)",
-        cinza: "#E3E4E6",
-        cinza_neutro: "#999999",
+        cinza: {
+          50: "#FBFAFA",
+          100: "#F2F3F3",
+          200: "#E3E4E6",
+          400: "#999999",
+        },
         dourado: "#F0A90E",
         "laranja-dark": {
           normal: "#EB7500",
@@ -36,6 +44,8 @@ module.exports = {
         temaEscuro: "3px 3px 12px 1px rgba(235,117,0,.5);",
         neutro: "3px 3px 12px 3px rgb(62, 60, 60, .5);",
         neutro_sm: "1px 1px 3px 1px rgb(62, 60, 60, .5);",
+        neutro_dark: "3px 3px 12px 3px rgb(81, 81, 87, .5);",
+        neutro_dark_sm: "1px 1px 3px 1px rgb(81, 81, 87, .5);",
       },
       maxWidth: {
         "7xl": "80rem",

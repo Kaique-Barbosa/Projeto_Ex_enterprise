@@ -9,7 +9,7 @@ import ButtonWithIcon from "@/components/buttonWithIcon/ButtonWithIcon";
 
 export default function cardModel5() {
   return (
-    <div className="w-80 md:w-full h-fit md:h-96 flex flex-col md:flex-row  justify-between items-center bg-cinza_neutro bg-opacity-10 p-4 gap-6 rounded-xl backdrop-filter backdrop-blur-lg backdrop-saturate-150">
+    <div className="w-80 md:w-full h-fit md:h-96 flex flex-col md:flex-row  justify-between items-center bg-cinza-200_neutro bg-opacity-10 p-4 gap-6 rounded-xl backdrop-filter backdrop-blur-lg backdrop-saturate-150">
       <Image
         src={imagem}
         className="w-80 h-96 md:h-fit rounded-lg"

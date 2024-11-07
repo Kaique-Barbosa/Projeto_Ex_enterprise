@@ -33,7 +33,7 @@ h6 {
 }
 
 span.swiper-pagination-bullet {
-  @apply bg-black dark:bg-cinza size-3
+  @apply bg-preto-950 dark:bg-cinza-200 size-3
 }
 
 span.swiper-pagination-bullet-active {
@@ -50,5 +50,3 @@ span.swiper-pagination-bullet-active {
     @apply flex-row justify-start text-start;
   }
 }
-
-@containe

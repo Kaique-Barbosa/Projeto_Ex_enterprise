@@ -25,7 +25,7 @@ export const Card = ({
 
   return (
     <article
-      className={`${css} bg-cinza shadow-neutro dark:bg-preto_secondario flex h-fit sm:min-h-80 w-full max-w-7xl items-center justify-center rounded-lg tracking-widest leading-tighter`}
+      className={`${css} bg-cinza-200 shadow-neutro dark:bg-preto-900 flex h-fit sm:min-h-80 w-full max-w-7xl items-center justify-center rounded-lg tracking-widest leading-tighter`}
     >
       <div
         className={`flex flex-1 self-stretch flex-col ${

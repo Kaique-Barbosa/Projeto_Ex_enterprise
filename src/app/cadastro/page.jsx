@@ -75,7 +75,7 @@ function page() {
                       </div>
                     </div>
                     <input
-                      className="border-cinza-600 p-4 relative self-stretch w-full mb-[-3.00px] ml-[-3.00px] mr-[-3.00px] bg-branco-100 rounded overflow-hidden border-[3px] border-solid text-cinza-600 whitespace-nowrap font-fontes-fonte-normal-light font-[number:var(--fontes-fonte-normal-light-font-weight)] text-[length:var(--fontes-fonte-normal-light-font-size)] tracking-[var(--fontes-fonte-normal-light-letter-spacing)] leading-[var(--fontes-fonte-normal-light-line-height)] [font-style:var(--fontes-fonte-normal-light-font-style)]"
+                      className="border-cinza-200-600 p-4 relative self-stretch w-full mb-[-3.00px] ml-[-3.00px] mr-[-3.00px] bg-branco-100 rounded overflow-hidden border-[3px] border-solid text-cinza-200-600 whitespace-nowrap font-fontes-fonte-normal-light font-[number:var(--fontes-fonte-normal-light-font-weight)] text-[length:var(--fontes-fonte-normal-light-font-size)] tracking-[var(--fontes-fonte-normal-light-letter-spacing)] leading-[var(--fontes-fonte-normal-light-line-height)] [font-style:var(--fontes-fonte-normal-light-font-style)]"
                       placeholder="Digite seu nome"
                       type="text"
                     />
@@ -89,7 +89,7 @@ function page() {
                     </div>
 
                     <input
-                      className="border-cinza-600 p-4 relative self-stretch w-full mb-[-3.00px] ml-[-3.00px] mr-[-3.00px] bg-branco-100 rounded overflow-hidden border-[3px] border-solid text-cinza-600 whitespace-nowrap font-fontes-fonte-normal-light font-[number:var(--fontes-fonte-normal-light-font-weight)] text-[length:var(--fontes-fonte-normal-light-font-size)] tracking-[var(--fontes-fonte-normal-light-letter-spacing)] leading-[var(--fontes-fonte-normal-light-line-height)] [font-style:var(--fontes-fonte-normal-light-font-style)]"
+                      className="border-cinza-200-600 p-4 relative self-stretch w-full mb-[-3.00px] ml-[-3.00px] mr-[-3.00px] bg-branco-100 rounded overflow-hidden border-[3px] border-solid text-cinza-200-600 whitespace-nowrap font-fontes-fonte-normal-light font-[number:var(--fontes-fonte-normal-light-font-weight)] text-[length:var(--fontes-fonte-normal-light-font-size)] tracking-[var(--fontes-fonte-normal-light-letter-spacing)] leading-[var(--fontes-fonte-normal-light-line-height)] [font-style:var(--fontes-fonte-normal-light-font-style)]"
                       placeholder="Digite seu sobrenome"
                       type="text"
                     />
@@ -103,7 +103,7 @@ function page() {
                     </div>
 
                     <input
-                      className="border-cinza-600 p-4 relative self-stretch w-full mb-[-3.00px] ml-[-3.00px] mr-[-3.00px] bg-branco-100 rounded overflow-hidden border-[3px] border-solid text-cinza-600 whitespace-nowrap font-fontes-fonte-normal-light font-[number:var(--fontes-fonte-normal-light-font-weight)] text-[length:var(--fontes-fonte-normal-light-font-size)] tracking-[var(--fontes-fonte-normal-light-letter-spacing)] leading-[var(--fontes-fonte-normal-light-line-height)] [font-style:var(--fontes-fonte-normal-light-font-style)]"
+                      className="border-cinza-200-600 p-4 relative self-stretch w-full mb-[-3.00px] ml-[-3.00px] mr-[-3.00px] bg-branco-100 rounded overflow-hidden border-[3px] border-solid text-cinza-200-600 whitespace-nowrap font-fontes-fonte-normal-light font-[number:var(--fontes-fonte-normal-light-font-weight)] text-[length:var(--fontes-fonte-normal-light-font-size)] tracking-[var(--fontes-fonte-normal-light-letter-spacing)] leading-[var(--fontes-fonte-normal-light-line-height)] [font-style:var(--fontes-fonte-normal-light-font-style)]"
                       placeholder="Digite seu numero de telefone"
                       type="number"
                     />
@@ -121,7 +121,7 @@ function page() {
                     </div>
 
                     <input
-                      className="border-cinza-600 p-4 relative self-stretch w-full mb-[-3.00px] ml-[-3.00px] mr-[-3.00px] bg-branco-100 rounded overflow-hidden border-[3px] border-solid text-cinza-600 whitespace-nowrap font-fontes-fonte-normal-light font-[number:var(--fontes-fonte-normal-light-font-weight)] text-[length:var(--fontes-fonte-normal-light-font-size)] tracking-[var(--fontes-fonte-normal-light-letter-spacing)] leading-[var(--fontes-fonte-normal-light-line-height)] [font-style:var(--fontes-fonte-normal-light-font-style)]"
+                      className="border-cinza-200-600 p-4 relative self-stretch w-full mb-[-3.00px] ml-[-3.00px] mr-[-3.00px] bg-branco-100 rounded overflow-hidden border-[3px] border-solid text-cinza-200-600 whitespace-nowrap font-fontes-fonte-normal-light font-[number:var(--fontes-fonte-normal-light-font-weight)] text-[length:var(--fontes-fonte-normal-light-font-size)] tracking-[var(--fontes-fonte-normal-light-letter-spacing)] leading-[var(--fontes-fonte-normal-light-line-height)] [font-style:var(--fontes-fonte-normal-light-font-style)]"
                       placeholder="Digite seu email"
                       type="email"
                     />
@@ -139,7 +139,7 @@ function page() {
                     </div>
 
                     <input
-                      className="border-cinza-600 p-4 relative self-stretch w-full mb-[-3.00px] ml-[-3.00px] mr-[-3.00px] bg-branco-100 rounded overflow-hidden border-[3px] border-solid text-cinza-600 whitespace-nowrap font-fontes-fonte-normal-light font-[number:var(--fontes-fonte-normal-light-font-weight)] text-[length:var(--fontes-fonte-normal-light-font-size)] tracking-[var(--fontes-fonte-normal-light-letter-spacing)] leading-[var(--fontes-fonte-normal-light-line-height)] [font-style:var(--fontes-fonte-normal-light-font-style)]"
+                      className="border-cinza-200-600 p-4 relative self-stretch w-full mb-[-3.00px] ml-[-3.00px] mr-[-3.00px] bg-branco-100 rounded overflow-hidden border-[3px] border-solid text-cinza-200-600 whitespace-nowrap font-fontes-fonte-normal-light font-[number:var(--fontes-fonte-normal-light-font-weight)] text-[length:var(--fontes-fonte-normal-light-font-size)] tracking-[var(--fontes-fonte-normal-light-letter-spacing)] leading-[var(--fontes-fonte-normal-light-line-height)] [font-style:var(--fontes-fonte-normal-light-font-style)]"
                       placeholder="Defina sua senha"
                       type="password"
                     />
@@ -157,7 +157,7 @@ function page() {
                     </div>
 
                     <input
-                      className="border-cinza-600 p-4 relative self-stretch w-full mb-[-3.00px] ml-[-3.00px] mr-[-3.00px] bg-branco-100 rounded overflow-hidden border-[3px] border-solid text-cinza-600 whitespace-nowrap font-fontes-fonte-normal-light font-[number:var(--fontes-fonte-normal-light-font-weight)] text-[length:var(--fontes-fonte-normal-light-font-size)] tracking-[var(--fontes-fonte-normal-light-letter-spacing)] leading-[var(--fontes-fonte-normal-light-line-height)] [font-style:var(--fontes-fonte-normal-light-font-style)]"
+                      className="border-cinza-200-600 p-4 relative self-stretch w-full mb-[-3.00px] ml-[-3.00px] mr-[-3.00px] bg-branco-100 rounded overflow-hidden border-[3px] border-solid text-cinza-200-600 whitespace-nowrap font-fontes-fonte-normal-light font-[number:var(--fontes-fonte-normal-light-font-weight)] text-[length:var(--fontes-fonte-normal-light-font-size)] tracking-[var(--fontes-fonte-normal-light-letter-spacing)] leading-[var(--fontes-fonte-normal-light-line-height)] [font-style:var(--fontes-fonte-normal-light-font-style)]"
                       placeholder="Digite novamente"
                       type="password"
                     />

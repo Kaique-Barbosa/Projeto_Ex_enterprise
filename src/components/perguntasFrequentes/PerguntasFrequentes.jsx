@@ -4,7 +4,7 @@ const PerguntasFrequentes = ({ titulo, texto, aberto }) => {
   return (
     <div className="space-y-4 w-full">
       <details
-        className="rounded-lg my-1 border-s-4 group bg-cinza p-6 dark:bg-preto_secondario dark:border-laranja-dark-normal border-laranja-light-normal [&_summary::-webkit-details-marker]:hidden"
+        className="rounded-lg my-1 border-s-4 group bg-cinza-200 p-6 dark:bg-preto-900 dark:border-laranja-dark-normal border-laranja-light-normal [&_summary::-webkit-details-marker]:hidden"
         open={aberto}
       >
         <summary className="flex cursor-pointer items-center justify-between gap-1.5">

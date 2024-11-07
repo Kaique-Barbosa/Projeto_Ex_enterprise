@@ -41,7 +41,7 @@ const MenuMobile = () => {
           height="32px"
           viewBox="0 -960 960 960"
           width="32px"
-          className="fill-preto_primario dark:fill-cinza"
+          className="fill-preto-950 dark:fill-cinza-200"
         >
           <path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
         </svg>
@@ -53,16 +53,16 @@ const MenuMobile = () => {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent className="bg-cinza dark:bg-preto_secondario">
+        <DrawerContent className="bg-cinza-200 dark:bg-preto-900">
           <DrawerCloseButton />
           <DrawerHeader
             paddingTop={12}
-            className="bg-cinza dark:bg-preto_secondario flex items-center gap-4"
+            className="bg-cinza-200 dark:bg-preto-900 flex items-center gap-4"
           >
             <Image src={logo} alt="Logo da empresa" className="size-12"/>
             <p className="text-lg">Ex Enterprise</p>
           </DrawerHeader>
-          <DrawerBody className="bg-cinza dark:bg-preto_secondario flex flex-col gap-4">
+          <DrawerBody className="bg-cinza-200 dark:bg-preto-900 flex flex-col gap-4">
             <Link
               href={"/"}
               className={`p-1 flex items-center gap-2 ${
