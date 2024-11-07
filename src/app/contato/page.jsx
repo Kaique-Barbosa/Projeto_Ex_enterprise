@@ -14,7 +14,7 @@ const contatOPage = () => {
 
             <SectionTitle css={"!m-0 !p-0"} texto={["Entre em ", "Contato"]} notBotao={true} />
 
-            <h2 className="w-[60%] mx-0 font-medium text-sm text-center">Estamos prontos para ajudar! Preencha o formulário abaixo e responderemos o mais rápido possível.</h2>
+            <h2 className="w-[60%] mx-0 font-medium text-lg text-center">Estamos prontos para ajudar! Preencha o formulário abaixo e responderemos o mais rápido possível.</h2>
             
             {/* <h2 className="w-[60%] mt-24 mx-0 font-medium text-sm text-center">Qual servico quer entrar em contato?</h2> */}
 
