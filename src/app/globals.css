@@ -37,7 +37,7 @@ span.swiper-pagination-bullet {
 }
 
 span.swiper-pagination-bullet-active {
-  @apply bg-laranja-light-normal dark:bg-laranja-dark-normal size-3
+  @apply bg-laranja-light dark:bg-laranja-dark size-3
 }
 
 .card {

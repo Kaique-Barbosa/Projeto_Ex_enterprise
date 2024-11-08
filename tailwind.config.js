@@ -1,3 +1,5 @@
+const { addIconSelectors } = require('@iconify/tailwind');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -25,16 +27,8 @@ module.exports = {
           400: "#999999",
         },
         dourado: "#F0A90E",
-        "laranja-dark": {
-          normal: "#EB7500",
-          hover: "#FFB132",
-          disabled: "#FFE5A5",
-        },
-        "laranja-light": {
-          normal: "#F64C03",
-          hover: "#FF8834",
-          disabled: "#FFD3A7",
-        },
+        "laranja-dark": "#EB7500",
+        "laranja-light": "#F64C03",
       },
       screens: {
         xs: "450px",
@@ -62,5 +56,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), addIconSelectors(["mdi"])],
 };

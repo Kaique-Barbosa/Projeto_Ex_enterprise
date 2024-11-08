@@ -17,14 +17,14 @@ export default function SobreEmpresa() {
               Conheca mais sobre a empresa
             </h2>
             <p className="tracking-wider text-center leading-normal text-balance">
-              <span className="text-laranja-light-normal dark:text-laranja-dark-normal">Nossa missão é oferecer</span>
+              <span className="text-laranja-light dark:text-laranja-dark">Nossa missão é oferecer</span>
               <span>&nbsp;</span>
               <span>
                 soluções tecnológicas avançadas, produtos de informática de alta
                 qualidade e serviços de locação de imóveis excepcionais,
               </span>
               <span>&nbsp;</span>
-              <span className="text-laranja-light-normal dark:text-laranja-dark-normal">
+              <span className="text-laranja-light dark:text-laranja-dark">
                 sempre com foco na inovação, na satisfação do cliente e na
                 criação de valor sustentável.
               </span>

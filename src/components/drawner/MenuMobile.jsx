@@ -66,7 +66,7 @@ const MenuMobile = () => {
             <Link
               href={"/"}
               className={`p-1 flex items-center gap-2 ${
-                currentRoute === "/" ? "text-laranja-light-normal dark:text-laranja-dark-normal" : "hover:text-laranja-light-normal hover:dark:text-laranja-dark-normal"
+                currentRoute === "/" ? "text-laranja-light dark:text-laranja-dark" : "hover:text-laranja-light hover:dark:text-laranja-dark"
               }`}
             >
               <IconHome className="size-5 text-inherit fill-current" />
@@ -76,7 +76,7 @@ const MenuMobile = () => {
             <Link
               href={"/imoveis"}
               className={`p-1 flex items-center gap-2 ${
-                currentRoute === "/imoveis" ? "text-laranja-light-normal dark:text-laranja-dark-normal" : "hover:text-laranja-light-normal hover:dark:text-laranja-dark-normal"
+                currentRoute === "/imoveis" ? "text-laranja-light dark:text-laranja-dark" : "hover:text-laranja-light hover:dark:text-laranja-dark"
               }`}
             >
               <IconEstate className="size-5 text-inherit fill-current" />
@@ -87,7 +87,7 @@ const MenuMobile = () => {
               href={"/consultoria"}
               className={`p-1 flex items-center gap-2 ${
                 currentRoute === "/consultoria"
-                  ? "text-laranja-light-normal dark:text-laranja-dark-normal" : "hover:text-laranja-light-normal hover:dark:text-laranja-dark-normal"
+                  ? "text-laranja-light dark:text-laranja-dark" : "hover:text-laranja-light hover:dark:text-laranja-dark"
               }`}
             >
               <IconConsultancy className="size-5 text-inherit fill-current" />
@@ -98,7 +98,7 @@ const MenuMobile = () => {
               href={"/e-commerce"}
               className={`p-1 flex items-center gap-2 ${
                 currentRoute === "/e-commerce"
-                  ? "text-laranja-light-normal dark:text-laranja-dark-normal" : "hover:text-laranja-light-normal hover:dark:text-laranja-dark-normal"
+                  ? "text-laranja-light dark:text-laranja-dark" : "hover:text-laranja-light hover:dark:text-laranja-dark"
               }`}
             >
               <IconEcommerce className="size-5 text-inherit fill-current" />
@@ -109,7 +109,7 @@ const MenuMobile = () => {
               href={"/ebooks"}
               className={`p-1 flex items-center gap-2 ${
                 currentRoute === "/ebooks"
-                  ? "text-laranja-light-normal dark:text-laranja-dark-normal" : "hover:text-laranja-light-normal hover:dark:text-laranja-dark-normal"
+                  ? "text-laranja-light dark:text-laranja-dark" : "hover:text-laranja-light hover:dark:text-laranja-dark"
               }`}
             >
               <IconEbooks className="size-5 text-inherit fill-current" />
