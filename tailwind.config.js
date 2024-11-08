@@ -1,4 +1,4 @@
-const { addIconSelectors } = require('@iconify/tailwind');
+const { addIconSelectors } = require("@iconify/tailwind");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -57,4 +57,28 @@ module.exports = {
     },
   },
   plugins: [require("daisyui"), addIconSelectors(["mdi"])],
+  daisyui: {
+    themes: [{
+      light: {
+        ...require("daisyui/src/theming/themes")["light"],
+        primary: "#E3E4E6",
+        secondary: "#232222",
+        accent: "#F64C03",
+        neutral: "#000000",
+        "base-100": "#FFFFFF",
+        "base-200": "#FBFAFA",
+        "base-300": "#F2F3F3",
+      },
+      dark: {
+        ...require("daisyui/src/theming/themes")["dark"],
+        primary: "#232222",
+        secondary: "#E3E4E6",
+        accent: "#EB7500",
+        neutral: "#999999",
+        "base-100": "#000000",
+        "base-200": "#111111",
+        "base-300": "#212020",
+      },
+    }],
+  },
 };

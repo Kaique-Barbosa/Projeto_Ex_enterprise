@@ -25,7 +25,7 @@ export const Card = ({
 
   return (
     <article
-      className={`${css} bg-cinza-200 shadow-neutro dark:bg-preto-900 flex h-fit sm:min-h-80 w-full max-w-7xl items-center justify-center rounded-lg tracking-widest leading-tighter`}
+      className={`${css} bg-cinza-200 dark:bg-preto-900 shadow-neutro flex h-fit sm:min-h-80 w-full max-w-7xl items-center justify-center rounded-lg tracking-widest leading-tighter`}
     >
       <div
         className={`flex flex-1 self-stretch flex-col ${
@@ -46,7 +46,7 @@ export const Card = ({
         <div className="flex flex-col items-center sm:items-start justify-center text-center sm:text-start gap-8 p-5 flex-1 self-stretch grow">
           <div className="flex flex-col gap-4 self-stretch">
             <h3 className="font-bold text-2xl text-pretty">{titulo}</h3>
-            <p className="text-laranja-light dark:text-laranja-dark text-balance dark:text-laranja">
+            <p className="text-accent text-balance">
               {subTitulo}
             </p>
           </div>

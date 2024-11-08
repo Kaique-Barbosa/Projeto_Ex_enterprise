@@ -4,7 +4,7 @@ import BotaoLinks from "@/components/botaoLinks/BotaoLinks";
 const FaleConosco = () => {
   return (
     <section className="container flex gap-4 flex-col max-w-9xl items-center justify-center my-12">
-      <h2 className="font-semibold text-center text-laranja-light dark:text-laranja-dark text-5xl">
+      <h2 className="font-semibold text-center text-accent text-5xl">
         Fale Conosco
       </h2>
 

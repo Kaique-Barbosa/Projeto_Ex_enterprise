@@ -41,7 +41,7 @@ const MenuMobile = () => {
           height="32px"
           viewBox="0 -960 960 960"
           width="32px"
-          className="fill-preto-950 dark:fill-cinza-200"
+          className="fill-secondary"
         >
           <path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
         </svg>
@@ -53,20 +53,22 @@ const MenuMobile = () => {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent className="bg-cinza-200 dark:bg-preto-900">
+        <DrawerContent className="bg-secondary">
           <DrawerCloseButton />
           <DrawerHeader
             paddingTop={12}
             className="bg-cinza-200 dark:bg-preto-900 flex items-center gap-4"
           >
-            <Image src={logo} alt="Logo da empresa" className="size-12"/>
+            <Image src={logo} alt="Logo da empresa" className="size-12" />
             <p className="text-lg">Ex Enterprise</p>
           </DrawerHeader>
           <DrawerBody className="bg-cinza-200 dark:bg-preto-900 flex flex-col gap-4">
             <Link
               href={"/"}
               className={`p-1 flex items-center gap-2 ${
-                currentRoute === "/" ? "text-laranja-light dark:text-laranja-dark" : "hover:text-laranja-light hover:dark:text-laranja-dark"
+                currentRoute === "/"
+                  ? "text-accent"
+                  : "hover:text-laranja-light hover:dark:text-laranja-dark"
               }`}
             >
               <IconHome className="size-5 text-inherit fill-current" />
@@ -76,7 +78,9 @@ const MenuMobile = () => {
             <Link
               href={"/imoveis"}
               className={`p-1 flex items-center gap-2 ${
-                currentRoute === "/imoveis" ? "text-laranja-light dark:text-laranja-dark" : "hover:text-laranja-light hover:dark:text-laranja-dark"
+                currentRoute === "/imoveis"
+                  ? "text-accent"
+                  : "hover:text-accent"
               }`}
             >
               <IconEstate className="size-5 text-inherit fill-current" />
@@ -87,7 +91,8 @@ const MenuMobile = () => {
               href={"/consultoria"}
               className={`p-1 flex items-center gap-2 ${
                 currentRoute === "/consultoria"
-                  ? "text-laranja-light dark:text-laranja-dark" : "hover:text-laranja-light hover:dark:text-laranja-dark"
+                  ? "text-accent"
+                  : "hover:text-accent"
               }`}
             >
               <IconConsultancy className="size-5 text-inherit fill-current" />
@@ -98,7 +103,8 @@ const MenuMobile = () => {
               href={"/e-commerce"}
               className={`p-1 flex items-center gap-2 ${
                 currentRoute === "/e-commerce"
-                  ? "text-laranja-light dark:text-laranja-dark" : "hover:text-laranja-light hover:dark:text-laranja-dark"
+                  ? "text-accent"
+                  : "hover:text-accent"
               }`}
             >
               <IconEcommerce className="size-5 text-inherit fill-current" />
@@ -108,8 +114,7 @@ const MenuMobile = () => {
             <Link
               href={"/ebooks"}
               className={`p-1 flex items-center gap-2 ${
-                currentRoute === "/ebooks"
-                  ? "text-laranja-light dark:text-laranja-dark" : "hover:text-laranja-light hover:dark:text-laranja-dark"
+                currentRoute === "/ebooks" ? "text-accent" : "hover:text-accent"
               }`}
             >
               <IconEbooks className="size-5 text-inherit fill-current" />

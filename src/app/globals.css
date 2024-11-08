@@ -33,11 +33,11 @@ h6 {
 }
 
 span.swiper-pagination-bullet {
-  @apply bg-preto-950 dark:bg-cinza-200 size-3
+  @apply bg-secondary size-3
 }
 
 span.swiper-pagination-bullet-active {
-  @apply bg-laranja-light dark:bg-laranja-dark size-3
+  @apply bg-accent size-3
 }
 
 .card {

@@ -24,7 +24,7 @@ export default function SobreDevs() {
               </span>
               <span>&nbsp;</span>
               <span>focando na</span>
-              <span className="text-laranja-light dark:text-laranja-dark">
+              <span className="text-accent">
                 {" "}
                 usabilidade, eficiencia e seguranda do sistema.
               </span>
@@ -35,7 +35,7 @@ export default function SobreDevs() {
           </div>
         </div>
         <div className="flex-1 ">
-          <div className="p-4 lg:p-0 grid xs:  items-center justify-center gap-4">
+          <div className="p-4 lg:p-0 grid xs:items-center justify-center gap-4">
             <Image
               className="items-center w-full h-80 row-span-2"
               alt="Cover"

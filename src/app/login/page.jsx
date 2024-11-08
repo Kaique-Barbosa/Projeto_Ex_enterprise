@@ -31,6 +31,7 @@ function page() {
                   type="email"
                   id="email"
                   required
+                  tabIndex={1}
                 />
               </div>
 
@@ -43,11 +44,13 @@ function page() {
                   placeholder="Digite sua senha"
                   required={true}
                   css="w-full"
+                  tabIndex={2}
                 />
               </div>
               <button
                 type="submit"
                 className="btn w-full py-3 text-white bg-laranja-light hover:bg-laranja-light dark:bg-laranja-dark dark:hover:bg-laranja-dark hover:bg-opacity-75 dark:hover:bg-opacity-75"
+                tabIndex={3}
               >
                 Acessar
               </button>
@@ -58,6 +61,7 @@ function page() {
             href={"/cadastro"}
             alt="Já tem uma conta? Faça seu login"
             className="text-center text-laranja-light dark:text-laranja-dark hover:underline hover:underline-offset-2"
+            tabIndex={4}
           >
             Ainda não têm cadastro? Faça o seu
           </Link>

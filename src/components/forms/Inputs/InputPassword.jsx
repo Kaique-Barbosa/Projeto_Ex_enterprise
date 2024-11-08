@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const InputPassword = ({ css, id, placeholder, required }) => {
+const InputPassword = ({ css, id, placeholder, required, tabIndex }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const toggleShowPassword = () => {
@@ -8,11 +8,14 @@ const InputPassword = ({ css, id, placeholder, required }) => {
   };
 
   return (
-    <div className={`input border-2 dark:border-cinza-400 border-preto-800 rounded bg-cinza-200 hover:border-laranja-light dark:hover:border-laranja-dark focus-visible:border-laranja-light dark:focus-visible:border-laranja-dark flex items-center justify-between text-preto-800 ${css}`}>
+    <div
+      className={`input h-fit p-2 border-2 border-neutral bg-cinza-100 rounded-md hover:border-accent has-[:focus-visible]:border-accent text-preto-800 flex items-center justify-between ${css}`}
+      tabIndex={tabIndex}
+    >
       <input
         type={showPassword ? "text" : "password"}
         placeholder={placeholder}
-        className="flex-1"
+        className="flex-1 peer"
         id={id}
         required={required}
       />

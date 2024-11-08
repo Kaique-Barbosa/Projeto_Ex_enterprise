@@ -36,7 +36,7 @@ const Session = ({ texto, notBotao, height}) => {
       >
         <h1 className="text-center tracking-wider leading-tight text-4xl sm:text-5xl">
           {texto[0] + " "}
-          <strong className="text-laranja-light dark:text-laranja-dark font-semibold">
+          <strong className="text-accent font-semibold">
             {texto[1]}
           </strong>
         </h1>

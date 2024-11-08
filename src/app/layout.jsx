@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <body
-        className={`${workSans.className} antialiased bg-gradient-to-b from-branco dark:from-preto-950 via-cinza-50 dark:via-preto-900 via-40% via-cinza-100 dark:via-preto-850 via-60%  to-cinza-200 dark:to-preto-800 to-80% text-preto-950 dark:text-cinza-200`}
+        className={`${workSans.className} antialiased bg-gradient-to-b from-base-100  via-base-200 via-50% via-base-300 via-70% to-primary to-90% text-secondary`}
       >
         <ThemeProvider atribute="class" defaultTheme="dark">
           <ChakraProvider>{children}</ChakraProvider>
