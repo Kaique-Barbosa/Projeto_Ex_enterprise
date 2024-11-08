@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import logo from "@/public/img/logo.png";
-import InputPassword from "@/components/forms/Inputs/InputPassword";
-import Input from "@/components/forms/Inputs/Input";
+import InputPassword from "@/components/forms/InputPassword";
+import Input from "@/components/forms/Input";
 
 function page() {
   return (
