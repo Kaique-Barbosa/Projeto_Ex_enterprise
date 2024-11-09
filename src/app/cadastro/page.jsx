@@ -11,13 +11,13 @@ import logo from "@/public/img/logo.png";
 function page() {
   return (
     <div className="min-h-svh h-full flex flex-col justify-center p-4 gap-8">
-      <div className="flex gap-2 justify-center items-center">
+      <header className="flex gap-2 justify-center items-center">
         <Image className="size-16 object-cover" alt="Logo" src={logo} />
         <span className="inline text-2xl font-semibold">Ex Enterprise</span>
-      </div>
+      </header>
 
-      <div className="flex items-center justify-center flex-1">
-        <div className="max-w-md w-full flex flex-col gap-6 bg-cinza-50 dark:bg-preto-850 p-6 shadow-neutro_sm dark:shadow-neutro_dark_sm rounded-lg">
+      <main className="flex items-center justify-center flex-1">
+        <div className="max-w-md w-full flex flex-col gap-6 bg-cinza-50/10 dark:bg-preto-850/10 p-4">
           <form className="flex flex-col" onSubmit={(e) => e.preventDefault()}>
             <fieldset className="flex flex-col gap-4">
               <legend className="text-center text-4xl mb-6">
@@ -29,7 +29,7 @@ function page() {
                 </label>
                 <Input
                   css="w-full"
-                  placeholder="Digite seu primeiro nome"
+                  placeholder="Primeiro nome"
                   type="text"
                   id="nome"
                   required
@@ -42,7 +42,7 @@ function page() {
                 </label>
                 <Input
                   css="w-full"
-                  placeholder="Digite seu sobrenome"
+                  placeholder="Sobrenome completo"
                   type="text"
                   id="sobrenome"
                   required
@@ -55,7 +55,7 @@ function page() {
                 </label>
                 <Input
                   css="w-full"
-                  placeholder="Digite seu email"
+                  placeholder="@exemplo.com"
                   type="email"
                   id="email"
                   required
@@ -68,7 +68,7 @@ function page() {
                 </label>
                 <InputTel
                   css="w-full"
-                  placeholder="Digite seu número de telefone"
+                  placeholder="(99) 99999-9999"
                   id="telefone"
                   required
                   tabIndex={4}
@@ -81,7 +81,7 @@ function page() {
                 </label>
                 <InputPassword
                   id="senha"
-                  placeholder="Digite sua senha"
+                  placeholder="Defina sua senha"
                   required={true}
                   css="w-full"
                   tabIndex={5}
@@ -94,7 +94,7 @@ function page() {
                 </label>
                 <InputPassword
                   id="confirmar-senha"
-                  placeholder="Confirme sua senha"
+                  placeholder="Digite sua senha definida"
                   required={true}
                   css="w-full"
                   tabIndex={6}
@@ -106,7 +106,7 @@ function page() {
                 className="btn btn-accent text-white w-full py-3"
                 tabIndex={7}
               >
-                Acessar
+                Criar conta
               </button>
             </fieldset>
           </form>
@@ -120,7 +120,7 @@ function page() {
             Já têm uma conta? Faça seu login
           </Link>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

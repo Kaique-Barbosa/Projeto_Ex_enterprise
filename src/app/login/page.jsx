@@ -10,17 +10,19 @@ import Input from "@/components/forms/Input";
 
 function page() {
   return (
-    <div className="h-dvh flex flex-col justify-center p-4 gap-8">
-      <div className="flex gap-2 justify-center items-center">
+    <div className="min-h-svh h-full flex flex-col justify-center p-4 gap-8">
+      <header className="flex gap-2 justify-center items-center">
         <Image className="size-16 object-cover" alt="Logo" src={logo} />
         <span className="inline text-2xl font-semibold">Ex Enterprise</span>
-      </div>
+      </header>
 
-      <div className="flex items-center justify-center flex-1">
-        <div className="max-w-md w-full flex flex-col gap-6 bg-cinza-50 dark:bg-preto-850 p-6 shadow-neutro_sm dark:shadow-neutro_dark_sm rounded-lg">
+      <main className="flex items-center justify-center flex-1">
+        <div className="max-w-md w-full flex flex-col gap-6 bg-cinza-50/10 dark:bg-preto-850/10 p-4">
           <form className="flex flex-col" onSubmit={(e) => e.preventDefault()}>
             <fieldset className="flex flex-col gap-4">
-              <legend className="text-center text-4xl mb-6">Acesse sua conta</legend>
+              <legend className="text-center text-4xl mb-6">
+                Acesse sua conta
+              </legend>
               <div className="flex-1">
                 <label htmlFor="email" className="label">
                   Email
@@ -66,7 +68,7 @@ function page() {
             Ainda não têm cadastro? Faça o seu
           </Link>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

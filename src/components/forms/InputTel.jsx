@@ -1,10 +1,10 @@
 import React from "react";
 
 export default function InputTel({css, id, placeholder, required, tabIndex}) {
+  const [phone, setPhone] = React.useState("");
 
-  function phoneHandler (event) {
-    let input = event.target;
-    let phone = input.value.replace(/\D/g, "");
+  function phoneMask (value) {
+    let phone = value.replace(/\D/g, "");
     let formattedPhone = "";
 
     if (formattedPhone.length === 11) {
@@ -15,7 +15,11 @@ export default function InputTel({css, id, placeholder, required, tabIndex}) {
       formattedPhone = phone;
     }
 
-    input.value = formattedPhone;
+    return formattedPhone;
+  }
+
+  function handleChange(event) {
+    setPhone(phoneMask(event.target.value));
   }
   
   return (
@@ -27,7 +31,7 @@ export default function InputTel({css, id, placeholder, required, tabIndex}) {
       required = {required}
       tabIndex={tabIndex}
       minLength={14}
-      onInput={(e) => phoneHandler(e)}
+      onChange={handleChange}
     />
   );
 }
