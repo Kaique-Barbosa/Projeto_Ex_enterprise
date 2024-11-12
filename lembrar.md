@@ -16,4 +16,7 @@ https://github.com/pacocoursey/next-themes
 Possivel biblioteca de componentes para usar
 https://ui.shadcn.com/
 
+Bliblioteca para formulários
+https://formik.org
+
 nada nao, so pra atualizar commit
