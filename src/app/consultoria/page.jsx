@@ -1,9 +1,11 @@
 "use client";
+
 import { React, useState } from "react";
 
 //importação de componentes
-import SectionTitle from "@/components/sectionTitle/SectionTitle";
-import { Card } from "@/components/card/Card";
+import { HeroSection } from "@/components/HeroSection";
+import Card from "@/components/Card";
+import Image from "next/image";
 import { Header } from "@/components/header/Header";
 import CardModel2 from "@/components/cardModel2/cardModel2";
 import SectionWithImg from "@/components/sectionWithImg/SectionWithImg";
@@ -87,7 +89,12 @@ const ConsultoriaPage = () => {
     <div className="flex flex-col items-center justify-center w-full">
       <Header />
 
-      <SectionTitle texto={["Conheça a nossa", "Consultoria em T.I"]} />
+      <HeroSection.Root>
+        <HeroSection.Title>
+          Conheça a nossa{" "}
+          <strong className="text-secondary">Consultoria em TI</strong>
+        </HeroSection.Title>
+      </HeroSection.Root>
 
       <SectionWithImg
         title="Uma empresa especializada em renovar o seu negócio"
@@ -105,10 +112,7 @@ const ConsultoriaPage = () => {
       {/* sequencia de cards. valores estão acima em um array de objetos */}
       <div className="container max-w-9xl flex flex-col items-center gap-12 my-12">
         <div>
-          <Heading
-            type="h2"
-            css="text-center text-pretty mb-4"
-          >
+          <Heading type="h2" css="text-center text-pretty mb-4">
             Nossos Serviços
           </Heading>
           <p className="text-lg text-laranja-light dark:text-laranja-dark">
@@ -116,46 +120,49 @@ const ConsultoriaPage = () => {
           </p>
         </div>
         {cardsData.map((card, index) => (
-          <Card
-            key={index} // Adicione uma key para cada Card
-            imagem={card.imagem}
-            titulo={card.titulo}
-            subTitulo={card.subTitulo}
-            altLink={card.altLink}
-            inverter={card.inverter}
-            linkButton={card.linkButton}
-          />
+          <Card.Root key={index}>
+            <Card.Container inverter={card.inverter}>
+              <Card.Header flex>
+                <Image
+                  className={`object-cover h-full rounded-t-lg ${
+                    card.inverter
+                      ? "sm:rounded-r-lg sm:rounded-l-none"
+                      : "sm:rounded-l-lg sm:rounded-r-none"
+                  }`}
+                  alt={card.altLink}
+                  src={card.imagem}
+                />
+              </Card.Header>
+              <Card.Body>
+                <div className="flex flex-col gap-4 self-stretch">
+                  <Card.Title>{card.titulo}</Card.Title>
+                  <Card.Description>{card.subTitulo}</Card.Description>
+                </div>
+              </Card.Body>
+            </Card.Container>
+          </Card.Root>
         ))}
       </div>
 
       <div className="container my-12 max-w-9xl">
-        <Heading
-          type="h2"
-          css="text-center text-pretty mb-8"
-        >
+        <Heading t css="text-center text-pretty mb-8">
           Público Alvo
         </Heading>
 
         <div className="w-full justify-between flex flex-wrap gap-8 p-4 my-12">
           <CardModel2
-            icon={
-              <EnterpriseIcon css="size-20 fill-secondary" />
-            }
+            icon={<EnterpriseIcon css="size-20 fill-secondary" />}
             titulo="Empresas de Pequeno, Médio e Grande Porte"
             descricao="Negócios que buscam otimizar seus processos tecnológicos, implementar novas soluções de TI ou necessitam de suporte especializado para projetos específicos."
           />
           <CardModel2
-            icon={
-              <RoctketIcon css="size-20 fill-secondary" />
-            }
+            icon={<RoctketIcon css="size-20 fill-secondary" />}
             titulo="Startups e Empresas de Tecnologia"
             descricao="Organizações emergentes e inovadoras que
               necessitam de orientação técnica para desenvolver seus produtos e serviços, bem como estruturar sua infraestrutura de TI."
           />
           <CardModel2
-            icon={
-              <GlobeIcon css="size-20 fill-secondary" />
-            }
+            icon={<GlobeIcon css="size-20 fill-secondary" />}
             titulo="Setor Público e Organizações Sem Fins Lucrativos"
             descricao="Instituições governamentais e ONGs que precisam de soluções tecnológicas eficientes para melhorar sua operação e impacto social."
           />
@@ -163,10 +170,7 @@ const ConsultoriaPage = () => {
       </div>
 
       <div className="container max-w-9xl my-12">
-        <Heading
-          type="h2"
-          css="text-center text-pretty mb-12"
-        >
+        <Heading type="h2" css="text-center text-pretty mb-12">
           Nossos Clientes
         </Heading>
         <div className="w-full">
@@ -175,10 +179,8 @@ const ConsultoriaPage = () => {
       </div>
 
       <div className="container max-w-9xl my-12 flex flex-col justify-center items-center">
-        <Heading
-          type="h2"
-          css="text-center text-pretty mb-8">
-            Perguntas Frequentes
+        <Heading type="h2" css="text-center text-pretty mb-8">
+          Perguntas Frequentes
         </Heading>
         {PerguntasFrequentesData.slice(0, visibleCount).map(
           (pergunta, index) => (
