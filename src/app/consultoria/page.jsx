@@ -186,9 +186,12 @@ const ConsultoriaPage = () => {
             consultoria? Entre em contato pelo nosso formulário de contato.
           </Section.Description>
           <LinkButton
-            texto={"Entre em contato"}
-            alt={"botão para página de contato"}
-            href={"/contato"}
+            texto="Entre em contato"
+            alt="botão para página de contato"
+            href="/contato"
+            style="normal"
+            color="accent"
+            className="text-white"
           />
         </div>
       </Section.Root>

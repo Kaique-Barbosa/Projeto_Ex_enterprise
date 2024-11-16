@@ -54,7 +54,13 @@ export function HomePage() {
                   mercado
                 </Card.Description>
               </div>
-              <LinkButton href="/consultoria" texto="Acessar" />
+              <LinkButton
+                href="/consultoria"
+                texto="Acessar"
+                style="outlineCircle"
+                color="accent"
+                className="hover:text-white"
+              />
             </Card.Body>
           </Card.Container>
         </Card.Root>
@@ -76,7 +82,13 @@ export function HomePage() {
                   site
                 </Card.Description>
               </div>
-              <LinkButton href="/imoveis" texto="Acessar" />
+              <LinkButton
+                href="/imoveis"
+                texto="Acessar"
+                style="outlineCircle"
+                color="accent"
+                className="hover:text-white"
+              />
             </Card.Body>
           </Card.Container>
         </Card.Root>
@@ -97,16 +109,20 @@ export function HomePage() {
                   Adiquira produtos de tecnologia com qualidade e confiança
                 </Card.Description>
               </div>
-              <LinkButton href="/ecomerce" texto="Acessar" />
+              <LinkButton
+                href="/ecommerce"
+                texto="Acessar"
+                style="outlineCircle"
+                color="accent"
+                className="hover:text-white"
+              />
             </Card.Body>
           </Card.Container>
         </Card.Root>
       </div>
       <Section.Root className="flex flex-col-reverse lg:flex-row items-center justify-center gap-8">
-        <div className="flex-1 text-center">
-          <Section.Title className="mb-6">
-            Conheça mais sobre a empresa
-          </Section.Title>
+        <div className="flex-1 text-center flex flex-col gap-6">
+          <Section.Title>Conheça mais sobre a empresa</Section.Title>
           <Section.Description>
             <span className="text-accent">Nossa missão é oferecer</span>
             <span>&nbsp;</span>
@@ -120,6 +136,14 @@ export function HomePage() {
               de valor sustentável.
             </span>
           </Section.Description>
+          <LinkButton
+            href={"/"}
+            alt="Botao link"
+            texto="Acessar"
+            style="outlineCircle"
+            color="accent"
+            className="self-center hover:text-white"
+          />
         </div>
         <div className="flex-1">
           <div className="p-4 lg:p-0 grid xs:grid-cols-2 items-center justify-center gap-4">
@@ -164,7 +188,9 @@ export function HomePage() {
             href={"/"}
             alt={"Botao link"}
             texto={"Acessar"}
-            className="self-center"
+            className="self-center hover:text-white"
+            style="outlineCircle"
+            color="accent"
           />
         </div>
         <div className="flex-1 flex flex-col gap-4">
