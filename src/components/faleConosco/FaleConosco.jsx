@@ -1,5 +1,5 @@
 import React from "react";
-import BotaoLinks from "@/components/botaoLinks/BotaoLinks";
+import LinkButton from "@/components/Buttons/LinkButton";
 
 const FaleConosco = () => {
   return (
@@ -21,7 +21,7 @@ const FaleConosco = () => {
           </p>
         </div>
 
-        <BotaoLinks
+        <LinkButton
           href="/"
           texto="Entre em contato"
           alt={"botão para página de contato"}

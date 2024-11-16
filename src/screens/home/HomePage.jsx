@@ -3,17 +3,18 @@
 import { Header } from "@/components/header/Header";
 import SectionTitle from "@/components/sectionTitle/SectionTitle";
 import Card from "@/components/Card";
-import SobreEmpresa from "@/components/sobreEmpresa/SobreEmpresa";
 import Image from "next/image";
-// importação de imagens
+import Sobre from "@/components/sobre/Sobre";
+import Section from "@/components/Section";
+import LinkButton from "@/components/Buttons/LinkButton";
+import Footer from "@/components/footer/Footer";
 
+// importação de imagens
 import consultoria from "@/public/img/consultoria.jpg";
 import locacao from "@/public/img/imoveis.jpg";
 import ecommerce from "@/public/img/ecommerce.jpg";
-import Sobre from "@/components/sobre/Sobre";
-import SobreDevs from "@/components/sobreDevs/SobreDevs";
-import Footer from "@/components/footer/Footer";
-import BotaoLinks from "@/components/botaoLinks/BotaoLinks";
+import devs1 from "@/public/img/devs1.png";
+import devs2 from "@/public/img/devs2.png";
 
 export function HomePage() {
   return (
@@ -53,10 +54,11 @@ export function HomePage() {
                   mercado
                 </Card.Description>
               </div>
-              <BotaoLinks href="/consultoria" texto="Acessar" />
+              <LinkButton href="/consultoria" texto="Acessar" />
             </Card.Body>
           </Card.Container>
         </Card.Root>
+
         <Card.Root>
           <Card.Container inverter>
             <Card.Header flex>
@@ -74,10 +76,11 @@ export function HomePage() {
                   site
                 </Card.Description>
               </div>
-              <BotaoLinks href="/imoveis" texto="Acessar" />
+              <LinkButton href="/imoveis" texto="Acessar" />
             </Card.Body>
           </Card.Container>
         </Card.Root>
+
         <Card.Root>
           <Card.Container>
             <Card.Header flex>
@@ -94,13 +97,81 @@ export function HomePage() {
                   Adiquira produtos de tecnologia com qualidade e confiança
                 </Card.Description>
               </div>
-              <BotaoLinks href="/ecomerce" texto="Acessar" />
+              <LinkButton href="/ecomerce" texto="Acessar" />
             </Card.Body>
           </Card.Container>
         </Card.Root>
       </div>
-      <SobreEmpresa />
-      <SobreDevs />
+      <Section.Root className="flex flex-col-reverse lg:flex-row items-center justify-center gap-8">
+        <div className="flex-1 text-center">
+          <Section.Title className="mb-6">
+            Conheça mais sobre a empresa
+          </Section.Title>
+          <Section.Description>
+            <span className="text-accent">Nossa missão é oferecer</span>
+            <span>&nbsp;</span>
+            <span>
+              soluções tecnológicas avançadas, produtos de informática de alta
+              qualidade e serviços de locação de imóveis excepcionais,
+            </span>
+            <span>&nbsp;</span>
+            <span className="text-accent">
+              sempre com foco na inovação, na satisfação do cliente e na criação
+              de valor sustentável.
+            </span>
+          </Section.Description>
+        </div>
+        <div className="flex-1">
+          <div className="p-4 lg:p-0 grid xs:grid-cols-2 items-center justify-center gap-4">
+            <Image
+              className="items-center w-full h-80 row-span-2 object-cover rounded-lg"
+              alt="imagens ilustrativas"
+              src={consultoria}
+            />
+            <Image
+              className="w-full h-80 object-cover rounded-lg"
+              alt="imagens ilustrativas "
+              src={locacao}
+            />
+            <Image
+              className="w-full h-80 object-cover rounded-lg"
+              alt="imagens ilustrativas"
+              src={ecommerce}
+            />
+          </div>
+        </div>
+      </Section.Root>
+      <Section.Root className="flex flex-col-reverse lg:flex-row items-center justify-center gap-8">
+        <div className="flex-1 flex flex-col gap-4 text-center justify-center">
+          <Section.Title>
+            Conheça mais sobre o time de desenvolvedores
+          </Section.Title>
+          <Section.Description>
+            <span>Nosso time de devs</span>
+            <span>&nbsp;</span>
+            <span>
+              busca inovação com sustentabilidade, utilizando das melhores
+              tecnologias do marcado
+            </span>
+            <span>&nbsp;</span>
+            <span>focando na</span>
+            <span className="text-accent">
+              {" "}
+              usabilidade, eficiencia e seguranda do sistema.
+            </span>
+          </Section.Description>
+          <LinkButton
+            href={"/"}
+            alt={"Botao link"}
+            texto={"Acessar"}
+            className="self-center"
+          />
+        </div>
+        <div className="flex-1 flex flex-col gap-4">
+          <Image className="w-full h-80" alt="Cover" src={devs1} />
+          <Image className="w-full h-80" alt="Cover" src={devs2} />
+        </div>
+      </Section.Root>
       <Footer />
     </div>
   );

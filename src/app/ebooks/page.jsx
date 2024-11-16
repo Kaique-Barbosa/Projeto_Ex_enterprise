@@ -1,37 +1,31 @@
 "use client";
-import { React, useState } from "react";
+import React from "react";
 
 //importação de componentes
-import SectionTitle from "@/components/sectionTitle/SectionTitle";
 import { Header } from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import CardModel5 from "@/components/cardModel5/cardModel5";
-
-// importação de imagens e logos
-
-// INICIO -------------- area dos dados dos componentes ------------------
-
-// ----------------- FIM  area dos dados dos componentes-----------------
+import { HeroSection } from "@/components/HeroSection";
+import Section from "@/components/Section";
 
 const EbooksPage = () => {
-  const [visibleCount, setVisibleCount] = useState(3); // Inicialmente 5 perguntas visíveis
-
-  const vermais = () => {
-    setVisibleCount((prevCount) => prevCount + 3); // Aumenta a contagem visível em 5
-  };
-
   return (
     <div className="flex flex-col items-center justify-center w-full">
       <Header />
 
-      <SectionTitle texto={["BAIXE GRATUITAMENTE", "E-BOOKS    "]} />
+      <HeroSection.Root>
+        <HeroSection.Title>
+          Baixe Gratuitamente nossos{" "}
+          <strong className="text-secondary">E-books</strong>
+        </HeroSection.Title>
+      </HeroSection.Root>
 
-      <div className="container max-w-9xl p-4 sm:p-8 lg:p-12 flex flex-col items-center gap-8">
+      <Section.Root className="flex flex-col items-center gap-8">
         <CardModel5 />
         <CardModel5 />
         <CardModel5 />
         <CardModel5 />
-      </div>
+      </Section.Root>
 
       <Footer />
     </div>

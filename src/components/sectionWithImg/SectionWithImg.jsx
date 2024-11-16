@@ -21,7 +21,6 @@ const SectionWithImg = ({ children, title, imgSrc, imgAlt }) => {
   );
 };
 
-// Adicionar PropsType para definir o tipo da variavel
 SectionWithImg.propTypes = {
   children: PropTypes.string,
   title: PropTypes.string,

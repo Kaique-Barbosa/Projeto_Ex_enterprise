@@ -5,7 +5,7 @@ import Image from "next/image";
 import React from "react";
 import imagem from "@/public/img/livroImg.jpg";
 import Download from "@/icons/Download/Download";
-import ButtonWithIcon from "@/components/buttonWithIcon/ButtonWithIcon";
+import ButtonWithIcon from "@/components/Buttons/ButtonWithIcon";
 
 export default function cardModel5() {
   return (

@@ -3,7 +3,7 @@ import Image from "next/image";
 import consultoria from "@/public/img/consultoria.jpg";
 import locacao from "@/public/img/imoveis.jpg";
 import ecommerce from "@/public/img/ecommerce.jpg";
-import BotaoLinks from "../botaoLinks/BotaoLinks";
+import BotaoLinks from "../Buttons/LinkButton";
 
 export default function SobreEmpresa() {
   return (

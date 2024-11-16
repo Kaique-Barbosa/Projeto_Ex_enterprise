@@ -8,13 +8,11 @@ import Card from "@/components/Card";
 import Image from "next/image";
 import { Header } from "@/components/header/Header";
 import CardModel2 from "@/components/cardModel2/cardModel2";
-import SectionWithImg from "@/components/sectionWithImg/SectionWithImg";
 import PerguntasFrequentes from "@/components/perguntasFrequentes/PerguntasFrequentes";
-import BotaoOnClick from "@/components/botaoOnClick/BotaoOnClick";
+import BotaoOnClick from "@/components/Buttons/BotaoOnClick";
 import Footer from "@/components/footer/Footer";
 import Carrocel from "@/components/carrocel/Carrocel";
 import FaleConosco from "@/components/faleConosco/FaleConosco";
-import { Heading } from "@/components/Heading/Heading";
 
 // importação de imagens e logos
 import consultoria from "@/public/img/consultoria.jpg";
@@ -24,6 +22,8 @@ import ecommerce from "@/public/img/ecommerce.jpg";
 import { GlobeIcon } from "@/icons/GlobeIcon/GlobeIcon";
 import { EnterpriseIcon } from "@/icons/EnterpriseIcon/EnterpriseIcon";
 import { RoctketIcon } from "@/icons/RocketIcon/RoctketIcon";
+import Section from "@/components/Section";
+import LinkButton from "@/components/Buttons/LinkButton";
 
 // INICIO -------------- area dos dados dos componentes ------------------
 const cardsData = [
@@ -96,28 +96,34 @@ const ConsultoriaPage = () => {
         </HeroSection.Title>
       </HeroSection.Root>
 
-      <SectionWithImg
-        title="Uma empresa especializada em renovar o seu negócio"
-        imgSrc={consultoria2}
-        imgAlt="Imagem de um escritório"
-      >
-        <p className="text-laranja-light dark:text-laranja-dark">
-          Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-          vulputate libero et velit interdum, ac aliquet odio mattis. Borem
-          ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
-          libero et velit interdum, ac aliquet odio mattis.
-        </p>
-      </SectionWithImg>
+      <Section.Root className="flex flex-col lg:flex-row gap-8">
+        <Image
+          src={consultoria2}
+          className="flex-1 max-h-80 lg:max-h-96 object-cover rounded-lg"
+          alt="imagem de um escritório"
+        />
+        <div className="flex-1 flex flex-col justify-center">
+          <Section.Title className="text-center mb-6">
+            Uma empresa especializada em renovar o seu negócio
+          </Section.Title>
+          <Section.Description className="text-center text-accent">
+            Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            vulputate libero et velit interdum, ac aliquet odio mattis. Borem
+            ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
+            libero et velit interdum, ac aliquet odio
+          </Section.Description>
+        </div>
+      </Section.Root>
 
       {/* sequencia de cards. valores estão acima em um array de objetos */}
-      <div className="container max-w-9xl flex flex-col items-center gap-12 my-12">
+      <Section.Root className="flex flex-col items-center gap-12">
         <div>
-          <Heading type="h2" css="text-center text-pretty mb-4">
+          <Section.Title className="text-center mb-4">
             Nossos Serviços
-          </Heading>
-          <p className="text-lg text-laranja-light dark:text-laranja-dark">
+          </Section.Title>
+          <Section.Description className="text-lg text-accent">
             Veja o que oferecemos em soluções para TI
-          </p>
+          </Section.Description>
         </div>
         {cardsData.map((card, index) => (
           <Card.Root key={index}>
@@ -142,12 +148,10 @@ const ConsultoriaPage = () => {
             </Card.Container>
           </Card.Root>
         ))}
-      </div>
+      </Section.Root>
 
-      <div className="container my-12 max-w-9xl">
-        <Heading t css="text-center text-pretty mb-8">
-          Público Alvo
-        </Heading>
+      <Section.Root>
+        <Section.Title className="text-center mb-8">Público Alvo</Section.Title>
 
         <div className="w-full justify-between flex flex-wrap gap-8 p-4 my-12">
           <CardModel2
@@ -167,21 +171,21 @@ const ConsultoriaPage = () => {
             descricao="Instituições governamentais e ONGs que precisam de soluções tecnológicas eficientes para melhorar sua operação e impacto social."
           />
         </div>
-      </div>
+      </Section.Root>
 
-      <div className="container max-w-9xl my-12">
-        <Heading type="h2" css="text-center text-pretty mb-12">
+      <Section.Root>
+        <Section.Title className="text-center mb-12">
           Nossos Clientes
-        </Heading>
+        </Section.Title>
         <div className="w-full">
           <Carrocel />
         </div>
-      </div>
+      </Section.Root>
 
-      <div className="container max-w-9xl my-12 flex flex-col justify-center items-center">
-        <Heading type="h2" css="text-center text-pretty mb-8">
+      <Section.Root className="flex flex-col justify-center items-center">
+        <Section.Title className="text-center mb-8">
           Perguntas Frequentes
-        </Heading>
+        </Section.Title>
         {PerguntasFrequentesData.slice(0, visibleCount).map(
           (pergunta, index) => (
             <PerguntasFrequentes
@@ -193,13 +197,30 @@ const ConsultoriaPage = () => {
           )
         )}
         {visibleCount < PerguntasFrequentesData.length && (
-          <div className="mb-36 my-5">
+          <div className="mb-12 my-5">
             <BotaoOnClick texto={"ver mais"} funcaoOnclick={vermais} />
           </div>
         )}
-      </div>
+      </Section.Root>
 
-      <FaleConosco />
+      <Section.Root>
+        <Section.Title className="text-center text-accent mb-8">
+          Fale Conosco
+        </Section.Title>
+        <div className="flex flex-col gap-8 justify-between items-center">
+          <Section.Description className="text-center">
+            Quer conversar com os nossos consultores? Quer conhecer mais sobre
+            os nossos serviços? Ainda têm mais dúvidas sobre a nossa
+            consultoria? Entre em contato pelo nosso formulário de contato.
+          </Section.Description>
+          <LinkButton
+            texto={"Entre em contato"}
+            alt={"botão para página de contato"}
+            href={"/contato"}
+          />
+        </div>
+      </Section.Root>
+      {/*  <FaleConosco /> */}
       <Footer />
     </div>
   );

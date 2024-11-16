@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import BotaoLinks from "../botaoLinks/BotaoLinks";
+import BotaoLinks from "../Buttons/LinkButton";
 import devs1 from "@/public/img/devs1.png";
 import devs2 from "@/public/img/devs2.png";
 

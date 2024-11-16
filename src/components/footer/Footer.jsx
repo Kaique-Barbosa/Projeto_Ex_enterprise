@@ -12,7 +12,7 @@ export default function Footer() {
         <Link href={"/"} alt="link para homepage">
           <Image src={logo} className="size-12" alt="logo" />
         </Link>
-        <p className="font-semibold text-2xl">Ex Enterprise</p>
+        <p className="font-medium text-2xl">Ex Enterprise</p>
       </div>
       <div className="flex flex-col xs:flex-wrap xs:flex-row gap-4 items-center justify-center">
         {appNavigation.map((item, index) => (
@@ -20,7 +20,7 @@ export default function Footer() {
         ))}
       </div>
       <div className="flex flex-col items-center justify-center gap-[1rem_2rem]">
-        <p className="text-lg font-semibold text-laranja-light dark:text-laranja-dark">
+        <p className="text-lg font-medium text-laranja-light dark:text-laranja-dark">
           Siga Nós
         </p>
 
