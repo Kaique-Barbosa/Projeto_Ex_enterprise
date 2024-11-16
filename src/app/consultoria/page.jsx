@@ -1,6 +1,4 @@
-"use client";
-
-import { React, useState } from "react";
+import React from "react";
 
 //importação de componentes
 import { HeroSection } from "@/components/HeroSection";
@@ -8,11 +6,9 @@ import Card from "@/components/Card";
 import Image from "next/image";
 import { Header } from "@/components/header/Header";
 import CardModel2 from "@/components/cardModel2/cardModel2";
-import PerguntasFrequentes from "@/components/perguntasFrequentes/PerguntasFrequentes";
-import BotaoOnClick from "@/components/Buttons/BotaoOnClick";
+import FAQSection from "@/components/perguntasFrequentes/FAQSection";
 import Footer from "@/components/footer/Footer";
 import Carrocel from "@/components/carrocel/Carrocel";
-import FaleConosco from "@/components/faleConosco/FaleConosco";
 
 // importação de imagens e logos
 import consultoria from "@/public/img/consultoria.jpg";
@@ -79,11 +75,6 @@ const PerguntasFrequentesData = [
 // ----------------- FIM  area dos dados dos componentes-----------------
 
 const ConsultoriaPage = () => {
-  const [visibleCount, setVisibleCount] = useState(3); // Inicialmente 5 perguntas visíveis
-
-  const vermais = () => {
-    setVisibleCount((prevCount) => prevCount + 3); // Aumenta a contagem visível em 5
-  };
 
   return (
     <div className="flex flex-col items-center justify-center w-full">
@@ -182,26 +173,7 @@ const ConsultoriaPage = () => {
         </div>
       </Section.Root>
 
-      <Section.Root className="flex flex-col justify-center items-center">
-        <Section.Title className="text-center mb-8">
-          Perguntas Frequentes
-        </Section.Title>
-        {PerguntasFrequentesData.slice(0, visibleCount).map(
-          (pergunta, index) => (
-            <PerguntasFrequentes
-              key={index}
-              titulo={pergunta.titulo}
-              texto={pergunta.texto}
-              aberto={pergunta.aberto}
-            />
-          )
-        )}
-        {visibleCount < PerguntasFrequentesData.length && (
-          <div className="mb-12 my-5">
-            <BotaoOnClick texto={"ver mais"} funcaoOnclick={vermais} />
-          </div>
-        )}
-      </Section.Root>
+      <FAQSection data={PerguntasFrequentesData}/>
 
       <Section.Root>
         <Section.Title className="text-center text-accent mb-8">
@@ -220,7 +192,7 @@ const ConsultoriaPage = () => {
           />
         </div>
       </Section.Root>
-      {/*  <FaleConosco /> */}
+
       <Footer />
     </div>
   );

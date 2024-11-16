@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const PerguntasFrequentes = ({ titulo, texto, aberto }) => {
+const PerguntasFrequentesDetais = ({ titulo, texto, aberto }) => {
   return (
     <div className="space-y-4 w-full">
       <details
@@ -29,4 +29,4 @@ const PerguntasFrequentes = ({ titulo, texto, aberto }) => {
   );
 };
 
-export default PerguntasFrequentes;
+export default PerguntasFrequentesDetais;

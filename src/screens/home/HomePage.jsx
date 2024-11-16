@@ -1,10 +1,7 @@
-"use client";
-
 import { Header } from "@/components/header/Header";
 import SectionTitle from "@/components/sectionTitle/SectionTitle";
 import Card from "@/components/Card";
 import Image from "next/image";
-import Sobre from "@/components/sobre/Sobre";
 import Section from "@/components/Section";
 import LinkButton from "@/components/Buttons/LinkButton";
 import Footer from "@/components/footer/Footer";
@@ -23,16 +20,19 @@ export function HomePage() {
 
       <SectionTitle texto={["Conheça a ", "Ex Enterprise"]} />
 
-      <Sobre title="Conheça um pouco sobre a empresa">
-        <p className="text-balance font-semibold">
+      <Section.Root className="flex flex-col justify-center gap-6 min-h-80">
+        <Section.Title className="text-center">
+          Conheça um pouco mais sobre a empresa
+        </Section.Title>
+        <Section.Description className="text-center">
           Empresa multifacetada que oferece consultoria especializada em
           tecnologia da informação, um e-commerce robusto para venda de produtos
           de informática e serviços de locação de imóveis. Com uma equipe
           altamente qualificada e um representante palestrante renomado no setor
           de TI, nos destacamos pela nossa capacidade de entregar soluções
           inovadoras e personalizadas.
-        </p>
-      </Sobre>
+        </Section.Description>
+      </Section.Root>
 
       <div className="container max-w-9xl items-center flex flex-col gap-8 my-12">
         <h2 className="text-center">Veja os nossos serviços</h2>
