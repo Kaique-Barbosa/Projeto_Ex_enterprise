@@ -6,7 +6,7 @@ const CardModel2 = ({ icon, titulo, descricao }) => {
     <article className="flex flex-col items-center p-4 gap-6 grow basis-60">
       {icon}
       <div className="flex flex-col gap-4 flex-1">
-        <h3 className="text-center text-lg font-bold">{titulo}</h3>
+        <h3 className="text-center text-lg">{titulo}</h3>
         <p className="text-center text-accent">
           {descricao}
         </p>
