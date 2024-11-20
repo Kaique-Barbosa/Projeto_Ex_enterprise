@@ -41,7 +41,7 @@ export function HomePage() {
           <Card.Container>
             <Card.Header flex>
               <Image
-                className="object-cover h-full rounded-t-lg sm:rounded-l-lg sm:rounded-r-none"
+                className="object-cover h-full rounded-t-lg md:rounded-l-lg md:rounded-r-none"
                 alt="Col"
                 src={consultoria}
               />
@@ -69,7 +69,7 @@ export function HomePage() {
           <Card.Container inverter>
             <Card.Header flex>
               <Image
-                className="object-cover h-full rounded-t-lg sm:rounded-r-lg sm:rounded-l-none"
+                className="object-cover h-full rounded-t-lg md:rounded-r-lg md:rounded-l-none"
                 alt="Col"
                 src={locacao}
               />
@@ -97,7 +97,7 @@ export function HomePage() {
           <Card.Container>
             <Card.Header flex>
               <Image
-                className="object-cover h-full rounded-t-lg sm:rounded-l-lg sm:rounded-r-none"
+                className="object-cover h-full rounded-t-lg md:rounded-l-lg md:rounded-r-none"
                 alt="Col"
                 src={ecommerce}
               />

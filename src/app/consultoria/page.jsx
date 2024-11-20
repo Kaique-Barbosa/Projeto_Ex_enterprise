@@ -123,8 +123,8 @@ const ConsultoriaPage = () => {
                 <Image
                   className={`object-cover h-full rounded-t-lg ${
                     card.inverter
-                      ? "sm:rounded-r-lg sm:rounded-l-none"
-                      : "sm:rounded-l-lg sm:rounded-r-none"
+                      ? "md:rounded-r-lg md:rounded-l-none"
+                      : "md:rounded-l-lg md:rounded-r-none"
                   }`}
                   alt={card.altLink}
                   src={card.imagem}

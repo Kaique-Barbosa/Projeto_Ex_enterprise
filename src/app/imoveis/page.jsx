@@ -8,6 +8,10 @@ import HouseIcon from "@/icons/HouseIcon";
 import React from "react";
 import REConsultancyIcon from "@/icons/REConsultancyIcon";
 import ManagementIcon from "@/icons/ManagementIcon";
+import CardImoveis from "@/components/CardImoveis";
+import Card from "@/components/Card";
+import Image from "next/image";
+import imovelImg from "@/public/img/mini_02577e27.jpg";
 
 const ImoveisPage = () => {
   return (
@@ -22,6 +26,14 @@ const ImoveisPage = () => {
           </strong>
         </HeroSection.Title>
       </HeroSection.Root>
+
+      <Section.Root className="flex flex-col gap-12">
+        <Section.Title className="text-center text-accent">
+          Todos os nossos Imóveis
+        </Section.Title>
+        
+        <CardImoveis image={imovelImg}/>
+      </Section.Root>
 
       <Section.Root className="flex flex-col gap-12">
         <Section.Title className="text-center">

@@ -4,7 +4,7 @@ export default function Container({ inverter, children }) {
   return (
     <div
       className={`flex flex-1 self-stretch flex-col ${
-        inverter ? "sm:flex-row-reverse" : "sm:flex-row"
+        inverter ? "md:flex-row-reverse" : "md:flex-row"
       }`}
     >
       {children}
