@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import LinkButton from "../Buttons/LinkButton";
 
-export default function index({ image }) {
+export default function index({ image, redirect }) {
   return (
     <div className="bg-cinza-200 dark:bg-preto-900 shadow-neutro flex h-fit md:min-h-80 w-full max-w-7xl items-center justify-center rounded-lg tracking-widest leading-tighter">
       <div className="flex flex-1 self-stretch flex-col md:flex-row">
@@ -52,7 +52,7 @@ export default function index({ image }) {
               </span>
             </div>
             <LinkButton
-              href="/imoveis"
+              href={redirect}
               alt="conferir detalhes do imóvel"
               texto="Mais informações"
               style="ghost"

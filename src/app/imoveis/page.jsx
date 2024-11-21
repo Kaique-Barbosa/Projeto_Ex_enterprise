@@ -1,3 +1,4 @@
+import React from "react";
 import Footer from "@/components/footer/Footer";
 import { Header } from "@/components/header/Header";
 import { HeroSection } from "@/components/HeroSection";
@@ -5,12 +6,9 @@ import Section from "@/components/Section";
 import CardModel2 from "@/components/cardModel2/cardModel2";
 import LinkButton from "@/components/Buttons/LinkButton";
 import HouseIcon from "@/icons/HouseIcon";
-import React from "react";
 import REConsultancyIcon from "@/icons/REConsultancyIcon";
 import ManagementIcon from "@/icons/ManagementIcon";
 import CardImoveis from "@/components/CardImoveis";
-import Card from "@/components/Card";
-import Image from "next/image";
 import imovelImg from "@/public/img/mini_02577e27.jpg";
 
 const ImoveisPage = () => {
@@ -32,7 +30,7 @@ const ImoveisPage = () => {
           Todos os nossos Imóveis
         </Section.Title>
         
-        <CardImoveis image={imovelImg}/>
+        <CardImoveis image={imovelImg} redirect="/imoveis/1001"/>
       </Section.Root>
 
       <Section.Root className="flex flex-col gap-12">
