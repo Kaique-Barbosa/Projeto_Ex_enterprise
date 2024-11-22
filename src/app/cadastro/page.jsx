@@ -3,10 +3,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Input from "@/components/forms/Input";
-import InputPassword from "@/components/forms/InputPassword";
 import InputTel from "@/components/forms/InputTel";
 import logo from "@/public/img/logo.png";
+import FormField from "@/components/forms/FormField";
 
 function page() {
   return (
@@ -24,45 +23,37 @@ function page() {
                 Crie a sua conta
               </legend>
               <div className="flex flex-wrap gap-x-8 gap-y-2">
-                <div className="flex-grow basis-80">
-                  <label htmlFor="nome" className="label">
-                    Nome
-                  </label>
-                  <Input
-                    css="w-full"
-                    placeholder="Primeiro nome"
-                    type="text"
+                <FormField.Container className="flex-grow basis-80">
+                  <FormField.Label htmlFor="nome" text="Nome" />
+                  <FormField.Input
                     id="nome"
-                    required
-                    tabIndex={1}
-                  />
-                </div>
-                <div className="flex-grow basis-80">
-                  <label htmlFor="sobrenome" className="label">
-                    Sobrenome
-                  </label>
-                  <Input
-                    css="w-full"
-                    placeholder="Sobrenome completo"
                     type="text"
+                    required={true}
+                    tabIndex={1}
+                    placeholder="Nome completo"
+                  />
+                </FormField.Container>
+
+                <FormField.Container className="flex-grow basis-80">
+                  <FormField.Label htmlFor="sobrenome" text="Sobrenome" />
+                  <FormField.Input
                     id="sobrenome"
-                    required
+                    type="text"
+                    required={true}
                     tabIndex={2}
+                    placeholder="Sobrenome"
                   />
-                </div>
-                <div className="flex-grow basis-80">
-                  <label htmlFor="email" className="label">
-                    Email
-                  </label>
-                  <Input
-                    css="w-full"
-                    placeholder="exemplo@mail.com"
-                    type="email"
+                </FormField.Container>
+                <FormField.Container className="flex-grow basis-80">
+                  <FormField.Label htmlFor="email" text="E-mail" />
+                  <FormField.Input
                     id="email"
-                    required
+                    type="email"
+                    required={true}
                     tabIndex={3}
+                    placeholder="Digite seu e-mail"
                   />
-                </div>
+                </FormField.Container>
                 <div className="flex-grow basis-80">
                   <label htmlFor="telefone" className="label">
                     Telefone
@@ -75,30 +66,27 @@ function page() {
                     tabIndex={4}
                   />
                 </div>
-                <div className="flex-grow basis-80">
-                  <label htmlFor="senha" className="label">
-                    Senha
-                  </label>
-                  <InputPassword
+                <FormField.Container className="flex-grow basis-80">
+                  <FormField.Label htmlFor="senha" text="Senha" />
+                  <FormField.InputPassword
                     id="senha"
-                    placeholder="Defina sua senha"
                     required={true}
-                    css="w-full"
                     tabIndex={5}
+                    placeholder="Digite sua senha"
                   />
-                </div>
-                <div className="flex-grow basis-80">
-                  <label htmlFor="confirmar-senha" className="label">
-                    Confirmar senha
-                  </label>
-                  <InputPassword
+                </FormField.Container>
+                <FormField.Container className="flex-grow basis-80">
+                  <FormField.Label
+                    htmlFor="confirmar-senha"
+                    text="Confirmar senha"
+                  />
+                  <FormField.InputPassword
                     id="confirmar-senha"
-                    placeholder="Digite sua senha definida"
                     required={true}
-                    css="w-full"
                     tabIndex={6}
+                    placeholder="Confirme sua senha"
                   />
-                </div>
+                </FormField.Container>
               </div>
 
               <div className="flex flex-wrap gap-x-8 gap-y-4 items-center">

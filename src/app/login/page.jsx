@@ -2,11 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
-
 import logo from "@/public/img/logo.png";
-import InputPassword from "@/components/forms/InputPassword";
-import Input from "@/components/forms/Input";
+import Link from "next/link";
+import FormField from "@/components/forms/FormField";
 
 function page() {
   return (
@@ -23,32 +21,28 @@ function page() {
               <legend className="text-center text-4xl mb-6">
                 Acesse sua conta
               </legend>
-              <div className="flex-1">
-                <label htmlFor="email" className="label">
-                  Email
-                </label>
-                <Input
-                  css="w-full"
-                  placeholder="Digite seu email"
+
+              <FormField.Container className="flex-1">
+                <FormField.Label htmlFor="email" text="E-mail" />
+                <FormField.Input
                   type="email"
                   id="email"
-                  required
-                  tabIndex={1}
-                />
-              </div>
-
-              <div className="flex-1">
-                <label htmlFor="senha" className="label">
-                  Senha
-                </label>
-                <InputPassword
-                  id="senha"
-                  placeholder="Digite sua senha"
                   required={true}
-                  css="w-full"
+                  tabIndex={1}
+                  placeholder={"Digite seu e-mail"}
+                ></FormField.Input>
+              </FormField.Container>
+
+              <FormField.Container className="flex-1">
+                <FormField.Label htmlFor="password" text="Senha" />
+                <FormField.InputPassword
+                  id="password"
+                  required={true}
                   tabIndex={2}
-                />
-              </div>
+                  placeholder={"Digite sua senha"}
+                ></FormField.InputPassword>
+              </FormField.Container>
+
               <button
                 type="submit"
                 className="btn w-full py-3 text-white bg-laranja-light hover:bg-laranja-light dark:bg-laranja-dark dark:hover:bg-laranja-dark hover:bg-opacity-75 dark:hover:bg-opacity-75"

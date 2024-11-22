@@ -17,7 +17,7 @@ const LinkButton = ({ href, alt, texto, className, style, color }) => {
       <Link
         href={href}
         alt={alt}
-        className={classNames("btn font-normal py-2 px-4", styles[style], className)}
+        className={classNames("btn font-medium py-2 px-4", styles[style], className)}
       >
         {texto}
       </Link>
