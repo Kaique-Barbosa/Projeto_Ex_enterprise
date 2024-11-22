@@ -31,6 +31,7 @@ function page() {
                     required={true}
                     tabIndex={1}
                     placeholder="Nome completo"
+                    name="nome"
                   />
                 </FormField.Container>
 
@@ -42,6 +43,7 @@ function page() {
                     required={true}
                     tabIndex={2}
                     placeholder="Sobrenome"
+                    name="sobrenome"
                   />
                 </FormField.Container>
                 <FormField.Container className="flex-grow basis-80">
@@ -52,6 +54,7 @@ function page() {
                     required={true}
                     tabIndex={3}
                     placeholder="Digite seu e-mail"
+                    name="email"
                   />
                 </FormField.Container>
                 <div className="flex-grow basis-80">
@@ -64,6 +67,7 @@ function page() {
                     id="telefone"
                     required
                     tabIndex={4}
+                    name="telefone"
                   />
                 </div>
                 <FormField.Container className="flex-grow basis-80">
@@ -73,6 +77,7 @@ function page() {
                     required={true}
                     tabIndex={5}
                     placeholder="Digite sua senha"
+                    name="senha"
                   />
                 </FormField.Container>
                 <FormField.Container className="flex-grow basis-80">

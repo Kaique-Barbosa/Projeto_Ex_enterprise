@@ -56,33 +56,33 @@ span.swiper-pagination-bullet-active {
     -webkit-box-shadow: 0 0 0 1000px rgb(227, 228, 230) inset;
     -webkit-text-fill-color: #8b8a8a !important;
   }
-  
+
   input:-webkit-autofill:hover {
     -webkit-text-fill-color: #8b8a8a !important;
   }
-  
+
   input:-webkit-autofill:focus {
     -webkit-text-fill-color: #8b8a8a !important;
   }
-  
+
   textarea:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px rgb(227, 228, 230) inset;
     -webkit-text-fill-color: #8b8a8a !important;
   }
-  
+
   textarea:-webkit-autofill:hover {
     -webkit-text-fill-color: #8b8a8a !important;
   }
-  
+
   textarea:-webkit-autofill:focus {
     -webkit-text-fill-color: #8b8a8a !important;
   }
-  
+
   select:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px rgb(227, 228, 230) inset;
     -webkit-text-fill-color: #8b8a8a !important;
   }
-  
+
   select:-webkit-autofill:hover {
     -webkit-text-fill-color: #8b8a8a !important;
   }

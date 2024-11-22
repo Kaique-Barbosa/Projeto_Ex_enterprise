@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Input from "./Input";
 import PropTypes from "prop-types";
 
-export default function InputPassword({ id, placeholder, required, tabIndex }) {
+export default function InputPassword({ id, placeholder, required, tabIndex, name }) {
   const [showPassword, setShowPassword] = useState(false);
 
   const toggleShowPassword = () => {
@@ -13,6 +13,7 @@ export default function InputPassword({ id, placeholder, required, tabIndex }) {
     <Input
       type={showPassword ? "text" : "password"}
       id={id}
+      name={name}
       className="flex-1 peer"
       required={required}
       placeholder={placeholder}

@@ -30,6 +30,7 @@ function page() {
                   required={true}
                   tabIndex={1}
                   placeholder={"Digite seu e-mail"}
+                  name="email"
                 ></FormField.Input>
               </FormField.Container>
 
@@ -40,6 +41,7 @@ function page() {
                   required={true}
                   tabIndex={2}
                   placeholder={"Digite sua senha"}
+                  name="password"
                 ></FormField.InputPassword>
               </FormField.Container>
 
