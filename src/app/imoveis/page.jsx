@@ -25,7 +25,7 @@ const ImoveisPage = () => {
         </HeroSection.Title>
       </HeroSection.Root>
 
-      <Section.Root className="flex flex-col gap-12">
+      <Section.Root className="flex flex-col items-center gap-12">
         <Section.Title className="text-center text-accent">
           Todos os nossos Imóveis
         </Section.Title>
