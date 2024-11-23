@@ -8,14 +8,15 @@ export default function Input({
   id,
   required,
   placeholder,
-  name
+  name,
+  onChange
 }) {
   return (
     <div
-      className="input h-fit p-2 border-2 border-neutral bg-cinza-100 rounded-md hover:border-accent has-[:focus-visible]:border-accent has-[:autofill]:bg-cinza-200 text-preto-800 flex items-center justify-between w-full"
+      className="input h-fit p-2 border-2 border-neutral bg-cinza-100 rounded-md hover:border-accent has-[:focus-visible]:border-accent has-[:autofill]:bg-cinza-200 text-preto-800 flex items-center w-full"
       tabIndex={tabIndex}
     >
-      <input type={type} id={id} name={name} className="flex-1 peer" required={required} placeholder={placeholder} />
+      <input type={type} id={id} name={name} className="flex-1 peer" required={required} placeholder={placeholder} onChange={onChange}/>
       {children}
     </div>
   );
@@ -23,9 +24,11 @@ export default function Input({
 
 Input.propsTypes = {
   children: PropTypes.node,
-  className: PropTypes.string,
+  onChange: PropTypes.func,
   tabIndex: PropTypes.number,
   type: PropTypes.string,
   id: PropTypes.string,
   required: PropTypes.bool,
+  placeholder: PropTypes.string,
+  name: PropTypes.string,
 };

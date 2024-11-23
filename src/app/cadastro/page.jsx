@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import InputTel from "@/components/forms/InputTel";
 import logo from "@/public/img/logo.png";
 import FormField from "@/components/forms/FormField";
 
@@ -58,17 +57,16 @@ function page() {
                   />
                 </FormField.Container>
                 <div className="flex-grow basis-80">
-                  <label htmlFor="telefone" className="label">
-                    Telefone
-                  </label>
-                  <InputTel
-                    css="w-full"
-                    placeholder="(99) 99999-9999"
-                    id="telefone"
-                    required
-                    tabIndex={4}
-                    name="telefone"
-                  />
+                  <FormField.Container className="flex-grow basis-80">
+                    <FormField.Label htmlFor="telefone" text="Telefone" />
+                    <FormField.InputTel
+                      id="telefone"
+                      required={true}
+                      tabIndex={4}  
+                      placeholder="(99) 99999-9999"
+                      name="telefone"
+                    />
+                  </FormField.Container>
                 </div>
                 <FormField.Container className="flex-grow basis-80">
                   <FormField.Label htmlFor="senha" text="Senha" />
