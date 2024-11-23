@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
-import classNames from "classnames";
+import { twMerge } from "tailwind-merge";
 
 const LinkButton = ({ href, alt, texto, className, style, color }) => {
   const styles = {
@@ -17,7 +17,7 @@ const LinkButton = ({ href, alt, texto, className, style, color }) => {
       <Link
         href={href}
         alt={alt}
-        className={classNames("btn font-medium py-2 px-4", styles[style], className)}
+        className={twMerge("btn font-medium py-2 px-4", styles[style], className)}
       >
         {texto}
       </Link>

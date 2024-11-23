@@ -1,9 +1,9 @@
 import React from "react";
-import classNames from "classnames";
+import { twMerge } from "tailwind-merge";
 
 export default function Root({ className, children }) {
   return (
-    <section className={classNames("container max-w-9xl my-12", className)}>
+    <section className={twMerge("container max-w-9xl my-12", className)}>
       {children}
     </section>
   );

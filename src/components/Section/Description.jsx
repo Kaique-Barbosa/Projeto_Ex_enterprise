@@ -1,6 +1,6 @@
 import React from "react";
-import classNames from "classnames";
+import { twMerge } from "tailwind-merge";
 
 export default function Description({ children, className }) {
-  return <p className={classNames("text-balance", className)}>{children}</p>;
+  return <p className={twMerge("text-balance", className)}>{children}</p>;
 }

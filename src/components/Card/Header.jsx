@@ -1,10 +1,8 @@
 import React from "react";
-import classNames from "classnames";
 
-
-export default function Header({ children, flex, widthFit }) {
+export default function Header({ children }) {
   return (
-    <div className={classNames("h-60 md:h-full", {"flex-1": flex, "md:w-fit": widthFit})}>
+    <div className="h-60 md:h-full flex-1">
       {children}
     </div>
   );
