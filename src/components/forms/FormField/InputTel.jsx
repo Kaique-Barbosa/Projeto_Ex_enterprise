@@ -1,3 +1,5 @@
+"use client";
+
 import Input from "./Input";
 import React, { useState } from "react";
 import PropTypes from "prop-types";

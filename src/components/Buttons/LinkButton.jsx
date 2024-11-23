@@ -3,9 +3,17 @@ import PropTypes from "prop-types";
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 
-const LinkButton = ({ href, alt, texto, className, style, color }) => {
+const LinkButton = ({
+  children,
+  href,
+  alt,
+  texto,
+  className,
+  style,
+  color,
+}) => {
   const styles = {
-    normal: `btn-${color}`,
+    normal: `bg-${color}`,
     circle: "rounded-full",
     outline: `bg-transparent text-secondary border-${color} hover:bg-${color}`,
     outlineCircle: `bg-transparent text-secondary rounded-full border-${color} hover:bg-${color}`,
@@ -17,8 +25,13 @@ const LinkButton = ({ href, alt, texto, className, style, color }) => {
       <Link
         href={href}
         alt={alt}
-        className={twMerge("btn font-medium py-2 px-4", styles[style], className)}
+        className={twMerge(
+          "btn font-medium py-2 px-4",
+          styles[style],
+          className
+        )}
       >
+        {children}
         {texto}
       </Link>
     </>
@@ -29,6 +42,15 @@ LinkButton.propTypes = {
   href: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   texto: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  style: PropTypes.oneOf([
+    "normal",
+    "circle",
+    "outline",
+    "outlineCircle",
+    "ghost",
+  ]),
+  color: PropTypes.string,
 };
 
 export default LinkButton;
