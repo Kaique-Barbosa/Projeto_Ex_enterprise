@@ -62,64 +62,86 @@ const MenuMobile = () => {
             <Image src={logo} alt="Logo da empresa" className="size-12" />
             <p className="text-lg">Ex Enterprise</p>
           </DrawerHeader>
-          <DrawerBody className="bg-cinza-200 dark:bg-preto-900 flex flex-col gap-4">
-            <Link
-              href={"/"}
-              className={`p-1 flex items-center gap-2 ${
-                currentRoute === "/"
-                  ? "text-accent"
-                  : "hover:text-laranja-light hover:dark:text-laranja-dark"
-              }`}
-            >
-              <IconHome className="size-5 text-inherit fill-current" />
-              HOME
-            </Link>
+          <DrawerBody className="bg-cinza-200 dark:bg-preto-900 flex flex-col gap-6">
+            <div className="flex flex-col gap-4">
+              <Link
+                href={"/"}
+                className={`p-1 flex items-center gap-2 ${
+                  currentRoute === "/"
+                    ? "text-accent"
+                    : "hover:text-laranja-light hover:dark:text-laranja-dark"
+                }`}
+              >
+                <IconHome className="size-5 text-inherit fill-current" />
+                HOME
+              </Link>
+              <Link
+                href={"/imoveis"}
+                className={`p-1 flex items-center gap-2 ${
+                  currentRoute === "/imoveis"
+                    ? "text-accent"
+                    : "hover:text-accent"
+                }`}
+              >
+                <IconEstate className="size-5 text-inherit fill-current" />
+                IMÓVEIS
+              </Link>
+              <Link
+                href={"/consultoria"}
+                className={`p-1 flex items-center gap-2 ${
+                  currentRoute === "/consultoria"
+                    ? "text-accent"
+                    : "hover:text-accent"
+                }`}
+              >
+                <IconConsultancy className="size-5 text-inherit fill-current" />
+                CONSULTORIA
+              </Link>
+              <Link
+                href={"/e-commerce"}
+                className={`p-1 flex items-center gap-2 ${
+                  currentRoute === "/e-commerce"
+                    ? "text-accent"
+                    : "hover:text-accent"
+                }`}
+              >
+                <IconEcommerce className="size-5 text-inherit fill-current" />
+                E-COMMERCE
+              </Link>
+              <Link
+                href={"/ebooks"}
+                className={`p-1 flex items-center gap-2 ${
+                  currentRoute === "/ebooks" ? "text-accent" : "hover:text-accent"
+                }`}
+              >
+                <IconEbooks className="size-5 text-inherit fill-current" />
+                E-BOOKS
+              </Link>
+            </div>
 
-            <Link
-              href={"/imoveis"}
-              className={`p-1 flex items-center gap-2 ${
-                currentRoute === "/imoveis"
-                  ? "text-accent"
-                  : "hover:text-accent"
-              }`}
-            >
-              <IconEstate className="size-5 text-inherit fill-current" />
-              IMÓVEIS
-            </Link>
-
-            <Link
-              href={"/consultoria"}
-              className={`p-1 flex items-center gap-2 ${
-                currentRoute === "/consultoria"
-                  ? "text-accent"
-                  : "hover:text-accent"
-              }`}
-            >
-              <IconConsultancy className="size-5 text-inherit fill-current" />
-              CONSULTORIA
-            </Link>
-
-            <Link
-              href={"/e-commerce"}
-              className={`p-1 flex items-center gap-2 ${
-                currentRoute === "/e-commerce"
-                  ? "text-accent"
-                  : "hover:text-accent"
-              }`}
-            >
-              <IconEcommerce className="size-5 text-inherit fill-current" />
-              E-COMMERCE
-            </Link>
-
-            <Link
-              href={"/ebooks"}
-              className={`p-1 flex items-center gap-2 ${
-                currentRoute === "/ebooks" ? "text-accent" : "hover:text-accent"
-              }`}
-            >
-              <IconEbooks className="size-5 text-inherit fill-current" />
-              E-BOOKS
-            </Link>
+            <div className="sm:hidden">
+              <p className="font-normal">Voçê não está logado</p>
+              <ul className="menu px-0 text-base">
+                <li>
+                  <Link
+                    alt="fazer login"
+                    href="/login"
+                    className="hover:bg-accent hover:text-white px-2"
+                  >
+                    Login
+                  </Link>
+                </li >
+                <li>
+                  <Link
+                    alt="criar conta"
+                    href="/cadastro"
+                    className="hover:bg-accent hover:text-white px-2"
+                  >
+                    Criar conta
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

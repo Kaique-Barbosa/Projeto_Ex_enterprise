@@ -10,8 +10,10 @@ function page() {
   return (
     <div className="min-h-svh h-full flex flex-col justify-center items-center">
       <header className="flex gap-2 justify-center items-center p-4">
-        <Image className="size-16 object-cover" alt="Logo" src={logo} />
-        <span className="inline text-2xl font-semibold">Ex Enterprise</span>
+        <Link alt="ir para home" href="/" className="flex items-center gap-2">
+          <Image className="size-16 object-cover" alt="Logo" src={logo} />
+          <span className="text-2xl font-semibold">Ex Enterprise</span>
+        </Link>
       </header>
 
       <main className="w-full max-w-screen-lg flex items-center justify-center flex-1 px-4 sm:px-8 lg:px-12 py-4">
@@ -62,7 +64,7 @@ function page() {
                     <FormField.InputTel
                       id="telefone"
                       required={true}
-                      tabIndex={4}  
+                      tabIndex={4}
                       placeholder="(99) 99999-9999"
                       name="telefone"
                     />

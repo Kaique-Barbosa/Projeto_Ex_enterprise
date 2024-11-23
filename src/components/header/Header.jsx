@@ -7,6 +7,7 @@ import MenuMobile from "../drawner/MenuMobile";
 import ThemeButton from "../themeButton/ThemeButton";
 import NavLinks from "../navLinks/NavLinks";
 import Link from "next/link";
+import DropdownUser from "../Dropdown/User";
 
 const headerNavigation = appNavigation.filter(
   (link) => link.title !== "Contato"
@@ -58,13 +59,16 @@ export const Header = () => {
           />
         </Link>
         <div className="flex gap-8 items-center">
-          <nav className="hidden md:flex items-center gap-2 justify-center">
+          <nav className="hidden lg:flex items-center gap-2 justify-center">
             {headerNavigation.map((link) => (
               <NavLinks key={link.title} title={link.title} path={link.path} />
             ))}
           </nav>
+          <div className="hidden sm:block">
+            <DropdownUser />
+          </div>
           <ThemeButton />
-          <div className="block md:hidden">
+          <div className="block lg:hidden">
             <MenuMobile />
           </div>
         </div>
