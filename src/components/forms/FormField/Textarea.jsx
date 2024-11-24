@@ -21,7 +21,7 @@ export default function Textarea({
       id={id}
       name={name}
       className={twMerge(
-        "textarea p-2 border-2 border-neutral bg-cinza-100 rounded-md hover:border-accent focus-visible:border-accent text-preto-800 w-full",
+        "textarea p-2 border-2 border-neutral bg-white rounded-md hover:border-accent focus-visible:border-accent text-preto-800 w-full resize-none",
         className
       )}
       placeholder={placeholder}

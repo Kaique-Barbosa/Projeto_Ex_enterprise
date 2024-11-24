@@ -13,7 +13,7 @@ export default function Input({
 }) {
   return (
     <div
-      className="input h-fit p-2 border-2 border-neutral bg-cinza-100 rounded-md hover:border-accent has-[:focus-visible]:border-accent has-[:autofill]:bg-cinza-200 text-preto-800 flex items-center w-full"
+      className="input h-fit p-2 border-2 border-neutral bg-white rounded-lg hover:border-accent has-[:focus-visible]:border-accent has-[:autofill]:bg-cinza-200 text-preto-800 flex items-center w-full"
       tabIndex={tabIndex}
     >
       <input type={type} id={id} name={name} className="flex-1 peer" required={required} placeholder={placeholder} onChange={onChange}/>
