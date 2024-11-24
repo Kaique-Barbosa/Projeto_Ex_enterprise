@@ -107,8 +107,8 @@ const ImovelPage = ({ params }) => {
               alt="Clique para conversar no WhatsApp"
               texto="Conversar no WhatsApp"
               style="normal"
-              color="green-500"
-              className="text-white hover:bg-green-700"
+              color="success"
+              className="text-white hover:bg-green-600"
             >
               <IconWhatsapp className="size-4 fill-current text-inherit" />
             </LinkButton>
