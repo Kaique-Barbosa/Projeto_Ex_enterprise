@@ -6,12 +6,20 @@ import RadioButton from "@/components/forms/RadioButton";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { validarTelefone, formatarTelefoneParaNumeros } from "@/utils/telefone";
 
 const schema = yup.object().shape({
   servico: yup.string().required("Selecione um serviço"),
   nome: yup.string().required("Nome é obrigatório"),
   email: yup.string().email("Email inválido").required("Email é obrigatório"),
-  telefone: yup.string().required("Telefone é obrigatório"),
+  telefone: yup
+    .string()
+    .transform(formatarTelefoneParaNumeros)
+    .max(15, "Telefone inválido")
+    .required("Telefone é obrigatório")
+    .test("Numero de telefone válido", "Telefone inválido", (value) =>
+      validarTelefone(value)
+    ),
   assunto: yup.string().required("Digite um assunto"),
   mensagem: yup.string().required("Digite uma mensagem"),
 });
