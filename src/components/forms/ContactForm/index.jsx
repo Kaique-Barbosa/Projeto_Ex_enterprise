@@ -3,8 +3,32 @@
 import React from "react";
 import FormField from "@/components/forms/FormField";
 import RadioButton from "@/components/forms/RadioButton";
+import { useForm, Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const schema = yup.object().shape({
+  servico: yup.string().required("Selecione um serviço"),
+  nome: yup.string().required("Nome é obrigatório"),
+  email: yup.string().email("Email inválido").required("Email é obrigatório"),
+  telefone: yup.string().required("Telefone é obrigatório"),
+  assunto: yup.string().required("Digite um assunto"),
+  mensagem: yup.string().required("Digite uma mensagem"),
+});
 
 const ContactForm = () => {
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const formSubmit = (data) => {
+    alert(JSON.stringify(data));
+  };
+
   return (
     <div className="flex flex-col gap-8 items-center">
       <h2 className="text-center text-2xl">
@@ -12,86 +36,125 @@ const ContactForm = () => {
       </h2>
 
       <div className="w-full max-w-3xl flex justify-center">
-        <form action="#" className="w-full flex flex-col gap-6">
-          <div className="w-full flex justify-center gap-4">
-            <RadioButton />
+        <form
+          onSubmit={handleSubmit(formSubmit)}
+          className="w-full flex flex-col gap-6"
+        >
+          <div className="w-full flex flex-col justify-center gap-4">
+            <Controller
+              name="servico"
+              control={control}
+              render={({ field }) => (
+                <FormField.Container className="flex flex-col items-center xs:flex-row xs:justify-center gap-4">
+                  <RadioButton
+                    value="consultoria"
+                    checked={field.value === "consultoria"}
+                    label="Consultoria"
+                    onChange={() => field.onChange("consultoria")}
+                  />
+                  <RadioButton
+                    value="imoveis"
+                    checked={field.value === "imoveis"}
+                    label="Alocação de imóveis"
+                    onChange={() => field.onChange("imoveis")}
+                  />
+                  <RadioButton
+                    value="ecommerce"
+                    checked={field.value === "ecommerce"}
+                    label="E-commerce"
+                    onChange={() => field.onChange("ecommerce")}
+                  />
+                </FormField.Container>
+              )}
+            />
 
-            <label
-              htmlFor="Option2"
-              className="p-3 rounded-lg border-2 border-accent text-white font-semibold hover:bg-accent has-[:checked]:bg-accent has-[:checked]:text-white cursor-pointer"
-              tabIndex="0"
-            >
-              <input
-                className="sr-only"
-                id="Option2"
-                type="radio"
-                tabIndex="-1"
-                name="servico"
-              />
-
-              <span className="text-sm"> Alocação de imóveis</span>
-            </label>
-            <label
-              htmlFor="Option3"
-              className="p-3 rounded-lg border-2 border-accent text-white font-semibold hover:bg-accent has-[:checked]:bg-accent has-[:checked]:text-white cursor-pointer"
-              tabIndex="0"
-            >
-              <input
-                className="sr-only"
-                id="Option3"
-                type="radio"
-                tabIndex="-1"
-                name="servico"
-              />
-
-              <span className="text-sm"> E-commerce </span>
-            </label>
+            <FormField.Error className="text-center">
+              {errors.servico?.message}
+            </FormField.Error>
           </div>
 
           <div className="flex-1 flex flex-col gap-2">
-            <FormField.Container className="flex-1">
-              <FormField.Label htmlFor="name" text="Nome" />
-              <FormField.Input
-                id="name"
-                type="text"
-                name="nome"
-                placeholder="Nome completo"
-                required={true}
-              />
-            </FormField.Container>
+            <div className="flex flex-wrap gap-y-2 gap-x-4">
+              <FormField.Container className="grow basis-80">
+                <FormField.Label>Nome</FormField.Label>
+                <Controller
+                  name="nome"
+                  control={control}
+                  defaultValue=""
+                  render={({ field }) => (
+                    <FormField.Input
+                      {...field}
+                      type="text"
+                      placeholder="Digite seu nome completo"
+                    ></FormField.Input>
+                  )}
+                />
+                <FormField.Error>{errors.nome?.message}</FormField.Error>
+              </FormField.Container>
+              <FormField.Container className="grow basis-80">
+                <FormField.Label>E-mail</FormField.Label>
+                <Controller
+                  name="email"
+                  control={control}
+                  defaultValue=""
+                  render={({ field }) => (
+                    <FormField.Input
+                      {...field}
+                      type="email"
+                      placeholder="Digite seu email"
+                    />
+                  )}
+                />
+                <FormField.Error>{errors.email?.message}</FormField.Error>
+              </FormField.Container>
+            </div>
 
             <div className="flex flex-wrap gap-y-2 gap-x-4">
               <FormField.Container className="grow basis-80">
-                <FormField.Label htmlFor="email" text="Email" />
-                <FormField.Input
-                  id="email"
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  required={true}
+                <FormField.Label>Telefone</FormField.Label>
+                <Controller
+                  name="telefone"
+                  control={control}
+                  defaultValue=""
+                  render={({ field }) => (
+                    <FormField.Input
+                      {...field}
+                      type="tel"
+                      placeholder="Digite seu telefone"
+                    />
+                  )}
                 />
+                <FormField.Error>{errors.telefone?.message}</FormField.Error>
               </FormField.Container>
               <FormField.Container className="grow basis-80">
-                <FormField.Label htmlFor="phone" text="Telefone" />
-                <FormField.Input
-                  id="phone"
-                  type="tel"
-                  name="telefone"
-                  placeholder="Telefone"
-                  required={true}
+                <FormField.Label>Assunto</FormField.Label>
+                <Controller
+                  name="assunto"
+                  control={control}
+                  defaultValue=""
+                  render={({ field }) => (
+                    <FormField.Input
+                      {...field}
+                      type="text"
+                      placeholder="Digite o assunto"
+                    />
+                  )}
                 />
+                <FormField.Error>{errors.assunto?.message}</FormField.Error>
               </FormField.Container>
             </div>
 
             <FormField.Container className="flex-1">
-              <FormField.Label htmlFor="message" text="Mensagem" />
-              <FormField.Textarea
-                id="message"
+              <FormField.Label>Mensagem</FormField.Label>
+              <Controller
                 name="mensagem"
-                placeholder="Mensagem"
-                required={true}
-                className="h-32"
+                control={control}
+                defaultValue=""
+                render={({ field }) => (
+                  <FormField.Textarea {...field} className="h-40" />
+                )}
               />
+              <FormField.Error>{errors.mensagem?.message}</FormField.Error>
             </FormField.Container>
           </div>
 

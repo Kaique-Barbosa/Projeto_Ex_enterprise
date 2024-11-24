@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function Label({ htmlFor, text }) {
+export default function Label({ children }) {
   return (
-    <label htmlFor={htmlFor} className="label">
-      {text}
+    <label className="label">
+      {children}
     </label>
   );
 }

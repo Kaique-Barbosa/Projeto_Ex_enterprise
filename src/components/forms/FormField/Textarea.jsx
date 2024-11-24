@@ -1,34 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-export default function Textarea({
-  id,
-  name,
-  placeholder,
-  defaultValue = "",
-  className,
-}) {
-  const [value, setValue] = useState(defaultValue);
-
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
+const Textarea = forwardRef(({ placeholder, className, value, onChange }, ref) => {
   return (
     <textarea
-      id={id}
-      name={name}
+      ref={ref}
+      value={value}
+      onChange={onChange}
       className={twMerge(
         "textarea p-2 border-2 border-neutral bg-white rounded-md hover:border-accent focus-visible:border-accent text-preto-800 w-full resize-none",
         className
       )}
       placeholder={placeholder}
-      onChange={handleChange}
-      value={value}
-    >
-        {defaultValue}
-    </textarea>
+    ></textarea>
   );
-}
+});
+
+export default Textarea;

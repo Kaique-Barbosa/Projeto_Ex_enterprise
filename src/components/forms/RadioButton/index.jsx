@@ -1,21 +1,17 @@
 import React from "react";
 
-export default function RadioButton() {
+export default function RadioButton({ value, checked, label, onChange }) {
   return (
-    <label
-      htmlFor="Option1"
-      className="p-3 rounded-lg border-2 border-accent text-white font-semibold hover:bg-accent has-[:checked]:bg-accent has-[:checked]:text-white cursor-pointer"
-      tabIndex="0"
-    >
+    <label className="w-fit py-2 px-4 rounded-lg border-2 border-accent text-secondary font-medium hover:bg-accent hover:text-white has-[:checked]:bg-accent has-[:checked]:text-white cursor-pointer">
       <input
-        className="sr-only"
-        id="Option1"
         type="radio"
-        tabIndex="-1"
-        name="servico"
+        className="sr-only"
+        value={value}
+        checked={checked}
+        onChange={onChange}
       />
 
-      <span className="text-sm"> Consultoria </span>
+      <span className="text-sm">{label}</span>
     </label>
   );
 }
