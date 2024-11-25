@@ -5,8 +5,28 @@ import Image from "next/image";
 import logo from "@/public/img/logo.png";
 import Link from "next/link";
 import FormField from "@/components/forms/FormField";
+import * as yup from "yup";
+import { Controller, Form, useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+const schema = yup.object().shape({
+  email: yup.string().email("Email inválido").required("Campo obrigatório"),
+  password: yup.string().required("Campo obrigatório"),
+});
 
 function page() {
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const loginSubmit = (data) => {
+    console.log(JSON.stringify(data, null, 2));
+  }
+
   return (
     <div className="min-h-svh h-full flex flex-col justify-center p-4 gap-8">
       <header className="flex gap-2 justify-center items-center">
@@ -17,39 +37,53 @@ function page() {
       </header>
 
       <main className="flex items-center justify-center flex-1">
-        <div className="max-w-md w-full flex flex-col gap-6 bg-cinza-50/10 dark:bg-preto-850/10 p-4">
-          <form className="flex flex-col" onSubmit={(e) => e.preventDefault()}>
+        <div className="max-w-md w-full flex flex-col gap-6 p-4">
+          <form className="flex flex-col" onSubmit={handleSubmit(loginSubmit)}>
             <fieldset className="flex flex-col gap-4">
               <legend className="text-center text-4xl mb-6">
                 Acesse sua conta
               </legend>
 
               <FormField.Container className="flex-1">
-                <FormField.Label htmlFor="email" text="E-mail" />
-                <FormField.Input
-                  type="email"
-                  id="email"
-                  required={true}
-                  tabIndex={1}
-                  placeholder={"Digite seu e-mail"}
+                <FormField.Label>E-mail</FormField.Label>
+                <Controller
+                  control={control}
                   name="email"
-                ></FormField.Input>
+                  defaultValue=""
+                  render={({ field }) => (
+                    <FormField.Input
+                      {...field}
+                      type="email"
+                      required={true}
+                      tabIndex={1}
+                      placeholder="Digite seu e-mail"
+                    ></FormField.Input>
+                  )}
+                />
+                <FormField.Error>{errors.email?.message}</FormField.Error>
               </FormField.Container>
 
               <FormField.Container className="flex-1">
-                <FormField.Label htmlFor="password" text="Senha" />
-                <FormField.InputPassword
-                  id="password"
-                  required={true}
-                  tabIndex={2}
-                  placeholder={"Digite sua senha"}
+                <FormField.Label>Senha</FormField.Label>
+                <Controller
+                  control={control}
                   name="password"
-                ></FormField.InputPassword>
+                  defaultValue=""
+                  render={({ field }) => (
+                    <FormField.InputPassword
+                      {...field}
+                      required={true}
+                      tabIndex={2}
+                      placeholder="Digite sua senha"
+                    ></FormField.InputPassword>
+                  )}
+                />
+                <FormField.Error>{errors.password?.message}</FormField.Error>
               </FormField.Container>
 
               <button
                 type="submit"
-                className="btn w-full py-3 text-white bg-laranja-light hover:bg-laranja-light dark:bg-laranja-dark dark:hover:bg-laranja-dark hover:bg-opacity-75 dark:hover:bg-opacity-75"
+                className="btn btn-accent text-white"
                 tabIndex={3}
               >
                 Acessar

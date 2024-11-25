@@ -5,8 +5,48 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/img/logo.png";
 import FormField from "@/components/forms/FormField";
+import * as yup from "yup";
+import { useForm, Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { validarTelefone, formatarTelefoneParaNumeros } from "@/utils/telefone";
+
+const schema = yup.object().shape({
+  nome: yup.string().required("Campo obrigatório"),
+  sobrenome: yup.string().required("Campo obrigatório"),
+  email: yup.string().email("Email inválido").required("Campo obrigatório"),
+  telefone: yup
+    .string()
+    .transform(formatarTelefoneParaNumeros)
+    .max(15, "Telefone inválido")
+    .required("Campo obrigatório")
+    .test("Numero de telefone válido", "Telefone inválido", (value) =>
+      validarTelefone(value)
+    ),
+  senha: yup
+    .string()
+    .min(8, "A senha deve ter no mínimo 8 caracteres")
+    .required("Campo obrigatório"),
+  confirmarSenha: yup
+    .string()
+    .required("Campo obrigatório")
+    .oneOf([yup.ref("senha"), null], "As senhas não coincidem"),
+});
 
 function page() {
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const registerSubmit = (data) => {
+    const { confirmarSenha, ...filterData } = data;
+
+    console.log(JSON.stringify(filterData, null, 2));
+  };
+
   return (
     <div className="min-h-svh h-full flex flex-col justify-center items-center">
       <header className="flex gap-2 justify-center items-center p-4">
@@ -18,79 +58,121 @@ function page() {
 
       <main className="w-full max-w-screen-lg flex items-center justify-center flex-1 px-4 sm:px-8 lg:px-12 py-4">
         <div className="w-full flex flex-col gap-6 p-4">
-          <form className="flex flex-col" onSubmit={(e) => e.preventDefault()}>
+          <form
+            className="flex flex-col"
+            onSubmit={handleSubmit(registerSubmit)}
+          >
             <fieldset className="flex flex-col gap-8">
               <legend className="text-center text-4xl mb-6">
                 Crie a sua conta
               </legend>
-              <div className="flex flex-wrap gap-x-8 gap-y-2">
+              <div className="flex flex-wrap gap-x-8 gap-y-1">
                 <FormField.Container className="flex-grow basis-80">
-                  <FormField.Label htmlFor="nome" text="Nome" />
-                  <FormField.Input
-                    id="nome"
-                    type="text"
-                    required={true}
-                    tabIndex={1}
-                    placeholder="Nome completo"
+                  <FormField.Label>Nome</FormField.Label>
+                  <Controller
+                    control={control}
                     name="nome"
+                    defaultValue=""
+                    render={({ field }) => (
+                      <FormField.Input
+                        {...field}
+                        type="text"
+                        tabIndex={1}
+                        placeholder="Primeiro nome"
+                      ></FormField.Input>
+                    )}
                   />
+                  <FormField.Error>{errors.nome?.message}</FormField.Error>
                 </FormField.Container>
 
                 <FormField.Container className="flex-grow basis-80">
-                  <FormField.Label htmlFor="sobrenome" text="Sobrenome" />
-                  <FormField.Input
-                    id="sobrenome"
-                    type="text"
-                    required={true}
-                    tabIndex={2}
-                    placeholder="Sobrenome"
+                  <FormField.Label>Sobrenome</FormField.Label>
+                  <Controller
+                    control={control}
                     name="sobrenome"
+                    defaultValue=""
+                    render={({ field }) => (
+                      <FormField.Input
+                        {...field}
+                        type="text"
+                        tabIndex={2}
+                        placeholder="Sobrenome completo"
+                      ></FormField.Input>
+                    )}
                   />
+                  <FormField.Error>{errors.sobrenome?.message}</FormField.Error>
                 </FormField.Container>
                 <FormField.Container className="flex-grow basis-80">
-                  <FormField.Label htmlFor="email" text="E-mail" />
-                  <FormField.Input
-                    id="email"
-                    type="email"
-                    required={true}
-                    tabIndex={3}
-                    placeholder="Digite seu e-mail"
+                  <FormField.Label>Email</FormField.Label>
+                  <Controller
+                    control={control}
                     name="email"
+                    defaultValue=""
+                    render={({ field }) => (
+                      <FormField.Input
+                        {...field}
+                        type="email"
+                        tabIndex={3}
+                        placeholder="Digite seu e-mail"
+                      ></FormField.Input>
+                    )}
                   />
+                  <FormField.Error>{errors.email?.message}</FormField.Error>
                 </FormField.Container>
                 <div className="flex-grow basis-80">
                   <FormField.Container className="flex-grow basis-80">
-                    <FormField.Label htmlFor="telefone" text="Telefone" />
-                    <FormField.InputTel
-                      id="telefone"
-                      required={true}
-                      tabIndex={4}
-                      placeholder="(99) 99999-9999"
+                    <FormField.Label>Telefone</FormField.Label>
+                    <Controller
+                      control={control}
                       name="telefone"
+                      defaultValue=""
+                      render={({ field }) => (
+                        <FormField.Input
+                          {...field}
+                          type="tel"
+                          tabIndex={4}
+                          placeholder="(00) 00000-0000"
+                        ></FormField.Input>
+                      )}
                     />
+                    <FormField.Error>
+                      {errors.telefone?.message}
+                    </FormField.Error>
                   </FormField.Container>
                 </div>
                 <FormField.Container className="flex-grow basis-80">
-                  <FormField.Label htmlFor="senha" text="Senha" />
-                  <FormField.InputPassword
-                    id="senha"
-                    required={true}
-                    tabIndex={5}
-                    placeholder="Digite sua senha"
+                  <FormField.Label>Senha</FormField.Label>
+                  <Controller
+                    control={control}
                     name="senha"
+                    defaultValue=""
+                    render={({ field }) => (
+                      <FormField.InputPassword
+                        {...field}
+                        tabIndex={5}
+                        placeholder="Digite sua senha"
+                      ></FormField.InputPassword>
+                    )}
                   />
+                  <FormField.Error>{errors.senha?.message}</FormField.Error>
                 </FormField.Container>
                 <FormField.Container className="flex-grow basis-80">
-                  <FormField.Label
-                    htmlFor="confirmar-senha"
-                    text="Confirmar senha"
+                  <FormField.Label>Confirmar senha</FormField.Label>
+                  <Controller
+                    control={control}
+                    name="confirmarSenha"
+                    defaultValue=""
+                    render={({ field }) => (
+                      <FormField.InputPassword
+                        {...field}
+                        tabIndex={6}
+                        placeholder="Confirme sua senha"
+                      ></FormField.InputPassword>
+                    )}
                   />
-                  <FormField.InputPassword
-                    id="confirmar-senha"
-                    required={true}
-                    tabIndex={6}
-                    placeholder="Confirme sua senha"
-                  />
+                  <FormField.Error>
+                    {errors.confirmarSenha?.message}
+                  </FormField.Error>
                 </FormField.Container>
               </div>
 

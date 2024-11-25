@@ -9,7 +9,7 @@ const contatoPage = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full">
       <Header />
-
+      
       <HeroSection.Root>
         <HeroSection.Title>Entre em Contato</HeroSection.Title>
         <HeroSection.Subtitle textAlignment="center">
