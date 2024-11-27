@@ -1,33 +1,34 @@
 import { NextResponse } from "next/server";
 
-export function middleware(req) {
-  const token = req.cookies.get("token");
+export function middleware(request) {
+  const path = request.nextUrl.pathname;
+
+  const token = request.cookies.get("token")?.value;
 
   // Páginas públicas (sem autenticação)
-  const publicPages = ["/login", "/cadastro"];
+  const publicRoutes = [
+    "/login",
+    "/cadastro",
+    "/",
+    "/consultoria",
+    "/imoveis",
+    "/contato",
+    "/ebooks",
+  ];
 
-  // Middleware para verificar se o usuário está autenticado
-  if (!token && !publicPages.includes(req.nextUrl.pathname)) {
-    return NextResponse.redirect("/login");
+  // Middleware para rotas públicas
+  if (publicRoutes.includes(path)) {
+    return NextResponse.next();
   }
 
-  // Middleware para verificar se o usuário já está autenticado
-  if (token && publicPages.includes(req.nextUrl.pathname)) {
-    return NextResponse.redirect("/");
+  // Middleware para rotas privadas
+  if (!token) {
+    return NextResponse.redirect(new URL("/login", request.url));
   }
 
   return NextResponse.next();
 }
 
 export const config = {
-  mather: [
-    "/",
-    "/login",
-    "/cadastro",
-    "/consultoria",
-    "/acesso-bloqueado",
-    "/contato",
-    "/imoveis",
-    "imoveis/[id]",
-  ],
+  matcher: ["/(!api|_next/static|_next/image|favicon.ico)*"],
 };
