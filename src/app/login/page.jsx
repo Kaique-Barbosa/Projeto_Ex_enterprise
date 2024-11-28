@@ -6,15 +6,21 @@ import logo from "@/public/img/logo.png";
 import Link from "next/link";
 import FormField from "@/components/forms/FormField";
 import * as yup from "yup";
-import { Controller, Form, useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import api from "@/utils/api";
+import { useRouter } from "next/navigation";
+import { useToast } from "@chakra-ui/react";
 
 const schema = yup.object().shape({
   email: yup.string().email("Email inválido").required("Campo obrigatório"),
-  password: yup.string().required("Campo obrigatório"),
+  senha: yup.string().required("Campo obrigatório"),
 });
 
 function page() {
+  const router = useRouter();
+  const toast = useToast();
+
   const {
     control,
     handleSubmit,
@@ -24,8 +30,33 @@ function page() {
   });
 
   const loginSubmit = (data) => {
-    console.log(JSON.stringify(data, null, 2));
-  }
+    api
+      .post("/usuario/login", data)
+      .then((response) => {
+        toast({
+          title: "Sucesso!",
+          description: response.data.message,
+          status: "success",
+          position: "top-center",
+          duration: 3000,
+          isClosable: true,
+        });
+
+        router.push("/");
+      })
+      .catch((error) => {
+        console.error(error);
+        const { response } = error;
+        toast({
+          title: "Erro ao fazer login!",
+          description: response.data.message,
+          position: "top-center",
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
+      });
+  };
 
   return (
     <div className="min-h-svh h-full flex flex-col justify-center p-4 gap-8">
@@ -67,7 +98,7 @@ function page() {
                 <FormField.Label>Senha</FormField.Label>
                 <Controller
                   control={control}
-                  name="password"
+                  name="senha"
                   defaultValue=""
                   render={({ field }) => (
                     <FormField.InputPassword

@@ -1,9 +1,23 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import axios from "axios";
+import api from "@/utils/api";
 import { jwtDecode } from "jwt-decode";
+import cookie from "cookie";
 
-export default function useAuth() {
+export async function getServerSideProps(context) {
+  const { req } = context;
+  const cookies = cookie.parse(req.headers.cookie || "");
+
+  const token = cookies.token;
+
+  return {
+    props: {
+      token,
+    },
+  };
+}
+
+export default function useAuth(token) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
@@ -12,17 +26,16 @@ export default function useAuth() {
     // Função para verificar se o usuário está autenticado
     async function checkAuth() {
       try {
+        if (!token) {
+          throw new Error("Token não encontrado");
+        }
         // Verifica se o token é válido no servidor
-        const response = await axios.get("/verificarToken", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await api.get("/verificarToken");
 
         const data = await response.json();
 
         // Se o token não for válido, lança um erro
-        if (!data.valid) {
+        if (data) {
           throw new Error("Token inválido");
         }
 
@@ -34,10 +47,11 @@ export default function useAuth() {
 
         // Se a rota atual for /login, redireciona para a home
         if (router.pathname === "/login") {
-          router.push(router.query.redirect || "/");
+          router.push("/");
         }
       } catch (error) {
         console.error(error);
+        console.log("token não é válido");
         setUser(null);
         setLoading(true);
       } finally {
