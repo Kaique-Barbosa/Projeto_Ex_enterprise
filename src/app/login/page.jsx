@@ -44,7 +44,6 @@ function page() {
           isClosable: true,
         });
 
-        localStorage.setItem("token", response.data.token);
         router.push("/");
       })
       .catch((error) => {

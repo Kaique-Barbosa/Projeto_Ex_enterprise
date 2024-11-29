@@ -3,7 +3,11 @@ import Link from "next/link";
 import { useAuthContext } from "@/context/AuthContext";
 
 export default function DropdownUser() {
-  const { isAuthenticated, user, logout } = useAuthContext();
+  const { isAuthenticated, user, logout, loading } = useAuthContext();
+
+  if (loading) {
+    return null;
+  }
 
   return (
     <div className="dropdown dropdown-bottom dropdown-end">

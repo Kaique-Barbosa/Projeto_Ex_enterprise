@@ -9,6 +9,8 @@ import * as yup from "yup";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { validarTelefone, formatarTelefoneParaNumeros } from "@/utils/telefone";
+import api from "@/utils/api";
+import { useToast } from "@chakra-ui/react";
 
 const schema = yup.object().shape({
   nome: yup.string().required("Campo obrigatório"),
@@ -41,10 +43,11 @@ function page() {
     resolver: yupResolver(schema),
   });
 
+  const toast = useToast()
+
   const registerSubmit = (data) => {
     const { confirmarSenha, ...filterData } = data;
-
-    console.log(JSON.stringify(filterData, null, 2));
+    console.log(JSON.stringify(filterData));
   };
 
   return (
