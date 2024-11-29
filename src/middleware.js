@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export function middleware(request) {
   const path = request.nextUrl.pathname;
 
-  const token = request.cookies.get("token")?.value;
+  const token = request.cookies.get("token");
 
   // Páginas públicas (sem autenticação)
   const publicRoutes = [
@@ -22,7 +22,7 @@ export function middleware(request) {
   }
 
   // Middleware para rotas privadas
-  if (!token) {
+  if (!token && !publicRoutes.includes(path)) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
 
