@@ -17,7 +17,12 @@ export default function useAuth() {
           signal: controller.signal,
         });
 
-        const user = response.data.data;
+        const user = {
+          nome: response.data.nome,
+          sobrenome: response.data.sobrenome,
+          email: response.data.email,
+          
+        };
 
         // Salva o usuário no estado
         setUser(user);

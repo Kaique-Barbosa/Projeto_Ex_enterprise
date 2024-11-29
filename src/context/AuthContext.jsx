@@ -7,7 +7,7 @@ const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
   const { user, loading, isAuthenticated, logout } = useAuth();
-
+  
   return (
     <AuthContext.Provider value={{ isAuthenticated, user, loading, logout }}>
       {children}
