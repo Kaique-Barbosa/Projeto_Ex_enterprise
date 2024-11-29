@@ -21,7 +21,6 @@ export default function useAuth() {
 
         // Salva o usuário no estado
         setUser(user);
-
       } catch (error) {
         setUser(null);
         setLoading(true);
@@ -38,9 +37,19 @@ export default function useAuth() {
     };
   }, [router.pathname]);
 
-  const logout = () => {
-    setUser(null);
-    router.push("/login");
+  const logout = async () => {
+    try {
+      // Faz a requisição para o servidor
+      const response = await api.post("/usuario/logout");
+
+      if (response.status === 200) {
+        setUser(null);
+      }
+
+      router.push("/login");
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const isAuthenticated = !!user;
