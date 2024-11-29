@@ -22,10 +22,6 @@ export default function useAuth() {
         // Salva o usuário no estado
         setUser(user);
 
-        // Se a rota atual for /login, redireciona para a home
-        if (router.pathname === "/login") {
-          router.push("/");
-        }
       } catch (error) {
         setUser(null);
         setLoading(true);
