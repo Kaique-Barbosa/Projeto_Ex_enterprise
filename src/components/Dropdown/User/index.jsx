@@ -17,8 +17,8 @@ export default function DropdownUser() {
         </div>
         <ul className="dropdown-content menu absolute w-60 bg-primary rounded-lg shadow-lg mt-2">
           <li className="dropdown-item">
-            <div>
-              <p>Email</p>
+            <div className="flex flex-col items-start gap-2">
+              <p className="font-semibold text-base">Email</p>
               <p>{user.email}</p>
             </div>
           </li>

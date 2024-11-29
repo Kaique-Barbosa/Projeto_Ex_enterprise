@@ -31,17 +31,20 @@ function page() {
 
   const loginSubmit = (data) => {
     api
-      .post("/usuario/login", data)
+      .post("/usuario/login", data, {
+        timeout: 3000,
+      })
       .then((response) => {
         toast({
           title: "Sucesso!",
           description: response.data.message,
-          status: "success",
           position: "top-center",
+          status: "success",
           duration: 3000,
           isClosable: true,
         });
 
+        localStorage.setItem("token", response.data.token);
         router.push("/");
       })
       .catch((error) => {
