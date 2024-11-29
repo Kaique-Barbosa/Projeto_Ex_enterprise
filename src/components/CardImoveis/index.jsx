@@ -8,6 +8,7 @@ export default function index({ image, redirect }) {
       <div className="flex flex-1 self-stretch flex-col md:flex-row">
         <Image
           src={image}
+          alt="imagem do imovel"
           className="h-60 md:h-full w-full md:w-80 rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
         />
         <div className="flex flex-col items-start justify-center gap-8 p-6 flex-1">
