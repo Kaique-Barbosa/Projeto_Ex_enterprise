@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import api from "@/utils/api";
 
 export default function useAuth() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
+  const pathname = usePathname();
   const controller = new AbortController();
 
   useEffect(() => {
@@ -40,7 +41,7 @@ export default function useAuth() {
     return () => {
       controller.abort();
     };
-  }, [router.pathname]);
+  }, [pathname]);
 
   const logout = async () => {
     try {
