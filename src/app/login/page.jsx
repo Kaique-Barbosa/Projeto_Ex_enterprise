@@ -1,16 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import logo from "@/public/img/logo.png";
 import Link from "next/link";
 import FormField from "@/components/forms/FormField";
 import * as yup from "yup";
-import { Controller, useForm } from "react-hook-form";
+import { Controller, set, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import api from "@/utils/api";
 import { useRouter } from "next/navigation";
 import { useToast } from "@chakra-ui/react";
+import SubmitButton from "@/components/Buttons/SubmitButton";
 
 const schema = yup.object().shape({
   email: yup.string().email("Email inválido").required("Campo obrigatório"),
@@ -18,6 +19,8 @@ const schema = yup.object().shape({
 });
 
 function page() {
+  const [loading, setLoading] = useState(false);
+
   const router = useRouter();
   const toast = useToast();
 
@@ -30,24 +33,28 @@ function page() {
   });
 
   const loginSubmit = (data) => {
+    setLoading(true);
+
     api
       .post("/usuario/login", data, {
         timeout: 3000,
       })
       .then((response) => {
         toast({
-          title: "Sucesso!",
           description: response.data.message,
           position: "top-center",
           status: "success",
-          duration: 3000,
+          duration: 1400,
           isClosable: true,
         });
 
-        router.push("/");
+        setLoading(false);
+
+        setTimeout(() => {
+          router.back();
+        }, 1500);
       })
       .catch((error) => {
-        console.error(error);
         const { response } = error;
         toast({
           title: "Erro ao fazer login!",
@@ -57,7 +64,10 @@ function page() {
           duration: 3000,
           isClosable: true,
         });
+
+        setLoading(false);
       });
+      
   };
 
   return (
@@ -87,7 +97,6 @@ function page() {
                     <FormField.Input
                       {...field}
                       type="email"
-                      required={true}
                       tabIndex={1}
                       placeholder="Digite seu e-mail"
                     ></FormField.Input>
@@ -105,22 +114,21 @@ function page() {
                   render={({ field }) => (
                     <FormField.InputPassword
                       {...field}
-                      required={true}
                       tabIndex={2}
                       placeholder="Digite sua senha"
                     ></FormField.InputPassword>
                   )}
                 />
-                <FormField.Error>{errors.password?.message}</FormField.Error>
+                <FormField.Error>{errors.senha?.message}</FormField.Error>
               </FormField.Container>
 
-              <button
-                type="submit"
-                className="btn btn-accent text-white"
-                tabIndex={3}
-              >
-                Acessar
-              </button>
+              <SubmitButton
+                text="Entrar"
+                color="accent"
+                style="normal"
+                className="text-white hover:bg-accent/75 disabled:bg-accent/50"
+                loading={loading}
+              />
             </fieldset>
           </form>
 
