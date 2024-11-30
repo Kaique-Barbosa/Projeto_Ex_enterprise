@@ -13,8 +13,8 @@ const LinkButton = ({
   color,
 }) => {
   const styles = {
-    normal: `bg-${color}`,
-    circle: "rounded-full",
+    normal: `bg-${color} hover:bg-${color}/75`,
+    circle: "rounded-full bg-${color} hover:bg-${color}/75",
     outline: `bg-transparent text-secondary border-${color} hover:bg-${color}`,
     outlineCircle: `bg-transparent text-secondary rounded-full border-${color} hover:bg-${color}`,
     ghost: `bg-transparent hover:bg-${color}`,

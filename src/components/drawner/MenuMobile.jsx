@@ -21,6 +21,7 @@ import IconEstate from "@/icons/IconEstate/IconEstate";
 import IconConsultancy from "@/icons/IconConsultancy/IconConsultancy";
 import IconEcommerce from "@/icons/IconEcommerce/IconEcommerce";
 import IconEbooks from "@/icons/IconEbooks/IconEbooks";
+import MenuUser from "@/components/Menu/User";
 
 const MenuMobile = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -120,27 +121,7 @@ const MenuMobile = () => {
             </div>
 
             <div className="sm:hidden">
-              <p className="font-normal">Voçê não está logado</p>
-              <ul className="menu px-0 text-base">
-                <li>
-                  <Link
-                    alt="fazer login"
-                    href="/login"
-                    className="hover:bg-accent hover:text-white px-2"
-                  >
-                    Login
-                  </Link>
-                </li >
-                <li>
-                  <Link
-                    alt="criar conta"
-                    href="/cadastro"
-                    className="hover:bg-accent hover:text-white px-2"
-                  >
-                    Criar conta
-                  </Link>
-                </li>
-              </ul>
+                <MenuUser />
             </div>
           </DrawerBody>
         </DrawerContent>
