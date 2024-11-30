@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/img/logo.png";
@@ -11,6 +11,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { validarTelefone, formatarTelefoneParaNumeros } from "@/utils/telefone";
 import api from "@/utils/api";
 import { useToast } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
+import SubmitButton from "@/components/Buttons/SubmitButton";
 
 const schema = yup.object().shape({
   nome: yup.string().required("Campo obrigatório"),
@@ -35,6 +37,8 @@ const schema = yup.object().shape({
 });
 
 function page() {
+  const [loading, setLoading] = useState(false);
+
   const {
     control,
     handleSubmit,
@@ -43,11 +47,46 @@ function page() {
     resolver: yupResolver(schema),
   });
 
-  const toast = useToast()
+  const toast = useToast();
+  const router = useRouter();
 
   const registerSubmit = (data) => {
     const { confirmarSenha, ...filterData } = data;
-    console.log(JSON.stringify(filterData));
+
+    setLoading(true);
+
+    api
+      .post("/usuario/cadastrar", filterData, {
+        timeout: 3000,
+      })
+      .then((response) => {
+        toast({
+          title: response.data.message,
+          description: "Redirecionando...",
+          position: "top-center",
+          status: "success",
+          duration: 1900,
+          isClosable: true,
+        });
+
+        setTimeout(() => {
+          router.back();
+          setLoading(false);
+        }, 2000);
+      })
+      .catch((error) => {
+        const { response } = error;
+        toast({
+          title: "Erro ao fazer cadastro!",
+          description: response.data.detais,
+          position: "top-center",
+          status: "error",
+          duration: 1400,
+          isClosable: true,
+        });
+
+        setLoading(false);
+      });
   };
 
   return (
@@ -180,13 +219,13 @@ function page() {
               </div>
 
               <div className="flex flex-wrap gap-x-8 gap-y-4 items-center">
-                <button
-                  type="submit"
-                  className="btn btn-accent text-white flex-grow basis-80 py-3"
-                  tabIndex={7}
-                >
-                  Criar conta
-                </button>
+                <SubmitButton
+                  loading={loading}
+                  style="normal"
+                  color="accent"
+                  text="Cadastrar"
+                  className="flex-grow basis-80 text-white hover:bg-accent/75 disabled:bg-accent/50"
+                />
                 <Link
                   href={"/login"}
                   alt="Já tem uma conta? Faça seu login"
