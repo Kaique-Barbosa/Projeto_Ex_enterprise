@@ -50,13 +50,13 @@ span.swiper-pagination-bullet-active {
   container-name: card-imoveis-container;
 }
 
-@container card-container (width > 320px) {
+@container card-container (width > 20rem) {
   .card-align-start {
     @apply flex-row justify-start text-start;
   }
 }
 
-@container card-imoveis-container (width > 870px) {
+@container card-imoveis-container (width > 50rem) {
   .card-imoveis-align {
     @apply flex-row;
   }

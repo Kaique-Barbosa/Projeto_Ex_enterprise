@@ -21,21 +21,9 @@ export const Header = () => {
     const header = headerRef.current;
     const handleScroll = () => {
       if (window.scrollY > 100) {
-        header.classList.add(
-          "shadow-neutro_sm",
-          "backdrop-blur-sm",
-          "backdrop-filter",
-          "bg-branco_75%",
-          "dark:bg-preto_75%"
-        );
+        header.classList.add("shadow-neutro_sm");
       } else {
-        header.classList.remove(
-          "shadow-neutro_sm",
-          "backdrop-blur-sm",
-          "backdrop-filter",
-          "bg-branco_75%",
-          "dark:bg-preto_75%"
-        );
+        header.classList.remove("shadow-neutro_sm");
       }
     };
 
@@ -47,7 +35,7 @@ export const Header = () => {
 
   return (
     <header
-      className="flex items-center justify-center w-full fixed top-0 z-50 transition-all duration-300"
+      className="flex items-center justify-center w-full fixed top-0 z-50 transition-all duration-300 bg-base-100"
       ref={headerRef}
     >
       <div className="w-full max-w-8xl flex items-center px-8 py-2 justify-between">
