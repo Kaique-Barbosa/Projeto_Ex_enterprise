@@ -45,9 +45,24 @@ span.swiper-pagination-bullet-active {
   container-name: card-container;
 }
 
+.card-imoveis {
+  container-type: inline-size;
+  container-name: card-imoveis-container;
+}
+
 @container card-container (width > 320px) {
   .card-align-start {
     @apply flex-row justify-start text-start;
+  }
+}
+
+@container card-imoveis-container (width > 870px) {
+  .card-imoveis-align {
+    @apply flex-row;
+  }
+
+  .card-imoveis-image {
+    @apply h-full w-80 rounded-l-lg rounded-tr-none;
   }
 }
 

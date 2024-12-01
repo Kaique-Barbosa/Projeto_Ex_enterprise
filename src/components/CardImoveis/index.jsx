@@ -1,17 +1,18 @@
 import Image from "next/image";
 import React from "react";
-import LinkButton from "../Buttons/LinkButton";
+import LinkButton from "@/components/Buttons/LinkButton";
+import Card from "@/components/Card";
 
 export default function index({ image, redirect }) {
   return (
-    <div className="bg-cinza-200 dark:bg-preto-900 shadow-neutro flex h-fit md:min-h-80 w-full max-w-7xl items-center justify-center rounded-lg tracking-widest leading-tighter">
-      <div className="flex flex-1 self-stretch flex-col md:flex-row">
+    <Card.Root css="card-imoveis">
+      <div className="card-imoveis-align flex flex-col self-stretch flex-1">
         <Image
           src={image}
           alt="imagem do imovel"
-          className="h-60 md:h-full w-full md:w-80 rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
+          className="card-imoveis-image h-60 w-full rounded-t-lg"
         />
-        <div className="flex flex-col items-start justify-center gap-8 p-6 flex-1">
+        <div className="flex flex-col items-center sm:items-start justify-center text-center md:text-start gap-8 p-6 flex-1">
           <div className="flex flex-col gap-2">
             <h5>Apartamento 1 quarto para locação, 40,03m²</h5>
             <div className="flex gap-2 items-center">
@@ -19,7 +20,7 @@ export default function index({ image, redirect }) {
               <span>Pituba, Rua Rubem Berta, 46</span>
             </div>
           </div>
-          <div className="flex gap-4 flex-wrap">
+          <div className="flex gap-4 flex-wrap justify-between flex-1">
             <div className="flex gap-1 items-center">
               <span className="iconify mdi--image-area text-2xl text-accent mr-1"></span>
               <span>0</span>
@@ -44,9 +45,8 @@ export default function index({ image, redirect }) {
           <div className="bg-success text-white p-2 rounded-xl">Disponivel</div>
           <div className="w-full flex flex-col xs:flex-row justify-center items-center xs:justify-between gap-4">
             <div className="flex flex-col gap-2 text-center xs:text-start">
-              <span className="text-accent text-4xl font-semibold leading-7 ">
-                R$<span className="ml-1">0,00 </span>
-                <span className="text-xl text-secondary">/mês</span>
+              <span className="text-accent text-3xl font-semibold leading-7 ">
+                R$ 0,00/mês
               </span>
               <span className="font-medium">
                 + R$ <span>0,00</span> de condomínio
@@ -63,6 +63,6 @@ export default function index({ image, redirect }) {
           </div>
         </div>
       </div>
-    </div>
+    </Card.Root>
   );
 }
