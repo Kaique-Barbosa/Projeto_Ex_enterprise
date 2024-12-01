@@ -6,7 +6,7 @@ export default function DropdownUser() {
   const { isAuthenticated, user, logout, loading } = useAuthContext();
 
   if (loading) {
-    return null;
+    return <div className="w-36 h-9 rounded-full bg-gray-300 animate-pulse"></div>;
   }
 
   return (
@@ -16,7 +16,7 @@ export default function DropdownUser() {
           <div
             tabIndex={0}
             role="button"
-            className="btn btn-ghost font-normal text-base"
+            className="btn btn-ghost hover:bg-accent h-12 rounded-full text-lg py-1 px-4 font-semibold hover:text-white"
           >
             Ola, {user.nome} {user.sobrenome}
           </div>
@@ -42,9 +42,9 @@ export default function DropdownUser() {
           <div
             tabIndex={0}
             role="button"
-            className="btn btn-ghost font-normal text-base"
+            className="btn btn-ghost hover:bg-accent h-12 rounded-full text-lg py-1 px-4 font-semibold hover:text-white"
           >
-            Voçê não está logado
+            Fazer Login
           </div>
 
           <ul className="dropdown-content menu absolute w-60 bg-primary rounded-lg shadow-lg mt-2">
