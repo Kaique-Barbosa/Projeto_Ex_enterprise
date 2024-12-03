@@ -2,13 +2,12 @@ import { NextResponse } from "next/server";
 
 export function middleware(request) {
   const path = request.nextUrl.pathname;
-
   const token = request.cookies.get("token");
+
+  console.log("path", path);
   
   // Páginas públicas (sem autenticação)
   const publicRoutes = [
-    "/login",
-    "/cadastro",
     "/",
     "/consultoria",
     "/imoveis",
@@ -17,7 +16,7 @@ export function middleware(request) {
   ];
 
   // Middleware para redirecionar o usuário para a home caso ele esteja logado
-  if (token && (path === "/login" || path === "/cadastro")) {
+  if (token && ["/login", "/cadastro"].includes(path)) {
     return NextResponse.redirect(new URL("/", request.url));
   }
   
@@ -25,15 +24,10 @@ export function middleware(request) {
   if (publicRoutes.includes(path)) {
     return NextResponse.next();
   }
-  
-  // Middleware para rotas privadas
-  if (!token && !publicRoutes.includes(path)) {
-    return NextResponse.redirect(new URL("/login", request.url));
-  }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/(!api|_next/static|_next/image|favicon.ico)*", "/login", "/cadastro"],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico)*)", "/login", "/cadastro"],
 };
