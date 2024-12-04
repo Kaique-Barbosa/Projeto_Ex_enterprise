@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import FormField from "@/components/forms/FormField";
 import RadioButton from "@/components/forms/RadioButton";
 import { useForm, Controller } from "react-hook-form";
@@ -24,18 +24,33 @@ const schema = yup.object().shape({
   mensagem: yup.string().required("Digite uma mensagem"),
 });
 
-const ContactForm = () => {
+const ContactForm = ({ selectedOption }) => {
   const {
     control,
+    setValue,
     handleSubmit,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
+    defaultValues: {
+      servico: selectedOption || "",
+      nome: "",
+      email: "",
+      telefone: "",
+      assunto: "",
+      mensagem: "",
+    },
   });
 
   const formSubmit = (data) => {
     alert(JSON.stringify(data));
   };
+
+  useEffect(() => {
+    if (selectedOption) {
+      setValue("servico", selectedOption);
+    }
+  }, [selectedOption, setValue]);
 
   return (
     <div className="flex flex-col gap-8 items-center">
@@ -88,7 +103,6 @@ const ContactForm = () => {
                 <Controller
                   name="nome"
                   control={control}
-                  defaultValue=""
                   render={({ field }) => (
                     <FormField.Input
                       {...field}
@@ -104,7 +118,6 @@ const ContactForm = () => {
                 <Controller
                   name="email"
                   control={control}
-                  defaultValue=""
                   render={({ field }) => (
                     <FormField.Input
                       {...field}
@@ -123,7 +136,6 @@ const ContactForm = () => {
                 <Controller
                   name="telefone"
                   control={control}
-                  defaultValue=""
                   render={({ field }) => (
                     <FormField.Input
                       {...field}
@@ -139,7 +151,6 @@ const ContactForm = () => {
                 <Controller
                   name="assunto"
                   control={control}
-                  defaultValue=""
                   render={({ field }) => (
                     <FormField.Input
                       {...field}
@@ -157,7 +168,6 @@ const ContactForm = () => {
               <Controller
                 name="mensagem"
                 control={control}
-                defaultValue=""
                 render={({ field }) => (
                   <FormField.Textarea {...field} className="h-40" />
                 )}

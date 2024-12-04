@@ -68,7 +68,7 @@ const ImoveisPage = () => {
           <LinkButton
             texto="Entre em contato"
             alt="botão para página de contato"
-            href="/contato"
+            href="/contato?option=imoveis"
             style="normal"
             color="accent"
             className="text-white"

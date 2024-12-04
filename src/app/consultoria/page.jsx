@@ -188,7 +188,7 @@ const ConsultoriaPage = () => {
           <LinkButton
             texto="Entre em contato"
             alt="botão para página de contato"
-            href="/contato"
+            href="/contato?option=consultoria"
             style="normal"
             color="accent"
             className="text-white"

@@ -1,10 +1,15 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-export default function Root({ className, children }) {
+const Root = forwardRef(({ className, children }, ref) => {
   return (
-    <section className={twMerge("container max-w-9xl my-12", className)}>
+    <section
+      ref={ref}
+      className={twMerge("container max-w-9xl my-12", className)}
+    >
       {children}
     </section>
   );
-}
+});
+
+export default Root;
