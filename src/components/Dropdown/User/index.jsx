@@ -6,7 +6,7 @@ export default function DropdownUser() {
   const { isAuthenticated, user, logout, loading } = useAuthContext();
 
   if (loading) {
-    return <div className="w-36 h-9 rounded-full bg-gray-300 animate-pulse"></div>;
+    return <div className="w-36 h-9 rounded-full bg-primary animate-pulse"></div>;
   }
 
   return (

@@ -1,10 +1,10 @@
-import {Work_Sans} from "next/font/google";
+import { Work_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { ChakraProvider } from "@chakra-ui/react";
-import { AuthProvider } from "@/context/AuthContext";
+import Providers from "@/providers";
 
-const workSans = Work_Sans({subsets: ['latin']})
+const workSans = Work_Sans({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Ex Enterprise",
@@ -17,11 +17,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${workSans.className} antialiased bg-gradient-to-b from-base-100  via-base-200 via-50% via-base-300 via-70% to-primary to-90% text-secondary`}
       >
-        <AuthProvider>
+        <Providers>
           <ThemeProvider atribute="class" defaultTheme="dark">
             <ChakraProvider>{children}</ChakraProvider>
           </ThemeProvider>
-        </AuthProvider>
+        </Providers>
       </body>
     </html>
   );

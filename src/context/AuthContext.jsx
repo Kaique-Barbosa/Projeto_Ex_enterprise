@@ -1,13 +1,68 @@
 "use client";
 
-import React, { createContext, useContext } from "react";
-import useAuth from "@/hooks/useAuth";
+import React, { createContext, useContext, useEffect, useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
+import api from "@/utils/api";
 
 const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
-  const { user, loading, isAuthenticated, logout } = useAuth();
-  
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
+  const pathname = usePathname();
+  const controller = new AbortController();
+
+  useEffect(() => {
+    // Função para verificar se o usuário está autenticado
+    async function checkAuth() {
+      try {
+        // Verifica se o token é válido no servidor
+        const response = await api.get("/verificarToken", {
+          signal: controller.signal,
+        });
+
+        const user = {
+          nome: response.data.nome,
+          sobrenome: response.data.sobrenome,
+          email: response.data.email,
+        };
+
+        // Salva o usuário no estado
+        setUser(user);
+      } catch (error) {
+        setUser(null);
+        setLoading(true);
+      } finally {
+        // Finaliza o loading
+        setLoading(false);
+      }
+    }
+
+    checkAuth();
+
+    return () => {
+      controller.abort();
+    };
+  }, [pathname]);
+
+  const logout = async () => {
+    try {
+      // Faz a requisição para o servidor
+      const response = await api.post("/usuario/logout");
+
+      if (response.status === 200) {
+        setUser(null);
+      }
+
+      router.push("/login");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const isAuthenticated = !!user;
+
   return (
     <AuthContext.Provider value={{ isAuthenticated, user, loading, logout }}>
       {children}
