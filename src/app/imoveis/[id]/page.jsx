@@ -6,7 +6,6 @@ import imovelImg from "@/public/img/mini_02577e27.jpg";
 import Link from "next/link";
 import LinkButton from "@/components/Buttons/LinkButton";
 import { IconWhatsapp } from "@/icons/IconWhatsapp";
-import FormField from "@/components/forms/FormField";
 
 const ImovelPage = ({ params }) => {
   return (
@@ -115,7 +114,7 @@ const ImovelPage = ({ params }) => {
               </LinkButton>
               <div className="divider">ou</div>
               <LinkButton
-                href="#"
+                href="/contato?option=imoveis"
                 alt="ir para formulário de contato"
                 texto="Formulário de contato"
                 style="normal"
