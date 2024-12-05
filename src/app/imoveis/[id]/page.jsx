@@ -70,20 +70,20 @@ const ImovelPage = ({ params }) => {
                 <p className="mt-1">IPTU</p>
               </div>
             </div>
-            <div className="flex gap-4 flex-wrap justify-between text-xl">
-              <div className="flex-1 flex gap-1 items-center">
+            <div className="flex gap-x-8 gap-y-4 flex-wrap justify-start text-xl">
+              <div className="flex gap-1 items-center">
                 <span className="iconify mdi--image-area text-2xl text-accent mr-1"></span>
                 <span>0 m²</span>
               </div>
-              <div className="flex-1 flex gap-1 items-center">
+              <div className="flex gap-1 items-center">
                 <span className="iconify mdi--bed text-2xl text-accent mr-1"></span>
                 <span> 0 quarto</span>
               </div>
-              <div className="flex-1 flex gap-1 items-center">
+              <div className="flex gap-1 items-center">
                 <span className="iconify mdi--garage text-2xl text-accent mr-1"></span>
                 <span>0 vaga</span>
               </div>
-              <div className="flex-1 flex gap-1 items-center">
+              <div className="flex gap-1 items-center">
                 <span className="iconify mdi--bathroom text-2xl text-accent mr-1"></span>
                 <span>0 banheiro</span>
               </div>
@@ -100,63 +100,30 @@ const ImovelPage = ({ params }) => {
               </p>
             </div>
           </div>
-          <div className="w-full lg:max-w-[30rem] h-fit bg-primary shadow-neutro_sm rounded-lg p-4 flex flex-col gap-4">
+          <aside className="w-full lg:max-w-[30rem] h-fit bg-primary shadow-neutro_sm rounded-lg p-4 flex flex-col gap-4 aside-imovel">
             <h3 className="text-2xl">Entre em contato</h3>
-            <LinkButton
-              href="#"
-              alt="Clique para conversar no WhatsApp"
-              texto="Conversar no WhatsApp"
-              style="normal"
-              color="success"
-              className="text-white hover:bg-green-600"
-            >
-              <IconWhatsapp className="size-4 fill-current text-inherit" />
-            </LinkButton>
-            <form className="flex flex-col gap-4">
-              <FormField.Container>
-                <FormField.Label htmlFor="nome" text="Nome" />
-                <FormField.Input
-                  id="nome"
-                  type="text"
-                  name="nome"
-                  placeholder="Digite seu nome"
-                  required
-                />
-              </FormField.Container>
-              <FormField.Container>
-                <FormField.Label htmlFor="email" text="Email" />
-                <FormField.Input
-                  id="email"
-                  type="email"
-                  name="email"
-                  placeholder="Digite seu email"
-                  required
-                />
-              </FormField.Container>
-              <FormField.Container>
-                <FormField.Label htmlFor="telefone" text="Telefone" />
-                <FormField.InputTel
-                  id="telefone"
-                  name="telefone"
-                  placeholder="Digite seu telefone"
-                  required
-                />
-              </FormField.Container>
-              <FormField.Container>
-                <FormField.Label htmlFor="mensagem" text="Mensagem" />
-                <FormField.Textarea
-                  id="mensagem"
-                  name="mensagem"
-                  required
-                  className="h-40"
-                  defaultValue="Olá, gostaria de mais informações sobre este imóvel, código: 1000000 - Apartamento 1 quarto para alugar 40,03m² por R$ 1.200,00."
-                />
-              </FormField.Container>
-              <button type="submit" className="btn btn-accent font-medium text-white hover:text-white">
-                Enviar mensagem
-              </button>
-            </form>
-          </div>
+            <div className="aside-imovel-contact flex flex-col gap-1">
+              <LinkButton
+                href="#"
+                alt="Clique para conversar no WhatsApp"
+                texto="Conversar no WhatsApp"
+                style="normal"
+                color="green-600"
+                className="text-white bg-green-600 hover:bg-green-700 flex-1"
+              >
+                <IconWhatsapp className="size-4 fill-current text-inherit" />
+              </LinkButton>
+              <div className="divider">ou</div>
+              <LinkButton
+                href="#"
+                alt="ir para formulário de contato"
+                texto="Formulário de contato"
+                style="normal"
+                color="accent"
+                className="text-white flex-1"
+              />
+            </div>
+          </aside>
         </div>
       </div>
       <Footer />
