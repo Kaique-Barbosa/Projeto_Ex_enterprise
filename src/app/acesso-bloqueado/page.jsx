@@ -19,10 +19,10 @@ export default function page() {
       </header>
 
       <main className="flex-1 flex flex-col items-center justify-center gap-6">
-        <span className="iconify mdi--block-helper size-40 text-accent"></span>
+        <span className="text-9xl text-accent">401</span>
 
         <div className="flex flex-col items-center gap-4">
-          <h1 className="text-center text-accent">Acesso bloqueado</h1>
+          <h1 className="text-center text-4xl text-accent">Acesso negado</h1>
           <p className="text-center text-lg">
             Você não tem permissão para acessar essa página.
           </p>
