@@ -99,7 +99,7 @@ const ImovelPage = ({ params }) => {
               </p>
             </div>
           </div>
-          <aside className="w-full lg:max-w-[30rem] h-fit bg-primary shadow-neutro_sm rounded-lg p-4 flex flex-col gap-4 aside-imovel">
+          <aside className="w-full lg:max-w-[30rem] h-fit bg-primary shadow-neutro_sm rounded-lg p-4 flex flex-col gap-6 aside-imovel">
             <h3 className="text-2xl">Entre em contato</h3>
             <div className="aside-imovel-contact flex flex-col gap-1">
               <LinkButton
@@ -120,6 +120,18 @@ const ImovelPage = ({ params }) => {
                 style="normal"
                 color="accent"
                 className="text-white flex-1"
+              />
+            </div>
+            <div className="flex flex-col gap-4">
+              <h3>Alugue este imóvel</h3>
+              <p>Clique no botão abaixo para gerar o contrato de locação</p>
+              <LinkButton
+                href="/imoveis/:id/gerar-contrato"
+                alt="ir para gerar contrato"
+                texto="Gerar contrato"
+                style="normal"
+                color="accent"
+                className="text-white"
               />
             </div>
           </aside>
