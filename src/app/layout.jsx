@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { ChakraProvider } from "@chakra-ui/react";
 import Providers from "@/providers";
-
+import { SpeedInsights } from '@vercel/speed-insights/next';
 const workSans = Work_Sans({ subsets: ["latin"] });
 
 export const metadata = {
@@ -22,6 +22,7 @@ export default function RootLayout({ children }) {
             <ChakraProvider>{children}</ChakraProvider>
           </ThemeProvider>
         </Providers>
+        <SpeedInsights />
       </body>
     </html>
   );
