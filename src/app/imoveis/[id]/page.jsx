@@ -8,6 +8,7 @@ import Link from "next/link";
 import LinkButton from "@/components/Buttons/LinkButton";
 import { IconWhatsapp } from "@/icons/IconWhatsapp";
 import api from "@/utils/api";
+import ImgCarrocel from "@/components/imgCarrocel/ImgCarrocel";
 
 const ImovelPage = ({ params }) => {
   const [imovel, setImovel] = useState(null);
@@ -135,6 +136,7 @@ const ImovelPage = ({ params }) => {
                 </p>
               </div>
             </div>
+            
             {/* o card de contato\ só aparece se estiver disponivel */}
             {imovel.disponibilidade ? (
             <aside className="w-full lg:max-w-[30rem] h-fit bg-primary shadow-neutro_sm rounded-lg p-4 flex flex-col gap-4 aside-imovel">
@@ -160,7 +162,9 @@ const ImovelPage = ({ params }) => {
                   className="text-white flex-1"
                 />
               </div>
+              <ImgCarrocel/>
             </aside>
+
 
             ) : (
                 " "
