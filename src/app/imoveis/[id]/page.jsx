@@ -5,6 +5,7 @@ import { IconWhatsapp } from "@/icons/IconWhatsapp";
 import api from "@/utils/api";
 import ImgCarrocel from "@/components/imgCarrocel/ImgCarrocel";
 import Section from "@/components/Section";
+import GerarContrato from "@/components/Imoveis/GerarContrato";
 
 async function buscarImovel(id) {
   const response = await api.post("/imoveis/listar/" + id);
@@ -14,6 +15,7 @@ async function buscarImovel(id) {
 
 const ImovelPage = async ({ params }) => {
   await new Promise((resolve) => setTimeout(resolve, 2000));
+
   const imovel = await buscarImovel(params.id);
 
   return (
@@ -133,6 +135,9 @@ const ImovelPage = async ({ params }) => {
                   color="accent"
                   className="text-white flex-1"
                 />
+              </div>
+              <div>
+                <GerarContrato />
               </div>
             </aside>
           </div>
