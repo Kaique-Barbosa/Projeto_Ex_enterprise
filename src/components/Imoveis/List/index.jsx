@@ -10,7 +10,7 @@ export default async function Imoveis() {
   const data = response.data;
 
   return (
-    <div className="flex flex-col gap-6 w-full">
+    <div className="flex flex-col gap-6 items-center w-full">
       {data.map((imovel, index) => (
         <CardImoveis
           key={index}
