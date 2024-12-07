@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import { Header } from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
@@ -10,21 +10,24 @@ import { IconWhatsapp } from "@/icons/IconWhatsapp";
 import api from "@/utils/api";
 
 const ImovelPage = ({ params }) => {
-  const [imoveis, setImoveis] = useState([]);
+  const [imovel, setImovel] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Função para buscar os imóveis
-  const buscarImoveis = async () => {
+  // Função para buscar o imóvel
+  const buscarImovel = async () => {
     try {
-      const dados = await api.get(`https://api-ex-enterprise.onrender.com/imoveis/listar/${params.id}`);
-      setImoveis(dados.data); // Atualiza o estado com os dados recebidos
+      const response = await api.post(`https://api-ex-enterprise.onrender.com/imoveis/listar/${params.id}`);
+      setImovel(response.data); // Atualiza o estado com os dados recebidos
+      setIsLoading(false); // Define isLoading como false após os dados serem carregados
     } catch (error) {
-      console.error("Erro ao buscar imóveis:", error);
+      console.error("Erro ao buscar imóvel:", error);
+      setIsLoading(false); // Define isLoading como false mesmo se houver erro
     }
   };
 
-  // useEffect para chamar a função de busca de imóveis
+  // useEffect para chamar a função de busca de imóvel
   useEffect(() => {
-    buscarImoveis(); // Chama a função de busca assim que o componente for montado
+    buscarImovel(); // Chama a função de busca assim que o componente for montado
   }, []); // O efeito será executado apenas uma vez, após a montagem do componente
 
   return (
@@ -35,6 +38,7 @@ const ImovelPage = ({ params }) => {
           src={imovelImg}
           className="h-full w-full"
           alt="Imagem do imóvel"
+          priority
         />
       </div>
 
@@ -55,13 +59,23 @@ const ImovelPage = ({ params }) => {
             </li>
           </ul>
         </div>
-        {imoveis.map((imovel, index) => (
-          <div className="flex flex-col lg:flex-row gap-12 " key={index}>
+        
+        {isLoading ? (
+          <span className="loading w-20 max-w-screen-md m-auto loading-dots "></span>
+        ) : (
+          <div className="flex flex-col lg:flex-row gap-12 mx-2">
             <div className="flex flex-col gap-12">
               <div>
-                <div className="bg-success text-white p-2 rounded inline">
-                  {imovel.disponibilidade ? "Disponível" : "Indisponível"} para alocação
-                </div>
+              {imovel.disponibilidade ? (
+              <div className="bg-success w-fit text-white px-4 py-2 rounded-md">
+                 Disponivel para alocação
+              </div>
+            ) : (
+              <div className="bg-error w-fit text-white px-4 py-2 rounded-md">
+               Indisponivel para alocação
+              </div>
+            )}
+              
               </div>
               <div>
                 <h1 className="text-accent mb-4 text-4xl">
@@ -78,19 +92,19 @@ const ImovelPage = ({ params }) => {
               <div className="flex flex-wrap justify-between items-center gap-6">
                 <div className="grow basis-52">
                   <p className="text-4xl text-accent text-semibold">
-                    R$ {imovel.valorAlocacao.toFixed(2)}
+                    R$ {imovel.valorAlocacao}
                   </p>
                   <p className="mt-1">Valor de locação (por mês)</p>
                 </div>
                 <div className="grow basis-32">
                   <p className="text-2xl text-accent text-semibold">
-                    R$ {imovel.valorCondominio.toFixed(2)}
+                    R$ {imovel.valorCondominio}
                   </p>
                   <p className="mt-1">Condomínio</p>
                 </div>
                 <div className="grow basis-32">
                   <p className="text-2xl text-accent text-semibold">
-                    R$ {imovel.valorIPTU.toFixed(2)}
+                    R$ {imovel.valorIPTU}
                   </p>
                   <p className="mt-1">IPTU</p>
                 </div>
@@ -121,6 +135,8 @@ const ImovelPage = ({ params }) => {
                 </p>
               </div>
             </div>
+            {/* o card de contato\ só aparece se estiver disponivel */}
+            {imovel.disponibilidade ? (
             <aside className="w-full lg:max-w-[30rem] h-fit bg-primary shadow-neutro_sm rounded-lg p-4 flex flex-col gap-4 aside-imovel">
               <h3 className="text-2xl">Entre em contato</h3>
               <div className="aside-imovel-contact flex flex-col gap-1">
@@ -145,8 +161,12 @@ const ImovelPage = ({ params }) => {
                 />
               </div>
             </aside>
+
+            ) : (
+                " "
+            )}
           </div>
-        ))}
+        )}
       </div>
       <Footer />
     </div>
