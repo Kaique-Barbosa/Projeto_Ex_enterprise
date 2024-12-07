@@ -1,7 +1,4 @@
-"use client"
-import React, { useEffect, useState } from "react";
-import Footer from "@/components/footer/Footer";
-import { Header } from "@/components/header/Header";
+import React, { Suspense } from "react";
 import { HeroSection } from "@/components/HeroSection";
 import Section from "@/components/Section";
 import CardModel2 from "@/components/cardModel2/cardModel2";
@@ -9,35 +6,12 @@ import LinkButton from "@/components/Buttons/LinkButton";
 import HouseIcon from "@/icons/HouseIcon";
 import REConsultancyIcon from "@/icons/REConsultancyIcon";
 import ManagementIcon from "@/icons/ManagementIcon";
-import CardImoveis from "@/components/CardImoveis";
-import imovelImg from "@/public/img/mini_02577e27.jpg";
-import api from "@/utils/api";
-import CardImoveisSkeletron from "@/components/CardImoveis/Skeletron";
+import Imoveis from "@/components/Imoveis/List";
+import LoadingImoveis from "@/components/Imoveis/Loading";
 
 const ImoveisPage = () => {
-
-  const [imoveis, setImoveis] = useState([]);
-  
-  // Função para buscar os imóveis
-  const buscarImoveis = async () => {
-    try {
-      const dados = await api.get("https://api-ex-enterprise.onrender.com/imoveis/listar");
-      setImoveis(dados.data); // Atualiza o estado com os dados recebidos
-    } catch (error) {
-      console.error("Erro ao buscar imóveis:", error);
-    }
-  };
-
-  // useEffect para chamar a função de busca de imóveis
-  useEffect(() => {
-    buscarImoveis(); // Chama a função de busca assim que o componente for montado
-  }, []); // O efeito será executado apenas uma vez, após a montagem do componente
-
-
   return (
-    <div className="flex flex-col items-center justify-center w-full">
-      <Header />
-
+    <main>
       <HeroSection.Root>
         <HeroSection.Title>
           Aloque imóveis com{" "}
@@ -51,25 +25,11 @@ const ImoveisPage = () => {
         <Section.Title className="text-center text-accent">
           Todos os nossos Imóveis
         </Section.Title>
-        
-        {imoveis.length > 0 ? (
-          imoveis.map((imovel, index) => (
-            <CardImoveis key={index} image={imovelImg} redirect={`/imoveis/${imovel.id}`} 
-            nome = {imovel.nome } 
-            endereco = {imovel.endereco}
-            disponibilidade = {imovel.disponibilidade}
-            valorAlocacao = {imovel.valorAlocacao}
-            valorCondominio = {imovel.valorCondominio}
-            areaImovel = {imovel.areaImovel}
-            quantidadeQuartos ={imovel.quantidadeQuartos}
-            quantidadeBanheiros = {imovel.quantidadeBanheiros}
-            vagasEstacionamento = {imovel.vagasEstacionamento}
-            
-            />
-          ))
-        ) : (
-          <CardImoveisSkeletron/>
-        )}
+
+        <Suspense fallback={<LoadingImoveis />}>
+          <Imoveis />
+        </Suspense>
+
       </Section.Root>
 
       <Section.Root className="flex flex-col gap-12">
@@ -114,9 +74,7 @@ const ImoveisPage = () => {
           />
         </div>
       </Section.Root>
-
-      <Footer />
-    </div>
+    </main>
   );
 };
 

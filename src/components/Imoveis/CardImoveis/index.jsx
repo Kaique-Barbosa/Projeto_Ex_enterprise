@@ -61,14 +61,14 @@ export default function index({
             </div>
             {disponibilidade ? (
               <div className="bg-success w-fit text-white px-4 py-2 rounded-md">
-                 Disponivel para alocação
+                Disponivel para alocação
               </div>
             ) : (
               <div className="bg-error w-fit text-white px-4 py-2 rounded-md">
-               Indisponivel para alocação
+                Indisponivel para alocação
               </div>
             )}
-          
+
             <div className="w-full flex flex-col xs:flex-row justify-center items-center xs:justify-between gap-4">
               <div className="flex flex-col gap-2 text-center xs:text-start">
                 <span className="text-accent text-3xl font-semibold leading-7 ">
@@ -78,14 +78,9 @@ export default function index({
                   + R$ {valorCondominio} de condomínio
                 </span>
               </div>
-              <LinkButton
-                href={redirect}
-                alt="conferir detalhes do imóvel"
-                texto="Mais informações"
-                style="ghost"
-                color="accent"
-                className="text-secondary hover:text-white"
-              />
+              <div className="btn btn-ghost hover:bg-accent hover:text-white">
+                Mais informações
+              </div>
             </div>
           </div>
         </div>

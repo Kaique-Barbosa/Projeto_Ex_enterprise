@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { ChakraProvider } from "@chakra-ui/react";
 import Providers from "@/providers";
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 const workSans = Work_Sans({ subsets: ["latin"] });
 
 export const metadata = {
