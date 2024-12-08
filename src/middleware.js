@@ -3,17 +3,9 @@ import { NextResponse } from "next/server";
 export function middleware(request) {
   const path = request.nextUrl.pathname;
   const token = request.cookies.get("token");
-  const refferer = request.headers.get("referer");
-
-  console.log("path", path);
-  console.log("token", token);
-  console.log("refferer", refferer);
-  console.log(!token);
-  console.log(path.includes("/imoveis/:id/gerar-contrato"));
 
   // Páginas públicas (sem autenticação)
   const publicRoutes = ["/", "/consultoria", "/imoveis", "/contato", "/ebooks"];
-  const protectedRoutes = ["/imoveis/:id/gerar-contrato"];
 
   // Middleware para redirecionar o usuário para a home caso ele esteja logado
   if (token && ["/login", "/cadastro"].includes(path)) {
@@ -25,9 +17,11 @@ export function middleware(request) {
     return NextResponse.next();
   }
 
-  // Middleware para rotas protegidas
-  if (protectedRoutes.includes(path) && !token) {
+  // Middleware para rotas privadas
+  if (path === "/imoveis/:id/gerar-contrato") {
+    if (!token) {
       return NextResponse.redirect(new URL("/acesso-bloqueado", request.url));
+    }
   }
 
   return NextResponse.next();
