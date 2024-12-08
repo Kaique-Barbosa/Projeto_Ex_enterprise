@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CardImoveisSkeletron() {
+export default function LoadingImoveisCard() {
   return (
     <div className="card-imoveis bg-cinza-200 shadow-neutro flex h-fit md:min-h-80 w-full max-w-7xl items-center justify-center rounded-lg tracking-widest leading-tighter animate-pulse">
       <div className="card-imoveis-align flex flex-col self-stretch flex-1">

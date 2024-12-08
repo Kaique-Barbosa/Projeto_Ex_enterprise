@@ -11,6 +11,7 @@ const LinkButton = ({
   className,
   style,
   color,
+  ariaDisabled,
 }) => {
   const styles = {
     normal: `bg-${color} hover:bg-${color}/75 border-none`,
@@ -30,6 +31,7 @@ const LinkButton = ({
           styles[style],
           className
         )}
+        aria-disabled={ariaDisabled}
       >
         {children}
         {texto}
