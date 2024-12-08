@@ -6,20 +6,19 @@ import { usePathname } from "next/navigation";
 import PropTypes from "prop-types";
 
 export default function NavLinks({ title, path }) {
-
   const currentRoute = usePathname();
 
   return (
     <Link
       aria-disabled={currentRoute === path}
       href={path}
-      className={`py-2 px-2 rounded-sm uppercase ${
+      className={`py-1 px-2 rounded uppercase ${
         currentRoute === path
-          ? "text-accent"
+          ? "text-accent pointer-events-none"
           : "hover:text-white hover:bg-accent"
       }`}
     >
-        {title}
+      {title}
     </Link>
   );
 }

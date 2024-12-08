@@ -5,7 +5,7 @@ import api from "@/utils/api";
 
 export default async function Imoveis() {
   const response = await api.get(
-    "https://api-ex-enterprise.onrender.com/imoveis/listar"
+    "/imoveis/listar"
   );
   const data = response.data;
 

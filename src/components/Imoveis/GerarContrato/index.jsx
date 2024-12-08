@@ -3,9 +3,8 @@
 import React from "react";
 import LinkButton from "@/components/Buttons/LinkButton";
 import { useAuthContext } from "@/context/AuthContext";
-import { twMerge } from "tailwind-merge";
 
-export default function GerarContrato() {
+export default function GerarContrato({ imovelCod }) {
   const { isAuthenticated } = useAuthContext();
 
   return (
@@ -16,7 +15,7 @@ export default function GerarContrato() {
         imóvel.
       </p>
       <LinkButton
-        href="/imoveis/:id/gerar-contrato"
+        href={`/imoveis/${imovelCod}/gerar-contrato`}
         alt="ir para á paǵina para gerar contrato de locação"
         texto="Gerar Contrato"
         className={`
