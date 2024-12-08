@@ -1,38 +1,62 @@
 "use client";
-
-import { Button } from "@chakra-ui/react";
 import Image from "next/image";
-import React from "react";
-import imagem from "@/public/img/livroImg.jpg";
+import React, { useState } from "react";
 import Download from "@/icons/Download/Download";
 import ButtonWithIcon from "@/components/Buttons/ButtonWithIcon";
+import api from "@/utils/api";
 
-export default function cardModel5() {
+// Função para baixar o eBook
+async function baixarEbook(titulo, setToast) {
+  const nomeArquivo = `${titulo}.pdf`; // Concatena o título com ".pdf"
+  console.log(nomeArquivo)
+  try {
+    const response = await api.get(`/ebooks/baixar/${nomeArquivo}`);
+    console.log("eBook baixado com sucesso!");
+    setToast({ type: "success", message: "Download iniciado com sucesso!" });
+  } catch (error) {
+    console.error("Erro ao baixar o eBook:", error);
+    setToast({
+      type: "error",
+      message: error.response?.data?.error || "Erro desconhecido ao baixar o eBook.",
+    });
+  }
+}
+
+export default function CardModel5({ titulo, descricao, capa }) {
+  const [toast, setToast] = useState(null); // Estado para armazenar o tipo e mensagem do toast
+
   return (
-    <div className="w-80 md:w-full h-fit md:h-96 flex flex-col md:flex-row  justify-between items-center bg-cinza-200_neutro bg-opacity-10 p-4 gap-6 rounded-xl backdrop-filter backdrop-blur-lg backdrop-saturate-150">
+    <div className="w-80 md:w-full h-fit md:h-96 flex flex-col md:flex-row justify-between items-center bg-cinza-200_neutro bg-opacity-10 p-4 gap-6 rounded-xl backdrop-filter backdrop-blur-lg backdrop-saturate-150">
       <Image
-        src={imagem}
+        src={capa}
         className="w-80 h-96 md:h-fit rounded-lg"
         alt="Capa de ebook"
       />
       <div className="w-full h-full flex flex-col gap-3">
         <div className="flex-1 self-stretch">
-          <h3 className="mb-4">Nome do Ebook</h3>
-          <p>
-            Rorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-            turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
-            nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
-            tellus elit sed risus. Maecenas eget condimentum velit, sit amet
-            feugiat lectus. Class aptent taciti sociosqu ad litora torquent per
-            conubia nostra, per inceptos himenaeos.
-          </p>
+          <h3 className="mb-4">{titulo}</h3>
+          <p>{descricao}</p>
         </div>
         <ButtonWithIcon
           icon={<Download css="size-4 text-inherit fill-current" />}
           texto="Download"
           css="self-center md:self-start"
+          funcaoOnclick={() => baixarEbook(titulo, setToast)} // Passa `setToast` como argumento
         />
       </div>
+
+      {/* Toast */}
+      {toast && (
+        <div className="toast toast-top toast-center">
+          <div
+            className={`alert ${
+              toast.type === "success" ? "alert-success" : "alert-info"
+            }`}
+          >
+            <span>{toast.message}</span>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
