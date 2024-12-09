@@ -5,10 +5,10 @@ import { IconWhatsapp } from "@/icons/IconWhatsapp";
 import api from "@/utils/api";
 import ImgCarrocel from "@/components/imgCarrocel/ImgCarrocel";
 import Section from "@/components/Section";
-import GerarContrato from "@/components/Imoveis/GerarContrato";
+import GerarContratoLink from "@/components/Imoveis/GerarContratoLink";
 
 async function buscarImovel(id) {
-  const response = await api.post("/imoveis/listar/" + id);
+  const response = await api.get("/imoveis/listar/" + id);
   const data = response.data;
   return data;
 }
@@ -137,7 +137,7 @@ const ImovelPage = async ({ params }) => {
                 />
               </div>
               <div>
-                <GerarContrato />
+                <GerarContratoLink imovelCod={imovel.id} />
               </div>
             </aside>
           </div>

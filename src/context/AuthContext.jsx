@@ -23,6 +23,7 @@ export const AuthProvider = ({ children }) => {
         });
 
         const user = {
+          id: response.data.usuario,
           nome: response.data.nome,
           sobrenome: response.data.sobrenome,
           email: response.data.email,
