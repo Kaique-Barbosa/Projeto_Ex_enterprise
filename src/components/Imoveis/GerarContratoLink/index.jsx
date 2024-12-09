@@ -4,7 +4,7 @@ import React from "react";
 import LinkButton from "@/components/Buttons/LinkButton";
 import { useAuthContext } from "@/context/AuthContext";
 
-export default function GerarContrato({ imovelCod }) {
+export default function GerarContratoLink({ imovelCod }) {
   const { isAuthenticated } = useAuthContext();
 
   return (
@@ -15,7 +15,7 @@ export default function GerarContrato({ imovelCod }) {
         imóvel.
       </p>
       <LinkButton
-        href={`/imoveis/${imovelCod}/gerar-contrato`}
+        href={`/imoveis/gerar-contrato?imovel=${imovelCod}`}
         alt="ir para á paǵina para gerar contrato de locação"
         texto="Gerar Contrato"
         className={`
