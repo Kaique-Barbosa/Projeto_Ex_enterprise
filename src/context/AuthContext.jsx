@@ -22,18 +22,19 @@ export const AuthProvider = ({ children }) => {
           signal: controller.signal,
         });
 
+        const data = response.data;
+
         const user = {
-          id: response.data.usuario,
-          nome: response.data.nome,
-          sobrenome: response.data.sobrenome,
-          email: response.data.email,
+          id: data.usuario,
+          nome: data.nome,
+          sobrenome: data.sobrenome,
+          email: data.email,
         };
 
         // Salva o usuário no estado
         setUser(user);
       } catch (error) {
         setUser(null);
-        setLoading(true);
       } finally {
         // Finaliza o loading
         setLoading(false);
@@ -65,7 +66,9 @@ export const AuthProvider = ({ children }) => {
   const isAuthenticated = !!user;
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, user, loading, logout }}>
+    <AuthContext.Provider
+      value={{ isAuthenticated, user, loading, logout}}
+    >
       {children}
     </AuthContext.Provider>
   );

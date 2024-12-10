@@ -1,29 +1,40 @@
 import React, { useEffect } from "react";
 import FormField from "../FormField";
 import SubmitButton from "@/components/Buttons/SubmitButton";
-import { Controller, Form, useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import axios from "axios";
+import { buscarEnderecoPorCep, formatCEPtoNumber } from "@/utils/cep";
+import { validateCPF } from "@/utils/cpf";
+import { validateRG } from "@/utils/rg";
 
 const schema = yup.object().shape({
   nomeCompleto: yup.string().required("Campo obrigatório"),
   estadoCivil: yup.string().required("Campo obrigatório"),
   profissao: yup.string().required("Campo obrigatório"),
-  cpf: yup.string().required("Campo obrigatório"),
-  rg: yup.string().required("Campo obrigatório"),
+  cpf: yup
+    .string()
+    .required("Campo obrigatório")
+    .test("cpf", "CPF inválido", (value) => {
+      return validateCPF(value);
+    }), // Adicione a validação do CPF
+  rg: yup
+    .string()
+    .required("Campo obrigatório")
+    .test("rg", "RG inválido", (value) => {
+      return validateRG(value);
+    }),
   cep: yup
     .string()
-    .max(9, "CEP Inválido")
-    .required("Campo obrigatório")
-    .matches(/^\d{5}-?\d{3}$/, "CEP Inválido"),
+    .matches(/^\d{5}-?\d{3}$/, "CEP inválido")
+    .required("Campo obrigatório"),
   logradouro: yup.string().required("Campo obrigatório"),
   numero: yup.number().required("Campo obrigatório"),
   bairro: yup.string().required("Campo obrigatório"),
   cidade: yup.string().required("Campo obrigatório"),
 });
 
-export default function GerarContratoForm({ userCompleteName, imovelCod }) {
+export default function GerarContratoForm({ initialData }) {
   const {
     setValue,
     setError,
@@ -35,7 +46,7 @@ export default function GerarContratoForm({ userCompleteName, imovelCod }) {
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
-      nomeCompleto: userCompleteName || "",
+      nomeCompleto: "",
       estadoCivil: "",
       profissao: "",
       cpf: "",
@@ -45,46 +56,52 @@ export default function GerarContratoForm({ userCompleteName, imovelCod }) {
       numero: "",
       bairro: "",
       cidade: "",
-      imovelCodigo: imovelCod || "",
+      imovelCodigo: "",
     },
   });
 
   const cep = watch("cep");
-  const controller = new AbortController();
 
   useEffect(() => {
-    async function buscarEnderecoPorCep() {
-      try {
-        const response = await axios.get(
-          `https://viacep.com.br/ws/${cep}/json/`,
-          {
-            signal: controller.signal,
-          }
-        );
+    const cepToSearch = formatCEPtoNumber(cep);
 
-        const data = response.data;
+    async function setEndereco() {
+      try {
+        const data = await buscarEnderecoPorCep(cepToSearch);
+
+        if (data.erro) {
+          setError("cep", {
+            type: "cep",
+            message: "CEP não encontrado",
+          });
+          return;
+        }
 
         setValue("logradouro", data.logradouro);
         setValue("bairro", data.bairro);
         setValue("cidade", data.localidade);
-      } catch (error) {
-        console.error("Erro:", error);
-        setError("cep", {
-          type: "manual",
-          message: "CEP inválido",
-        });
+
         clearErrors("cep");
+      } catch (error) {
+        setError("cep", {
+          type: "cep",
+          message: "CEP não encontrado",
+        });
       }
     }
 
-    if (cep.length === 8) {
-      buscarEnderecoPorCep();
+    if (cepToSearch.length === 8) {
+      setEndereco();
     }
+  }, [cep, setValue, setError, clearErrors]);
 
-    return () => {
-      controller.abort();
-    };
-  }, [cep]);
+  useEffect(() => {
+    if (initialData) {
+      setValue("nomeCompleto", initialData.nomeCompleto);
+      setValue("cpf", initialData.cpf);
+      setValue("imovelCodigo", initialData.imovelCod);
+    }
+  }, [initialData, setValue]);
 
   const enviarDadosParaLocacao = (data) => {
     console.log(data);
@@ -104,6 +121,7 @@ export default function GerarContratoForm({ userCompleteName, imovelCod }) {
           <Controller
             name="nomeCompleto"
             control={control}
+            defaultValue=""
             render={({ field }) => (
               <FormField.Input
                 type="text"
@@ -199,6 +217,7 @@ export default function GerarContratoForm({ userCompleteName, imovelCod }) {
               />
             )}
           />
+
           <FormField.Error>{errors.cep?.message}</FormField.Error>
         </FormField.Container>
         <FormField.Container className="grow basis-96">
@@ -223,13 +242,14 @@ export default function GerarContratoForm({ userCompleteName, imovelCod }) {
             control={control}
             render={({ field }) => (
               <FormField.Input
-                type="text"
+                type="number"
                 placeholder="Número"
                 tabindex={0}
                 {...field}
               />
             )}
           />
+          <FormField.Error>{errors.numero?.message}</FormField.Error>
         </FormField.Container>
         <FormField.Container className="grow basis-96">
           <FormField.Label>Bairro</FormField.Label>

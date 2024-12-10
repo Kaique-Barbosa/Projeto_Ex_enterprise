@@ -8,7 +8,7 @@ import GerarContratoForm from "@/components/forms/GerarContratoForm";
 import { useSearchParams } from "next/navigation";
 
 export default function GerarContratoPage() {
-  const { user } = useAuthContext();
+  const { user, loading } = useAuthContext();
   const searchParams = useSearchParams();
 
   const [initialData, setInitialData] = useState({});
@@ -16,21 +16,24 @@ export default function GerarContratoPage() {
 
   useEffect(() => {
     async function buscarDadosParaLocacao() {
-      try {
-        const response = await api.get(`/usuario/${user.id})`, {
-          signal: controller.signal,
-        });
+      if (user && !loading) {
+        try {
+          const response = await api.get(`/usuario/${user.id}`, {
+            signal: controller.signal,
+          });
 
-        const { nome, sobrenome } = response.data;
+          const data = response.data;
 
-        const data = {
-          nomeCompleto: `${nome} ${sobrenome}`,
-          imovelCod: searchParams.get("imovel"),
-        };
+          const initData = {
+            nomeCompleto: `${data.nome} ${data.sobrenome}`,
+            cpf: data.cpf || "",
+            imovelCod: searchParams.get("imovel"),
+          };
 
-        setInitialData(data);
-      } catch (error) {
-        console.error("Erro:", error);
+          setInitialData(initData);
+        } catch (error) {
+          console.error("Erro:", error);
+        }
       }
     }
 
@@ -39,7 +42,15 @@ export default function GerarContratoPage() {
     return () => {
       controller.abort();
     };
-  }, [user]);
+  }, [user, loading]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center w-full h-screen">
+        <span className="loading loading-spinner text-accent size-10"></span>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col items-center justify-center w-full">
@@ -51,10 +62,7 @@ export default function GerarContratoPage() {
         </p>
       </Section.Root>
       <Section.Root className="mt-0 flex gap-4 items-center">
-        <GerarContratoForm
-          userCompleteName={initialData.nomeCompleto}
-          imovelCod={initialData.imovelCod}
-        />
+        <GerarContratoForm initialData={initialData} />
       </Section.Root>
     </div>
   );
