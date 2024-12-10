@@ -11,10 +11,11 @@ import {
 } from "@/utils/cep";
 import { validateCPF, formatCPF } from "@/utils/cpf";
 import { formatRG, validateRG } from "@/utils/rg";
+import Select from "../Select";
 
 const schema = yup.object().shape({
   nomeCompleto: yup.string().required("Campo obrigatório"),
-  estadoCivil: yup.string().required("Campo obrigatório"),
+  estadoCivil: yup.string().required("Selecione uma opção"),
   profissao: yup.string().required("Campo obrigatório"),
   cpf: yup
     .string()
@@ -110,7 +111,7 @@ export default function GerarContratoForm({ initialData }) {
   const enviarDadosParaLocacao = (data) => {
     const dataLocador = {
       nomeLocador: data.nomeCompleto,
-      estadoCivilLocador: data.estadoCivil,
+      estadoCivilLocador: data.estadoCivil + "(a)",
       profissaoLocador: data.profissao,
       cpfLocador: formatCPF(data.cpf),
       rgLocador: formatRG(data.rg),
@@ -157,12 +158,13 @@ export default function GerarContratoForm({ initialData }) {
             name="estadoCivil"
             control={control}
             render={({ field }) => (
-              <FormField.Input
-                type="text"
-                placeholder="Digite seu estado civil"
-                tabindex={0}
-                {...field}
-              />
+              <Select {...field}>
+                <option value="">Selecione</option>
+                <option value="Solteiro">Solteiro(a)</option>
+                <option value="Casado">Casado(a)</option>
+                <option value="Divorciado">Divorciado(a)</option>
+                <option value="Viuvo">Viúvo(a)</option>
+              </Select>
             )}
           />
           <FormField.Error>{errors.estadoCivil?.message}</FormField.Error>
@@ -192,7 +194,7 @@ export default function GerarContratoForm({ initialData }) {
             render={({ field }) => (
               <FormField.Input
                 type="text"
-                placeholder="Digite seu CPF"
+                placeholder="Digite seu CPF (somente números)"
                 tabindex={0}
                 {...field}
               />
@@ -209,7 +211,7 @@ export default function GerarContratoForm({ initialData }) {
             render={({ field }) => (
               <FormField.Input
                 type="text"
-                placeholder="Digite seu RG"
+                placeholder="Digite seu RG (somente números)"
                 tabindex={0}
                 {...field}
               />
