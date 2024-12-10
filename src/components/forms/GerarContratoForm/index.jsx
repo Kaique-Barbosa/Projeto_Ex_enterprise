@@ -4,9 +4,13 @@ import SubmitButton from "@/components/Buttons/SubmitButton";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { buscarEnderecoPorCep, formatCEPtoNumber } from "@/utils/cep";
-import { validateCPF } from "@/utils/cpf";
-import { validateRG } from "@/utils/rg";
+import {
+  buscarEnderecoPorCep,
+  formatCEP,
+  formatCEPtoNumber,
+} from "@/utils/cep";
+import { validateCPF, formatCPF } from "@/utils/cpf";
+import { formatRG, validateRG } from "@/utils/rg";
 
 const schema = yup.object().shape({
   nomeCompleto: yup.string().required("Campo obrigatório"),
@@ -104,7 +108,21 @@ export default function GerarContratoForm({ initialData }) {
   }, [initialData, setValue]);
 
   const enviarDadosParaLocacao = (data) => {
-    console.log(data);
+    const dataLocador = {
+      nomeLocador: data.nomeCompleto,
+      estadoCivilLocador: data.estadoCivil,
+      profissaoLocador: data.profissao,
+      cpfLocador: formatCPF(data.cpf),
+      rgLocador: formatRG(data.rg),
+      cepLocador: formatCEP(data.cep),
+      logradouroLocador: data.logradouro,
+      numeroLocador: data.numero,
+      bairroLocador: data.bairro,
+      cidadeLocador: data.cidade,
+      codImovelParaLocacao: data.imovelCodigo,
+    };
+
+    console.log(dataLocador);
   };
 
   return (
