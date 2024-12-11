@@ -17,4 +17,4 @@ https://ui.shadcn.com/
 Bliblioteca para formulários
 https://formik.org
 
-//so pra atualizar 
+//so pra atualizar o vercel 
