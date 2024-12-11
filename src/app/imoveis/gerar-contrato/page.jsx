@@ -44,6 +44,14 @@ function GerarContrato() {
     };
   }, [user, loading]);
 
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center w-full h-screen">
+        <span className="loading loading-spinner text-accent size-10"></span>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col items-center justify-center w-full">
       <Section.Root className="py-12 mt-20 flex flex-col gap-4">
