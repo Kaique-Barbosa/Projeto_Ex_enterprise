@@ -9,17 +9,39 @@ import { HeroSection } from "@/components/HeroSection";
 import Section from "@/components/Section";
 
 
-import imagem from "@/public/img/livroImg.jpg";
+import imagem1 from "@/public/capasEbooks/Formação de Suporte Técnico Proinfo (pdf.io).png"
+import imagem2 from "@/public/capasEbooks/cloud-computing-na-pratica.png"
+import imagem3 from "@/public/capasEbooks/IDENTIDADE-DA-SUA-EMPRESA.png"
+import imagem4 from "@/public/capasEbooks/5-Conselhos-para-se-tornar-um-Empreendedor-de-Alto-Impacto.png"
 
 const EbooksPage = () => {
 
-  const dadosEbooks = [ 
+  const dadosEbooks = [
     {
-      titulo: "opoder",
-      capa: imagem,
-      descricao: "A descrição fica aqui"
+      titulo: "Formacao de Suporte Tecnico",
+      capa: imagem1,
+      descricao: "A descrição fica aqui",
+      url: "https://qsgsksirv7fkvuvt.public.blob.vercel-storage.com/ebooks/Formacao-de-Suporte-Tecnico-Proinfo.pdf",
     },
-  ]
+    {
+      titulo: "cloud computing na pratica",
+      capa: imagem2,
+      descricao: "A descrição fica aqui",
+      url: "https://qsgsksirv7fkvuvt.public.blob.vercel-storage.com/ebooks/cloud-computing-na-pratica.pdf",
+    },
+    {
+      titulo: "Como construir a  identidade da sua empresa",
+      capa: imagem3,
+      descricao: "A descrição fica aqui",
+      url: "https://qsgsksirv7fkvuvt.public.blob.vercel-storage.com/ebooks/COMO-CONSTRUIR-A-IDENTIDADE-DA-SUA-EMPRESA.pdf",
+    },
+    {
+      titulo: "5 Conselhos para se tornar um Empreendedor de Alto Impacto",
+      capa: imagem4,
+      descricao: "A descrição fica aqui",
+      url: "https://qsgsksirv7fkvuvt.public.blob.vercel-storage.com/ebooks/5-Conselhos-para-se-tornar-um-Empreendedor-de-Alto-Impacto.pdf",
+    },
+  ];
 
   return (
     <div className="flex flex-col items-center justify-center w-full">
@@ -35,7 +57,7 @@ const EbooksPage = () => {
       <Section.Root className="flex flex-col items-center gap-8">
 
         {dadosEbooks.map((ebook, index)=>(
-          <CardModel5 key={index} capa={ebook.capa} titulo={ebook.titulo} descricao={ebook.descricao} />
+          <CardModel5 key={index} capa={ebook.capa} titulo={ebook.titulo} descricao={ebook.descricao} url={ebook.url} />
         ))}
        
       </Section.Root>
