@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Section from "@/components/Section";
 import api from "@/utils/api";
 import { useAuthContext } from "@/context/AuthContext";
 import GerarContratoForm from "@/components/forms/GerarContratoForm";
 import { useSearchParams } from "next/navigation";
 
-export default function GerarContratoPage() {
+function GerarContrato() {
   const { user, loading } = useAuthContext();
   const searchParams = useSearchParams();
 
@@ -44,14 +44,6 @@ export default function GerarContratoPage() {
     };
   }, [user, loading]);
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center w-full h-screen">
-        <span className="loading loading-spinner text-accent size-10"></span>
-      </div>
-    );
-  }
-
   return (
     <div className="flex flex-col items-center justify-center w-full">
       <Section.Root className="py-12 mt-20 flex flex-col gap-4">
@@ -65,5 +57,13 @@ export default function GerarContratoPage() {
         <GerarContratoForm initialData={initialData} />
       </Section.Root>
     </div>
+  );
+}
+
+export default function GerarContratoPage() {
+  return (
+    <Suspense>
+      <GerarContrato />
+    </Suspense>
   );
 }
