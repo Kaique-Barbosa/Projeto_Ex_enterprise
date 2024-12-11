@@ -18,12 +18,12 @@ export function middleware(request) {
     return NextResponse.next();
   }
 
-  // Middleware para rotas privadas
+  /* // Middleware para rotas privadas
   if (privateRoutes.includes(path)) {
     if (!token) {
       return NextResponse.redirect(new URL("/acesso-bloqueado", request.url));
     }
-  }
+  } */
 
   return NextResponse.next();
 }
