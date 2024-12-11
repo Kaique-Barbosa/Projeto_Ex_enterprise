@@ -8,7 +8,7 @@ import Section from "@/components/Section";
 import GerarContratoLink from "@/components/Imoveis/GerarContratoLink";
 
 async function buscarImovel(id) {
-  const response = await api.get("/imoveis/listar/" + id);
+  const response = await api.get(`/imoveis/listar/${id}`);
   const data = response.data;
   return data;
 }
