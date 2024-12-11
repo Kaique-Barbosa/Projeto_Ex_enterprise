@@ -12,14 +12,14 @@ export default function GerarContratoPage() {
   const searchParams = useSearchParams();
 
   const [initialData, setInitialData] = useState({});
-  const controllerRef = React.useRef(new AbortController());
+  const controller = new AbortController();
 
   useEffect(() => {
     async function buscarDadosParaLocacao() {
       if (user && !loading) {
         try {
           const response = await api.get(`/usuario/${user.id}`, {
-            signal: controllerRef.current.signal,
+            signal: controller.signal,
           });
 
           const data = response.data;
@@ -32,9 +32,7 @@ export default function GerarContratoPage() {
 
           setInitialData(initData);
         } catch (error) {
-          if (error.name !== "AbortError") {
-            console.error("Erro ao buscar dados:", error);
-          }
+          console.error("Erro:", error);
         }
       }
     }
@@ -42,9 +40,9 @@ export default function GerarContratoPage() {
     buscarDadosParaLocacao();
 
     return () => {
-      controllerRef.current.abort();
+      controller.abort();
     };
-  }, [user, loading, searchParams]);
+  }, [user, loading]);
 
   if (loading) {
     return (
