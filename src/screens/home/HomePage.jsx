@@ -13,8 +13,8 @@ import imagemTnsta3 from "@/public/imagensDoInstagram/fotoInstagramEx3.jpg"
 import consultoria from "@/public/novasImagens/consultoria-de-ti.jpg";
 import locacao from "@/public/img/imoveis.jpg";
 import ecommerce from "@/public/novasImagens/ecomerce.jpg";
-import devs1 from "@/public/img/devs1.png";
-import devs2 from "@/public/img/devs2.png";
+import devs1 from "@/public/devs/devs1.jpg";
+import devs2 from "@/public/devs/devs2.png";
 
 export function HomePage() {
   return (
@@ -201,8 +201,8 @@ export function HomePage() {
 
         </div>
         <div className="flex-1 flex flex-col gap-4">
-          <Image className="w-full h-80" alt="Cover" src={devs1} />
-          <Image className="w-full h-80" alt="Cover" src={devs2} />
+          <Image  className="w-full h-96 object-cover " alt="Cover" src={devs1} />
+          <Image className="w-full h-96 object-cover" alt="Cover" src={devs2} />
         </div>
       </Section.Root>
       <Footer />
