@@ -25,12 +25,14 @@ export function HomePage() {
           Conheça um pouco mais sobre a empresa
         </Section.Title>
         <Section.Description className="text-center">
-          Empresa multifacetada que oferece consultoria especializada em
-          tecnologia da informação, um e-commerce robusto para venda de produtos
-          de informática e serviços de locação de imóveis. Com uma equipe
-          altamente qualificada e um representante palestrante renomado no setor
-          de TI, nos destacamos pela nossa capacidade de entregar soluções
-          inovadoras e personalizadas.
+          Bem Vindo a Ex Enterprise. Somos uma organização versátil, 
+          dedicada a oferecer soluções especializadas em tecnologia 
+          da informação, um e-commerce confiável para produtos de 
+          informática e serviços completos de locação de imóveis. 
+          Contamos com uma equipe experiente e um representante de 
+          destaque no setor de TI, reconhecido por suas palestras 
+          e expertise. Procuramos entregar soluções criativas e 
+          ajustadas às necessidades de nossos clientes.
         </Section.Description>
       </Section.Root>
 
@@ -127,13 +129,13 @@ export function HomePage() {
             <span className="text-accent">Nossa missão é oferecer</span>
             <span>&nbsp;</span>
             <span>
-              soluções tecnológicas avançadas, produtos de informática de alta
-              qualidade e serviços de locação de imóveis excepcionais,
+              soluções tecnológicas de ponta, oferecer produtos de informática 
+              de excelência e garantir serviços de locação de imóveis que superem 
+              expectativas, com um compromisso contínuo com
             </span>
             <span>&nbsp;</span>
             <span className="text-accent">
-              sempre com foco na inovação, na satisfação do cliente e na criação
-              de valor sustentável.
+              a inovação, a satisfação do cliente e a geração de valor duradouro.
             </span>
           </Section.Description>
           <LinkButton
@@ -181,7 +183,7 @@ export function HomePage() {
             <span>focando na</span>
             <span className="text-accent">
               {" "}
-              usabilidade, eficiencia e seguranda do sistema.
+              usabilidade, eficiencia e segurança
             </span>
           </Section.Description>
            

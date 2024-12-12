@@ -62,14 +62,14 @@ const cardsData = [
 ];
 
 const PerguntasFrequentesData = [
-  { titulo: "Pergunta 1", texto: "texto texto texto texto", aberto: true },
-  { titulo: "Pergunta 2", texto: "texto texto texto texto", aberto: false },
-  { titulo: "Pergunta 3", texto: "texto texto texto texto", aberto: false },
-  { titulo: "Pergunta 4", texto: "texto texto texto texto", aberto: false },
-  { titulo: "Pergunta 5", texto: "texto texto texto texto", aberto: false },
-  { titulo: "Pergunta 6", texto: "texto texto texto texto", aberto: false },
-  { titulo: "Pergunta 7", texto: "texto texto texto texto", aberto: false },
-  { titulo: "Pergunta 8", texto: "texto texto texto texto", aberto: false },
+  { titulo: "Como a empresa pode ajudar a renovar o meu negócio?", texto: "Nossa empresa oferece consultoria especializada, identificando pontos de melhoria e implementando soluções inovadoras, como tecnologias de ponta, estratégias personalizadas e ferramentas modernas, para transformar seu negócio e torná-lo mais competitivo.", aberto: true },
+  { titulo: "Quais serviços estão disponíveis para apoiar empresas em sua transformação?", texto: "Dispomos de serviços como consultoria em tecnologia da informação, desenvolvimento de sistemas personalizados, suporte para transição digital, e-commerce para ampliação de vendas e soluções para otimização de processos internos.", aberto: false },
+  { titulo: "Por que escolher a nossa empresa para renovar o seu negócio?", texto: "Porque unimos expertise técnica, experiência de mercado e um compromisso sólido com inovação. Nossa abordagem personalizada garante resultados que atendem às necessidades específicas de cada cliente, sempre com foco em eficiência e crescimento sustentável.", aberto: false },
+  { titulo: "A empresa atende negócios de quais setores?", texto: "Atendemos uma ampla variedade de setores, incluindo tecnologia, comércio, serviços e imóveis, adaptando nossas soluções às necessidades e objetivos específicos de cada segmento.", aberto: false },
+  { titulo: "Quanto tempo leva para ver os resultados das soluções implementadas?", texto: "O tempo varia conforme a complexidade do projeto e as necessidades do cliente. Contudo, nosso processo ágil e eficiente permite que você perceba melhorias iniciais em curto prazo, enquanto trabalhamos em soluções duradouras.", aberto: false },
+  { titulo: "A empresa também oferece suporte pós-implementação?", texto: "Sim, oferecemos suporte contínuo após a implementação das soluções, garantindo o acompanhamento necessário para ajustes, otimizações e manutenção, sempre priorizando o sucesso do cliente.", aberto: false },
+  { titulo: "As soluções desenvolvidas pela empresa são personalizadas?", texto: "Absolutamente. Trabalhamos lado a lado com nossos clientes para entender suas demandas e desenvolver soluções exclusivas, alinhadas aos seus objetivos e desafios específicos.", aberto: false },
+  { titulo: "Quais tecnologias a empresa utiliza para impulsionar a renovação dos negócios?", texto: "Utilizamos tecnologias modernas e de alta performance, como inteligência artificial, análise de dados, sistemas de automação, plataformas de e-commerce e ferramentas de gestão, sempre alinhadas às tendências do mercado e às melhores práticas.", aberto: false },
 ];
 
 // ----------------- FIM  area dos dados dos componentes-----------------
