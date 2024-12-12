@@ -83,7 +83,7 @@ export function HomePage() {
               <div className="flex flex-col gap-4 self-stretch">
                 <Card.Title>Locação de Imóveis</Card.Title>
                 <Card.Description>
-                  Aloque um de nossos imóveis, acompanhe a disponibilidade no
+                  Alugue um de nossos imóveis, acompanhe a disponibilidade no
                   site
                 </Card.Description>
               </div>
