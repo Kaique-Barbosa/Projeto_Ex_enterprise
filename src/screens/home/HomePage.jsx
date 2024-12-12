@@ -184,14 +184,16 @@ export function HomePage() {
               usabilidade, eficiencia e seguranda do sistema.
             </span>
           </Section.Description>
+           
           <LinkButton
-            href={"/"}
+            href={"https://biolink.info/devs-ex-enterprise"}
             alt={"Botao link"}
-            texto={"Acessar"}
+            texto={"Conhecer Devs"}
             className="self-center hover:text-white"
             style="outlineCircle"
             color="accent"
           />
+
         </div>
         <div className="flex-1 flex flex-col gap-4">
           <Image className="w-full h-80" alt="Cover" src={devs1} />
