@@ -21,7 +21,7 @@ export default function index({
   descricao,
 }) {
   return (
-    <Card.Root css="card-imoveis">
+    <div className="card-imoveis bg-cinza-200 dark:bg-preto-900 shadow-neutro flex h-fit w-full max-w-9xl items-center justify-center rounded-lg tracking-widest leading-tighter">
       <Link
         href={redirect}
         alt="conferir detalhes do imóvel"
@@ -31,7 +31,7 @@ export default function index({
           <Image
             src={image}
             alt="imagem do imovel"
-            className="card-imoveis-image h-60 w-full rounded-t-lg"
+            className="card-imoveis-image h-80 w-full rounded-t-lg"
           />
           <div className="flex flex-col gap-8 p-6 flex-1">
             <div className="flex flex-col gap-2">
@@ -85,6 +85,6 @@ export default function index({
           </div>
         </div>
       </Link>
-    </Card.Root>
+    </div>
   );
 }
