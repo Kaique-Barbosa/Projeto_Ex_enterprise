@@ -14,9 +14,9 @@ const ImoveisPage = () => {
     <main>
       <HeroSection.Root>
         <HeroSection.Title>
-          Aloque imóveis com{" "}
+          Encontre e Alugue imóveis{" "} 
           <strong className="text-secondary">
-            com segurança e confiabilidade
+            com total segurança e confiança.
           </strong>
         </HeroSection.Title>
       </HeroSection.Root>
