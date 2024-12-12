@@ -7,9 +7,12 @@ import LinkButton from "@/components/Buttons/LinkButton";
 import Footer from "@/components/footer/Footer";
 
 // importação de imagens
-import consultoria from "@/public/img/consultoria.jpg";
+import imagemTnsta1 from "@/public/imagensDoInstagram/fotoInstagramEx1.jpg"
+import imagemTnsta2 from "@/public/imagensDoInstagram/fotoInstagramEx2.jpg"
+import imagemTnsta3 from "@/public/imagensDoInstagram/fotoInstagramEx3.jpg"
+import consultoria from "@/public/novasImagens/consultoria-de-ti.jpg";
 import locacao from "@/public/img/imoveis.jpg";
-import ecommerce from "@/public/img/ecommerce.jpg";
+import ecommerce from "@/public/novasImagens/ecomerce.jpg";
 import devs1 from "@/public/img/devs1.png";
 import devs2 from "@/public/img/devs2.png";
 
@@ -139,7 +142,7 @@ export function HomePage() {
             </span>
           </Section.Description>
           <LinkButton
-            href={"/"}
+            href={"https://www.instagram.com/exenterprise/"}
             alt="Botao link"
             texto="Acessar"
             style="outlineCircle"
@@ -152,17 +155,17 @@ export function HomePage() {
             <Image
               className="items-center w-full h-80 row-span-2 object-cover rounded-lg"
               alt="imagens ilustrativas"
-              src={consultoria}
+              src={imagemTnsta1}
             />
             <Image
               className="w-full h-80 object-cover rounded-lg"
               alt="imagens ilustrativas "
-              src={locacao}
+              src={imagemTnsta2}
             />
             <Image
               className="w-full h-80 object-cover rounded-lg"
               alt="imagens ilustrativas"
-              src={ecommerce}
+              src={imagemTnsta3}
             />
           </div>
         </div>

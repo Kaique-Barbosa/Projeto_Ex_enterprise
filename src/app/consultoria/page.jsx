@@ -11,10 +11,11 @@ import Footer from "@/components/footer/Footer";
 import Carrocel from "@/components/carrocel/Carrocel";
 
 // importação de imagens e logos
-import consultoria from "@/public/img/consultoria.jpg";
+import consultoria from "@/public/novasImagens/analise-diagnostico.jpg";
 import consultoria2 from "@/public/img/consultoria2.jpg";
-import locacao from "@/public/img/imoveis.jpg";
-import ecommerce from "@/public/img/ecommerce.jpg";
+import solucoes from "@/public/novasImagens/Soluções-Personalizadas.png";
+import implementacao from "@/public/novasImagens/Implantação-de-Sistemas.png";
+import treinamento from "@/public/novasImagens/eventos-de-tecnologia.webp";
 import { GlobeIcon } from "@/icons/GlobeIcon/GlobeIcon";
 import { EnterpriseIcon } from "@/icons/EnterpriseIcon/EnterpriseIcon";
 import { RoctketIcon } from "@/icons/RocketIcon/RoctketIcon";
@@ -33,7 +34,7 @@ const cardsData = [
     linkButton: "/consultoria",
   },
   {
-    imagem: locacao,
+    imagem: solucoes,
     titulo: "Desenvolvimento de Soluções Personalizadas",
     subTitulo:
       "Criação e implementação de soluções sob medida para atender às necessidades específicas dos clientes, desde software até integração de sistemas.",
@@ -42,7 +43,7 @@ const cardsData = [
     linkButton: "/imoveis",
   },
   {
-    imagem: ecommerce,
+    imagem: implementacao,
     titulo: "Implementação de Sistemas e Softwares",
     subTitulo:
       "Planejamento e execução de projetos de implementação de novos sistemas e softwares, garantindo uma transição suave e eficiente.",
@@ -51,7 +52,7 @@ const cardsData = [
     linkButton: "/ecommerce",
   },
   {
-    imagem: ecommerce,
+    imagem: treinamento,
     titulo: "Treinamentos e Workshops em Tecnologia da Informação",
     subTitulo:
       "Capacitação de equipes através de treinamentos práticos e workshops, focados em novas tecnologias, boas práticas e tendências do mercado de TI.",
@@ -98,10 +99,10 @@ const ConsultoriaPage = () => {
             Uma empresa especializada em renovar o seu negócio
           </Section.Title>
           <Section.Description className="text-center text-accent">
-            Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            vulputate libero et velit interdum, ac aliquet odio mattis. Borem
-            ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
-            libero et velit interdum, ac aliquet odio
+          Somos uma empresa dedicada a transformar e impulsionar o seu negócio, 
+          oferecendo soluções inovadoras e personalizadas para atender às suas 
+          necessidades. Nosso foco é ajudar você a alcançar novos patamares de 
+          sucesso, renovando estratégias e fortalecendo sua presença no mercado.
           </Section.Description>
         </div>
       </Section.Root>
@@ -121,13 +122,14 @@ const ConsultoriaPage = () => {
             <Card.Container inverter={card.inverter}>
               <Card.Header flex>
                 <Image
-                  className={`object-cover h-full rounded-t-lg ${
+                  className={`object-cover w-full h-full rounded-t-lg ${
                     card.inverter
                       ? "md:rounded-r-lg md:rounded-l-none"
                       : "md:rounded-l-lg md:rounded-r-none"
                   }`}
                   alt={card.altLink}
                   src={card.imagem}
+
                 />
               </Card.Header>
               <Card.Body>

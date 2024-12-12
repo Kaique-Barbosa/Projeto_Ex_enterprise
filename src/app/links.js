@@ -33,7 +33,7 @@ const appNavigation = [
 const appSocialMedias = [
     {
         title: "Whatsapp",
-        href: "#",
+        href: "https://wa.me/557191720457?text=Ol%C3%A1%20linaldo%2C%20%20Acessei%20o%20site%20da%20Ex%20Enterprise%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20para%20contratar%20os%20servi%C3%A7os",
         icon: <IconWhatsapp className="text-inherit fill-current size-full" />
     },
     {
@@ -43,7 +43,7 @@ const appSocialMedias = [
     },
     {
         title: "Instagram",
-        href: "#",
+        href: "https://www.instagram.com/exenterprise/",
         icon: <Instagram1 className="text-inherit fill-current size-full" />
     },
     {

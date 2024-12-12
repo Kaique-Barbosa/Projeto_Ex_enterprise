@@ -15,20 +15,21 @@ import CardModel3 from "../cardModel3/CardModel3";
 function Carrocel({}) {
   const dadosPerguntas = [
     {
-      titulo: "titulo teste",
-      subtitulo: "subtitulo",
-      mensagem: "dwadwagrsgsergdrgdrghfthdt",
+      titulo: "TechNova Solutions",
+      subtitulo: "Inovação para empresas que desejam crescer",
+      mensagem: "TechNova Solutions oferece serviços especializados em consultoria tecnológica e desenvolvimento de software personalizado, ajudando negócios de médio porte a escalar com soluções inovadoras e eficientes. (Empresa fictícia)",
     },
     {
-      titulo: "titulo teste",
-      subtitulo: "subtitulo",
-      mensagem: "dwadwagrsgsergdrgdrghfthdt",
+      titulo: "GreenFlow",
+      subtitulo: "Sustentabilidade inteligente ao seu alcance",
+      mensagem: "GreenFlow desenvolve soluções de energia limpa e otimização de recursos naturais, combinando tecnologia de ponta com práticas sustentáveis para empresas e comunidades. (StartUp fictício)",
     },
     {
-      titulo: "titulo teste",
-      subtitulo: "subtitulo",
-      mensagem: "dwadwagrsgsergdrgdrghfthdt",
-    },
+      titulo: "Vida Plena",
+      subtitulo: "Transformando vidas com inclusão e cuidado",
+      mensagem: "Vida Plena é uma organização sem fins lucrativos focada em programas de educação e assistência social, promovendo a inclusão e o desenvolvimento de comunidades em situação de vulnerabilidade. (Setor fictício)",
+    },
+
   ];
 
   return (

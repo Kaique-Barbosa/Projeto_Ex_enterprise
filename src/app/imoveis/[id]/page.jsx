@@ -7,6 +7,16 @@ import ImgCarrocel from "@/components/imgCarrocel/ImgCarrocel";
 import Section from "@/components/Section";
 import GerarContratoLink from "@/components/Imoveis/GerarContratoLink";
 
+// Importando imagens
+import imagem1 from "@/public/imoveis/terreo/image.png";
+import imagem2 from "@/public/imoveis/terreo/image2.jpg";
+import imagem3 from "@/public/imoveis/terreo/terreo.jpeg";
+import imagem4 from "@/public/imoveis/escritorio/imagem1.jpg";
+import imagem5 from "@/public/imoveis/escritorio/imagem2.png";
+import imagem6 from "@/public/imoveis/apt1/imagem1.png";
+import imagem7 from "@/public/imoveis/apt1/imagem2.png";
+import imagem8 from "@/public/imoveis/apt1/imagem3.png";
+
 async function buscarImovel(id) {
   const response = await api.get(`/imoveis/listar/${id}`);
   const data = response.data;
@@ -18,10 +28,25 @@ const ImovelPage = async ({ params }) => {
 
   const imovel = await buscarImovel(params.id);
 
+  // Definindo imagens para o imóvel com ID 1564
+  const imagens =
+  params.id === "1564"
+    ? [imagem1, imagem2, imagem3]
+    : params.id === "4787"
+    ? [imagem4, imagem5, imagem4]
+    : params.id === "1568"
+    ? [imagem6, imagem7, imagem8] 
+    :
+    [];
+
   return (
     <main className="flex flex-col w-full items-center">
-      <Section.Root className="mt-28 h-96">
-        <ImgCarrocel />
+      <Section.Root className="mt-28 h-[30rem] md:h-[50rem] ">
+        <ImgCarrocel
+          imagem1={imagens[0] || ""}
+          imagem2={imagens[1] || ""}
+          imagem3={imagens[2] || ""}
+        />
       </Section.Root>
 
       <div className="container w-full max-w-9xl my-12 flex flex-col gap-8">
@@ -47,11 +72,11 @@ const ImovelPage = async ({ params }) => {
               <div>
                 {imovel.disponibilidade ? (
                   <div className="bg-success w-fit text-white px-4 py-2 rounded-md">
-                    Disponivel para alocação
+                    Disponível para alocação
                   </div>
                 ) : (
                   <div className="bg-error w-fit text-white px-4 py-2 rounded-md">
-                    Indisponivel para alocação
+                    Indisponível para alocação
                   </div>
                 )}
               </div>
