@@ -41,7 +41,7 @@ const ImovelPage = async ({ params }) => {
 
   return (
     <main className="flex flex-col w-full items-center">
-      <Section.Root className="mt-28 h-[30rem] md:h-[50rem] ">
+      <Section.Root className="mt-28 h-[25rem] sm:h-[35rem]">
         <ImgCarrocel
           imagem1={imagens[0] || ""}
           imagem2={imagens[1] || ""}
